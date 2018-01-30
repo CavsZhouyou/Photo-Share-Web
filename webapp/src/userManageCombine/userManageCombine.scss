@@ -1,0 +1,686 @@
+/*
+ * @Author: zhouyou@weruan 
+ * @Descriptions: 用户管理界面(无路由)
+ * @Date: 2017-12-23 11:06:29 
+ * @Last Modified by: zhouyou@weruan
+ * @Last Modified time: 2017-12-25 13:40:36
+ */
+
+@import url("../scss/normalize.css");
+
+#navbar {
+    width: 100%;
+    height: 50px;
+    background: url("../image/nav_bg.png") no-repeat left center;
+
+    .navbar-container {
+        width: 100%;
+        height: 50px;
+        .navbar-left {
+            width: 400px;
+            height: 50px;
+            float: left;
+            margin-left: 50px;
+            .navbar-list {
+                float: left;
+                .navbar-item {
+                    float: left;
+                    width: 80px;
+                    height: 50px;
+                    background: transparent;
+                    font-size: 18px;
+                    color: #fff;
+                    text-align: center;
+                    line-height: 50px;
+                    a {
+                        color: #fff;
+                    }
+                    .photo-class-list {
+                        display: none;
+                        position: relative;
+                        z-index: 2;
+                        animation: 5s infinite;
+                        .photo-class {
+                            width: 150px;
+                            height: 35px;
+                            line-height: 35px;
+                            border-bottom: 1px solid #fff;
+                            background: rgba(72, 138, 145, 0.5);
+                            text-align: center;
+                        }
+                        .photo-class:hover {
+                            background: rgba(72, 138, 145, 0.8);
+                        }
+                    }
+                }
+                .photo-class-nav:hover {
+                    .photo-class-list {
+                        display: inline-block;
+                    }
+                }
+            }
+        }
+
+        .navbar-search {
+            display: inline-block;
+            width: 400px;
+            height: 50px;
+            line-height: 50px;
+
+            .search {
+                width: 275px;
+                height: 29px;
+                padding-right: 25px;
+                background: url("../image/search.png") no-repeat right center
+                    #fff;
+                background-size: 35px 35px;
+            }
+        }
+
+        .navbar-right {
+            float: right;
+            width: 120px;
+            height: 50px;
+            padding-left: 30px;
+            line-height: 50px;
+            background: rgba(123, 200, 130, 0.7);
+            margin-right: 50px;
+
+            .user-name {
+                color: #fff;
+                font-size: 16px;
+                vertical-align: middle;
+            }
+            .user-img {
+                display: none;
+                width: 40px;
+                height: 40px;
+                border-radius: 20px;
+                margin-left: 15px;
+                vertical-align: middle;
+            }
+
+            .default-img {
+                width: 60px;
+                height: 50px;
+                border-radius: 25px;
+                vertical-align: middle;
+            }
+        }
+    }
+}
+
+#operation-content {
+    width: 100%;
+    height: 875px;
+    padding-top: 20px;
+    background: rgba(242, 242, 242, 1);
+
+    .container {
+        position: relative;
+        width: 950px;
+        height: 875px;
+        margin: 0 auto;
+
+        #content {
+            width: 950px;
+            height: 855px;
+            border-radius: 10px;
+            background: #fff;
+
+            .active {
+                display: block;
+            }
+        }
+
+        #sidebar {
+            position: absolute;
+            z-index: 1;
+            top: 0;
+            left: -210px;
+            width: 200px;
+
+            .sidebar-item {
+                width: 200px;
+                height: 40px;
+                margin-bottom: 5px;
+                border-radius: 2px;
+                background: #fff;
+                font-size: 15px;
+                font-weight: bold;
+                line-height: 40px;
+
+                a {
+                    display: inline-block;
+                    width: 100%;
+                    color: #667d94;
+                    border-radius: 2px;
+                }
+
+                span {
+                    margin-left: 30px;
+                }
+            }
+
+            .sidebar-item:hover {
+                a {
+                    background: #3498db;
+                    color: #fff;
+                }
+            }
+
+            .active {
+                a {
+                    background: #3498db;
+                    color: #fff;
+                }
+            }
+        }
+    }
+}
+
+#photo-check-content {
+    display: none;
+    width: 910px;
+    height: 815px;
+    padding: 30px 20px 0;
+
+    .title {
+        display: block;
+        height: 60px;
+        width: 880px;
+        padding-left: 30px;
+        margin-bottom: 0;
+        border-bottom: 1px solid #dddcdc;
+        font-size: 28px;
+    }
+
+    .container {
+        width: 910px;
+
+        .photo-info {
+            width: 910px;
+            height: 150px;
+            border-bottom: 1px solid #dddcdc;
+
+            .photo-class {
+                position: relative;
+                float: left;
+                width: 70px;
+                height: 100%;
+                color: #8f8e8e;
+                font-size: 14px;
+
+                span {
+                    position: absolute;
+                    top: 10px;
+                }
+            }
+
+            .photo-name {
+                float: left;
+                width: 100px;
+                height: 90px;
+                padding-top: 60px;
+                font-size: 16px;
+                font-weight: bold;
+            }
+
+            .photo-description {
+                float: left;
+                width: 640px;
+                height: 150px;
+
+                .photo {
+                    display: inline-block;
+                    width: 140px;
+                    height: 120px;
+                    padding-top: 30px;
+                    text-align: center;
+
+                    img {
+                        width: 100px;
+                        height: 100px;
+                        vertical-align: middle;
+                    }
+                }
+
+                .photo-description-content {
+                    display: inline-block;
+                    width: 490px;
+                    height: 150px;
+                    color: #8f8e8e;
+                }
+            }
+
+            .check {
+                display: inline-block;
+                width: 100px;
+                height: 150px;
+                cursor: pointer;
+
+                .pass {
+                    margin-top: 40px;
+                    font-size: 14px;
+                    color: #0099ff;
+                }
+
+                .nopass {
+                    margin-top: 30px;
+                    font-size: 14px;
+                    color: rgb(253, 0, 0);
+                }
+            }
+        }
+    }
+}
+
+#photo-look-content {
+    display: none;
+    width: 910px;
+    height: 815px;
+    padding: 30px 20px 0;
+
+    .title {
+        display: block;
+        height: 60px;
+        width: 880px;
+        padding-left: 30px;
+        margin-bottom: 0;
+        border-bottom: 1px solid #dddcdc;
+        font-size: 28px;
+    }
+
+    .container {
+        width: 910px;
+
+        .photo-info {
+            width: 910px;
+            height: 150px;
+            border-bottom: 1px solid #dddcdc;
+
+            .photo-class {
+                position: relative;
+                float: left;
+                width: 70px;
+                height: 100%;
+                color: #8f8e8e;
+                font-size: 14px;
+
+                span {
+                    position: absolute;
+                    top: 10px;
+                }
+            }
+
+            .photo-name {
+                float: left;
+                width: 100px;
+                height: 90px;
+                padding-top: 60px;
+                font-size: 16px;
+                font-weight: bold;
+            }
+
+            .photo-description {
+                float: left;
+                width: 640px;
+                height: 150px;
+
+                .photo {
+                    display: inline-block;
+                    width: 140px;
+                    height: 120px;
+                    padding-top: 30px;
+                    text-align: center;
+
+                    img {
+                        width: 100px;
+                        height: 100px;
+                        vertical-align: middle;
+                    }
+                }
+
+                .photo-description-content {
+                    display: inline-block;
+                    width: 490px;
+                    height: 150px;
+                    color: #8f8e8e;
+                }
+            }
+
+            .check {
+                display: inline-block;
+                width: 100px;
+                height: 150px;
+                font-size: 14px;
+                cursor: pointer;
+
+                div {
+                    margin-top: 20px;
+                }
+
+                .pass {
+                    color: #66cc33;
+                }
+
+                .nopass {
+                    color: rgb(253, 0, 0);
+                }
+
+                .checking {
+                    color: #0099ff;
+                }
+
+                .delete {
+                    font-size: 16px;
+                    margin-top: 80px;
+                }
+            }
+        }
+    }
+}
+
+#photo-upload-content {
+    display: none;
+    width: 910px;
+    height: 815px;
+    padding: 30px 20px 0;
+    .title {
+        display: block;
+        height: 60px;
+        width: 880px;
+        padding-left: 30px;
+        margin-bottom: 0;
+        border-bottom: 1px solid #dddcdc;
+        font-size: 28px;
+    }
+    .container {
+        width: 910px;
+        height: 755px;
+        .row {
+            width: 910px;
+            border-bottom: 1px solid #dddcdc;
+        }
+        .operation {
+            float: left;
+            width: 100px;
+            font-size: 16px;
+            text-align: center;
+        }
+        .upload {
+            height: 150px;
+            .operation {
+                height: 150px;
+                line-height: 150px;
+            }
+            .content {
+                float: right;
+                width: 800px;
+                .photo {
+                    float: left;
+                    width: 150px;
+                    height: 130px;
+                    padding-top: 20px;
+                    line-height: 150px;
+                    img {
+                        width: 100px;
+                        height: 100px;
+                    }
+                }
+                .upload-photo {
+                    float: left;
+                    width: 300px;
+                    height: 110px;
+                    padding-top: 40px;
+                    span {
+                        display: inline-block;
+                        width: 300px;
+                        height: 25px;
+                    }
+                    .file {
+                        width: 100px;
+                        height: 30px;
+                        margin-top: 10px;
+                        background: rgba(22, 155, 213, 1);
+                        color: #fff;
+                        font-size: 14px;
+                        line-height: 25px;
+                        text-align: center;
+                        border-radius: 5px;
+                        cursor: pointer;
+
+                        input {
+                            position: absolute;
+                            opacity: 0;
+                        }
+                    }
+                }
+            }
+        }
+        .photo-name {
+            height: 100px;
+            line-height: 100px;
+
+            .operation {
+                height: 100px;
+                line-height: 100px;
+            }
+
+            #user-name {
+                width: 250px;
+                height: 30px;
+                border: 1px solid #dddcdc;
+            }
+        }
+
+        .photo-class {
+            height: 100px;
+            line-height: 100px;
+
+            .operation {
+                height: 100px;
+                line-height: 100px;
+            }
+
+            #class {
+                width: 250px;
+                height: 30px;
+                font-size: 16px;
+            }
+        }
+
+        .photo-description {
+            height: 200px;
+            line-height: 200px;
+
+            .operation {
+                height: 200px;
+                line-height: 200px;
+            }
+
+            textarea {
+                margin-top: 25px;
+                border: 1px solid #dddcdc;
+            }
+        }
+
+        #upload {
+            float: right;
+            width: 140px;
+            height: 40px;
+            margin-top: 30px;
+            border: none;
+            border-radius: 5px;
+            background: rgba(22, 155, 213, 1);
+            color: #fff;
+            line-height: 40px;
+            text-align: center;
+        }
+    }
+}
+
+#personal-info {
+    display: none;
+    width: 910px;
+    height: 815px;
+    padding: 30px 20px 0;
+
+    .title {
+        display: block;
+        height: 60px;
+        width: 880px;
+        padding-left: 30px;
+        margin-bottom: 0;
+        border-bottom: 1px solid #dddcdc;
+        font-size: 28px;
+    }
+
+    .container {
+        width: 910px;
+        height: 755px;
+
+        .row {
+            width: 910px;
+            height: 100px;
+            border-bottom: 1px solid #dddcdc;
+            line-height: 100px;
+
+            input {
+                width: 250px;
+                height: 30px;
+                border: 1px solid #dddcdc;
+            }
+        }
+
+        .operation {
+            float: left;
+            width: 100px;
+            height: 100px;
+            font-size: 16px;
+            text-align: center;
+            line-height: 100px;
+        }
+
+        .upload {
+            height: 150px;
+            line-height: 25px;
+            .operation {
+                height: 150px;
+                line-height: 150px;
+            }
+            .content {
+                float: right;
+                width: 800px;
+                .photo {
+                    float: left;
+                    width: 150px;
+                    height: 130px;
+                    padding-top: 20px;
+                    line-height: 150px;
+                    img {
+                        width: 100px;
+                        height: 100px;
+                    }
+                }
+                .upload-photo {
+                    float: left;
+                    width: 300px;
+                    height: 110px;
+                    padding-top: 40px;
+                    span {
+                        display: inline-block;
+                        width: 300px;
+                        height: 25px;
+                    }
+                    .file {
+                        width: 100px;
+                        height: 30px;
+                        margin-top: 10px;
+                        background: rgba(22, 155, 213, 1);
+                        color: #fff;
+                        font-size: 14px;
+                        line-height: 25px;
+                        text-align: center;
+                        border-radius: 5px;
+                        cursor: pointer;
+
+                        input {
+                            position: absolute;
+                            opacity: 0;
+                        }
+                    }
+                }
+            }
+        }
+
+        #upload {
+            float: right;
+            width: 140px;
+            height: 40px;
+            margin-top: 30px;
+            border: none;
+            border-radius: 5px;
+            background: rgba(22, 155, 213, 1);
+            color: #fff;
+            line-height: 40px;
+            text-align: center;
+        }
+    }
+}
+
+#change-password {
+    display: none;
+    width: 910px;
+    height: 815px;
+    padding: 30px 20px 0;
+    .title {
+        display: block;
+        height: 60px;
+        width: 880px;
+        padding-left: 30px;
+        margin-bottom: 0;
+        border-bottom: 1px solid #dddcdc;
+        font-size: 28px;
+    }
+
+    .container {
+        width: 910px;
+        height: 755px;
+
+        .row {
+            width: 910px;
+            height: 100px;
+            border-bottom: 1px solid #dddcdc;
+            line-height: 100px;
+
+            input {
+                width: 250px;
+                height: 30px;
+                border: 1px solid #dddcdc;
+            }
+        }
+
+        .operation {
+            float: left;
+            width: 100px;
+            height: 100px;
+            font-size: 16px;
+            text-align: center;
+            line-height: 100px;
+        }
+
+        #commit {
+            float: right;
+            width: 140px;
+            height: 40px;
+            margin-top: 30px;
+            border: none;
+            border-radius: 5px;
+            background: rgba(22, 155, 213, 1);
+            color: #fff;
+            line-height: 40px;
+            text-align: center;
+        }
+    }
+}

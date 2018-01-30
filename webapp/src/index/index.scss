@@ -1,0 +1,252 @@
+/*
+ * @Author: zhouyou@weruan 
+ * @Descriptions: 首页js样式文件
+ * @Date: 2017-11-26 20:01:37 
+ * @Last Modified by: zhouyou@weruan
+ * @Last Modified time: 2017-12-18 15:42:46
+ */
+
+@import url("../scss/normalize.css");
+
+#navbar {
+    width: 100%;
+    height: 50px;
+    > .navbar-container {
+        width: 1350px;
+        height: 50px;
+        margin: 0 auto;
+        > .navbar-left {
+            width: 800px;
+            height: 50px;
+            float: left;
+            > .navbar-list {
+                float: left;
+                > .navbar-item {
+                    float: left;
+                    width: 100px;
+                    height: 50px;
+                    background: transparent;
+                    font-size: 16px;
+                    color: #fff;
+                    text-align: center;
+                    line-height: 50px;
+                    a {
+                        color: #fff;
+                    }
+                    > .photo-class-list {
+                        display: none;
+                        position: relative;
+                        animation: 5s infinite;
+                        > .photo-class {
+                            width: 150px;
+                            height: 35px;
+                            line-height: 35px;
+                            border-bottom: 1px solid #fff;
+                            background: rgba(72, 138, 145, 0.5);
+                            text-align: center;
+                        }
+                        > .photo-class:hover {
+                            background: rgba(72, 138, 145, 0.8);
+                        }
+                    }
+                }
+                > .photo-class-nav:hover {
+                    .photo-class-list {
+                        display: inline-block;
+                    }
+                }
+            }
+        }
+        > .navbar-right {
+            float: right;
+            width: 150px;
+            height: 50px;
+            line-height: 50px;
+            .user-name {
+                color: #fff;
+                font-size: 16px;
+                vertical-align: middle;
+            }
+            .user-img {
+                display: none;
+                width: 40px;
+                height: 40px;
+                border-radius: 20px;
+                margin-left: 15px;
+                vertical-align: middle;
+            }
+
+            .default-img {
+                width: 60px;
+                height: 50px;
+                border-radius: 25px;
+                vertical-align: middle;
+            }
+        }
+    }
+}
+
+#content {
+    width: 1350px;
+    margin: 0 auto;
+    > .logo {
+        width: 600px;
+        height: 100px;
+        margin-top: 70px;
+        margin-bottom: 60px;
+        background: url("./img/logo.png") no-repeat -37px center transparent;
+    }
+    > .search-container {
+        width: 655px;
+        margin-left: 33px;
+        input {
+            width: 655px;
+            height: 52px;
+            background: url("../image/search.png") no-repeat right center #fff;
+        }
+    }
+
+    > .login-container {
+        display: none;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 200px;
+        z-index: 2;
+        width: 360px;
+        height: 310px;
+        margin: 0 auto;
+        padding: 30px 20px;
+        background: #fff;
+
+        > .head-nav {
+            height: 35px;
+            width: 360px;
+            margin-bottom: 35px;
+            border-bottom: 1px solid #e1e1e1;
+
+            > .nav {
+                display: inline-block;
+                height: 35px;
+                width: 100px;
+                text-align: center;
+                color: #111;
+            }
+
+            > .doing {
+                color: #0099ff;
+                border-bottom: 1px solid #0099ff;
+            }
+
+            > .return {
+                float: right;
+
+                .icon {
+                    width: 25px;
+                    height: 25px;
+                    color: #b8b6b6;
+                }
+            }
+        }
+
+        > .content-container {
+            width: 340px;
+            height: 235px;
+            padding: 0 10px;
+
+            .row {
+                height: 40px;
+                width: 340px;
+                margin-bottom: 25px;
+
+                input {
+                    width: 291px;
+                    height: 26px;
+                    padding: 5px 0 5px 45px;
+                }
+
+                input::-webkit-input-placeholder {
+                    color: #8f8e8e;
+                    font-size: 14px;
+                }
+
+                #account {
+                    background: url("./img/account.png") no-repeat 5px center,
+                        url("./img/line.png") no-repeat 36px center;
+                }
+
+                #password {
+                    background: url("./img/password.png") no-repeat 5px center,
+                        url("./img/line.png") no-repeat 36px center;
+                }
+
+                #repassword {
+                    background: url("./img/password.png") no-repeat 5px center,
+                        url("./img/line.png") no-repeat 36px center;
+                }
+            }
+
+            #login-content {
+                width: 340px;
+                height: 235px;
+
+                > .password {
+                    margin-bottom: 20px;
+                }
+
+                > .password-operate {
+                    margin-bottom: 15px;
+
+                    input {
+                        width: 15px;
+                        height: 15px;
+                        vertical-align: middle;
+                    }
+
+                    span {
+                        font-size: 14px;
+                    }
+
+                    a {
+                        display: inline-block;
+                        float: right;
+                        font-size: 14px;
+                        color: #8f8e8e;
+                    }
+
+                    a:hover {
+                        color: #0099ff;
+                    }
+                }
+            }
+
+            #regist-content {
+                display: none;
+                width: 340px;
+                height: 235px;
+            }
+
+            button {
+                width: 340px;
+                height: 50px;
+                border: none;
+                background: rgba(22, 155, 213, 1);
+                color: #fff;
+                font-size: 16px;
+                text-align: center;
+                vertical-align: middle;
+            }
+        }
+    }
+}
+
+.mask-layer {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+}

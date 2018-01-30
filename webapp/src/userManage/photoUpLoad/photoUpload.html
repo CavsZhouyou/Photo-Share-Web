@@ -1,0 +1,48 @@
+<section id="photo-upload-content">
+    <h3 class="title">图片上传</h3>
+    <div class="container">
+        <div class="row upload">
+            <span class="operation">
+                上传图片
+            </span>
+            <div class="content">
+                <div class="photo">
+                    <img src="./img/user.png" alt="上传头像">
+                </div>
+                <div class="upload-photo">
+                    <span>支持jpg，png格式大小5M以内的图片</span>
+                    <div class="file">
+                        <input type="file">上传图片
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row photo-name">
+            <span class="operation">图片名称</span>
+            <input type="text" id="user-name">
+        </div>
+
+        <div class="row photo-class">
+            <span class="operation">图片分类</span>
+            <select name="photo-class" id="class">
+                <option value="1">建筑商务</option>
+                <option value="2">旅行节庆</option>
+                <option value="3">科技医学</option>
+                <option value="4">行业概念</option>
+                <option value="5">矢量素材</option>
+                <option value="6">生活方式 运动</option>
+                <option value="7">艺术娱乐 美妆健康</option>
+                <option value="8">自然</option>
+                <option value="9">食物饮料</option>
+                <option value="10">动物及宠物</option>
+            </select>
+        </div>
+
+        <div class="row photo-description">
+            <span class="operation">图片介绍</span>
+            <textarea name="description" id="description" cols="60" rows="7"></textarea>
+        </div>
+        <button id="upload">确认上传</button>
+    </div>
+</section>

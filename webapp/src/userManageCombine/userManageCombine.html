@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>用户管理界面(无路由)</title>
+    <meta name="keywords" content="用户管理界面(无路由)">
+    <meta name="description" content="用户管理界面(无路由)">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+    <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+    <header id="navbar">
+        <div class="navbar-container">
+            <div class="navbar-left">
+                <ul class="navbar-list">
+                    <li class="navbar-item">
+                        <a href="">首页</a>
+                    </li>
+                    <li class="navbar-item photo-class-nav">
+                        <a href="">图片分类</a>
+                        <ul class="photo-class-list">
+                            <li class="photo-class">
+                                <a href="./photoClass.html">建筑商务</a>
+                            </li>
+                            <li class="photo-class">
+                                <a href="./photoClass.html">旅行节庆</a>
+                            </li>
+                            <li class="photo-class">
+                                <a href="./photoClass.html">科技医学</a>
+                            </li>
+                            <li class="photo-class">
+                                <a href="./photoClass.html">行业概念</a>
+                            </li>
+                            <li class="photo-class">
+                                <a href="./photoClass.html">矢量素材</a>
+                            </li>
+                            <li class="photo-class">
+                                <a href="./photoClass.html">生活方式 运动</a>
+                            </li>
+                            <li class="photo-class">
+                                <a href="./photoClass.html">艺术娱乐 美妆健康</a>
+                            </li>
+                            <li class="photo-class">
+                                <a href="./photoClass.html">自然</a>
+                            </li>
+                            <li class="photo-class">
+                                <a href="./photoClass.html">食物饮料</a>
+                            </li>
+                            <li class="photo-class">
+                                <a href="./photoClass.html">动物及宠物</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="navbar-item">
+                        <a href="">帮助</a>
+                    </li>
+                    <li class="navbar-item">
+                        <a href="">社区</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="navbar-search">
+                <input type="text" class="search">
+            </div>
+            <div class="navbar-right">
+                <a href="javascript:;" class="user-name">登录</a>
+                <img src="../image/login.png" alt="默认头像" title="默认头像" class="default-img">
+                <img src="" alt="用户头像" title="用户头像" class="user-img">
+            </div>
+        </div>
+    </header>
+    <section id="operation-content">
+        <div class="container">
+            <div id="content">
+                <!-- 图片审核界面 -->
+                <section id="photo-check-content">
+                    <h3 class="title">图片审核</h3>
+                    <div class="container">
+                        <div class="photo-info">
+                            <div class="photo-class">
+                                <span>商务建筑</span>
+                            </div>
+                            <div class="photo-name">
+                                <span>夕阳下的陌路</span>
+                            </div>
+                            <div class="photo-description">
+                                <div class="photo">
+                                    <img src="./img/photo1.jpg" alt="图片 夕阳下的陌路">
+                                </div>
+                                <div class="photo-description-content">
+                                    <p>你有没有想过有一天，放下一切，到一个深山老林里居住，感受大自然的美好，把一切都寄托于山水田园间，远离城市的喧嚣，在山野里放歌..............</p>
+                                </div>
+                            </div>
+                            <div class="check">
+                                <div class="pass">
+                                    <input type="checkbox">
+                                    <svg class="icon" aria-hidden="true">
+                                        <use xlink:href="#icon-edit"></use>
+                                    </svg>
+                                    <span>审核通过</span>
+                                </div>
+                                <div class="nopass">
+                                    <input type="checkbox">
+                                    <svg class="icon" aria-hidden="true">
+                                        <use xlink:href="#icon-edit"></use>
+                                    </svg>
+                                    <span>审核不通过</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="photo-info">
+                            <div class="photo-class">
+                                <span>商务建筑</span>
+                            </div>
+                            <div class="photo-name">
+                                <span>夕阳下的陌路</span>
+                            </div>
+                            <div class="photo-description">
+                                <div class="photo">
+                                    <img src="./img/photo2.jpg" alt="图片 夕阳下的陌路">
+                                </div>
+                                <div class="photo-description-content">
+                                    <p>你有没有想过有一天，放下一切，到一个深山老林里居住，感受大自然的美好，把一切都寄托于山水田园间，远离城市的喧嚣，在山野里放歌..............</p>
+                                </div>
+                            </div>
+                            <div class="check">
+                                <div class="pass">
+                                    <input type="checkbox">
+                                    <svg class="icon" aria-hidden="true">
+                                        <use xlink:href="#icon-edit"></use>
+                                    </svg>
+                                    <span>审核通过</span>
+                                </div>
+                                <div class="nopass">
+                                    <input type="checkbox">
+                                    <svg class="icon" aria-hidden="true">
+                                        <use xlink:href="#icon-edit"></use>
+                                    </svg>
+                                    <span>审核不通过</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="photo-info">
+                            <div class="photo-class">
+                                <span>商务建筑</span>
+                            </div>
+                            <div class="photo-name">
+                                <span>夕阳下的陌路</span>
+                            </div>
+                            <div class="photo-description">
+                                <div class="photo">
+                                    <img src="./img/photo3.jpg" alt="图片 夕阳下的陌路">
+                                </div>
+                                <div class="photo-description-content">
+                                    <p>你有没有想过有一天，放下一切，到一个深山老林里居住，感受大自然的美好，把一切都寄托于山水田园间，远离城市的喧嚣，在山野里放歌..............</p>
+                                </div>
+                            </div>
+                            <div class="check">
+                                <div class="pass">
+                                    <input type="checkbox">
+                                    <svg class="icon" aria-hidden="true">
+                                        <use xlink:href="#icon-edit"></use>
+                                    </svg>
+                                    <span>审核通过</span>
+                                </div>
+                                <div class="nopass">
+                                    <input type="checkbox">
+                                    <svg class="icon" aria-hidden="true">
+                                        <use xlink:href="#icon-edit"></use>
+                                    </svg>
+                                    <span>审核不通过</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 图片查看界面 -->
+                <section id="photo-look-content" class="active">
+                    <h3 class="title">图片查看</h3>
+                    <div class="container">
+                        <div class="photo-info">
+                            <div class="photo-class">
+                                <span>商务建筑</span>
+                            </div>
+                            <div class="photo-name">
+                                <span>夕阳下的陌路</span>
+                            </div>
+                            <div class="photo-description">
+                                <div class="photo">
+                                    <img src="./img/photo1.jpg" alt="图片 夕阳下的陌路">
+                                </div>
+                                <div class="photo-description-content">
+                                    <p>你有没有想过有一天，放下一切，到一个深山老林里居住，感受大自然的美好，把一切都寄托于山水田园间，远离城市的喧嚣，在山野里放歌..............</p>
+                                </div>
+                            </div>
+                            <div class="check">
+                                <div class="check-status pass">
+                                    <svg class="icon" aria-hidden="true">
+                                        <use xlink:href="#icon-success"></use>
+                                    </svg>
+                                    <span>审核通过</span>
+                                </div>
+                                <div class="delete">
+                                    <svg class="icon" aria-hidden="true">
+                                        <use xlink:href="#icon-delete"></use>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="photo-info">
+                            <div class="photo-class">
+                                <span>商务建筑</span>
+                            </div>
+                            <div class="photo-name">
+                                <span>夕阳下的陌路</span>
+                            </div>
+                            <div class="photo-description">
+                                <div class="photo">
+                                    <img src="./img/photo2.jpg" alt="图片 夕阳下的陌路">
+                                </div>
+                                <div class="photo-description-content">
+                                    <p>你有没有想过有一天，放下一切，到一个深山老林里居住，感受大自然的美好，把一切都寄托于山水田园间，远离城市的喧嚣，在山野里放歌..............</p>
+                                </div>
+                            </div>
+                            <div class="check">
+                                <div class="check-status nopass">
+                                    <svg class="icon" aria-hidden="true">
+                                        <use xlink:href="#icon-wrong"></use>
+                                    </svg>
+                                    <span>审核未通过</span>
+                                </div>
+                                <div class="delete">
+                                    <svg class="icon" aria-hidden="true">
+                                        <use xlink:href="#icon-delete"></use>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="photo-info">
+                            <div class="photo-class">
+                                <span>商务建筑</span>
+                            </div>
+                            <div class="photo-name">
+                                <span>夕阳下的陌路</span>
+                            </div>
+                            <div class="photo-description">
+                                <div class="photo">
+                                    <img src="./img/photo3.jpg" alt="图片 夕阳下的陌路">
+                                </div>
+                                <div class="photo-description-content">
+                                    <p>你有没有想过有一天，放下一切，到一个深山老林里居住，感受大自然的美好，把一切都寄托于山水田园间，远离城市的喧嚣，在山野里放歌..............</p>
+                                </div>
+                            </div>
+                            <div class="check">
+                                <div class="check-status checking">
+                                    <svg class="icon" aria-hidden="true">
+                                        <use xlink:href="#icon-help"></use>
+                                    </svg>
+                                    <span>待审核</span>
+                                </div>
+                                <div class="delete">
+                                    <svg class="icon" aria-hidden="true">
+                                        <use xlink:href="#icon-delete"></use>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 图片上传界面 -->
+                <section id="photo-upload-content">
+                    <h3 class="title">图片上传</h3>
+                    <div class="container">
+                        <div class="row upload">
+                            <span class="operation">
+                                上传图片
+                            </span>
+                            <div class="content">
+                                <div class="photo">
+                                    <img src="./img/user.png" alt="上传头像">
+                                </div>
+                                <div class="upload-photo">
+                                    <span>支持jpg，png格式大小5M以内的图片</span>
+                                    <div class="file">
+                                        <input type="file">上传图片
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row photo-name">
+                            <span class="operation">图片名称</span>
+                            <input type="text" id="user-name">
+                        </div>
+
+                        <div class="row photo-class">
+                            <span class="operation">图片分类</span>
+                            <select name="photo-class" id="class">
+                                <option value="1">建筑商务</option>
+                                <option value="2">旅行节庆</option>
+                                <option value="3">科技医学</option>
+                                <option value="4">行业概念</option>
+                                <option value="5">矢量素材</option>
+                                <option value="6">生活方式 运动</option>
+                                <option value="7">艺术娱乐 美妆健康</option>
+                                <option value="8">自然</option>
+                                <option value="9">食物饮料</option>
+                                <option value="10">动物及宠物</option>
+                            </select>
+                        </div>
+
+                        <div class="row photo-description">
+                            <span class="operation">图片介绍</span>
+                            <textarea name="description" id="description" cols="60" rows="7"></textarea>
+                        </div>
+                        <button id="upload">确认上传</button>
+                    </div>
+                </section>
+
+                <!-- 个人资料界面 -->
+                <section id="personal-info">
+                    <h3 class="title">个人资料</h3>
+                    <div class="container">
+                        <div class="row upload">
+                            <span class="operation">
+                                头像
+                            </span>
+                            <div class="content">
+                                <div class="photo">
+                                    <img src="./img/user.png" alt="上传头像">
+                                </div>
+                                <div class="upload-photo">
+                                    <span>支持jpg，png格式大小5M以内的图片</span>
+                                    <div class="file">
+                                        <input type="file">上传图片
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row user-name">
+                            <span class="operation">昵称</span>
+                            <input type="text" id="user-name">
+                        </div>
+                        <div class="row user-mail">
+                            <span class="operation">邮箱</span>
+                            <input type="text" id="user-mail">
+                        </div>
+                        <div class="row user-phone">
+                            <span class="operation">手机号</span>
+                            <input type="text" id="user-phone">
+                        </div>
+                        <div class="row user-introduce">
+                            <span class="operation">个人介绍</span>
+                            <input type="text" id="user-introduce">
+                        </div>
+                        <button id="upload">确认修改</button>
+                    </div>
+                </section>
+
+                <!-- 修改密码界面 -->
+                <section id="change-password">
+                    <h3 class="title">修改密码</h3>
+                    <div class="container">
+                        <div class="row old-password">
+                            <span class="operation">旧密码</span>
+                            <input type="text" id="old-password">
+                        </div>
+                        <div class="row new-password">
+                            <span class="operation">新密码</span>
+                            <input type="password" id="new-password">
+                        </div>
+                        <div class="row confirm-password">
+                            <span class="operation">确认新密码</span>
+                            <input type="password" id="confirm-password">
+                        </div>
+                        <button id="commit">确认修改</button>
+                    </div>
+                </section>
+
+            </div>
+            <div id="sidebar">
+                <ul>
+                    <li class="sidebar-item" data-type="photo-check-content">
+                        <a href="javacript:;">
+                            <span>图片审核</span>
+                        </a>
+                    </li>
+                    <li class="sidebar-item active" data-type="photo-look-content">
+                        <a href="javacript:;">
+                            <span>图片查看</span>
+                        </a>
+                    </li>
+                    <li class="sidebar-item" data-type="photo-upload-content">
+                        <a href="javacript:;">
+                            <span>图片上传</span>
+                        </a>
+                    </li>
+                    <li class="sidebar-item" data-type="personal-info">
+                        <a href="javacript:;">
+                            <span>个人资料</span>
+                        </a>
+                    </li>
+                    <li class="sidebar-item" data-type="change-password">
+                        <a href="javacript:;">
+                            <span>修改密码</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+</body>
+
+</html>

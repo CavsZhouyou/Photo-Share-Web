@@ -1,0 +1,213 @@
+/*
+ * @Author: zhouyou@weruan 
+ * @Descriptions: 单张图片浏览页面样式文件
+ * @Date: 2017-12-17 20:42:18 
+ * @Last Modified by: zhouyou@weruan
+ * @Last Modified time: 2017-12-18 15:44:32
+ */
+
+@import url("../scss/normalize.css");
+
+#navbar {
+    width: 100%;
+    height: 50px;
+    background: url("../image/nav_bg.png") no-repeat left center;
+
+    > .navbar-container {
+        width: 100%;
+        height: 50px;
+        > .navbar-left {
+            width: 400px;
+            height: 50px;
+            float: left;
+            margin-left: 50px;
+            > .navbar-list {
+                float: left;
+                > .navbar-item {
+                    float: left;
+                    width: 80px;
+                    height: 50px;
+                    background: transparent;
+                    font-size: 18px;
+                    color: #fff;
+                    text-align: center;
+                    line-height: 50px;
+                    a {
+                        color: #fff;
+                    }
+                    > .photo-class-list {
+                        display: none;
+                        position: relative;
+                        animation: 5s infinite;
+                        > .photo-class {
+                            width: 150px;
+                            height: 35px;
+                            line-height: 35px;
+                            border-bottom: 1px solid #fff;
+                            background: rgba(72, 138, 145, 0.5);
+                            text-align: center;
+                        }
+                        > .photo-class:hover {
+                            background: rgba(72, 138, 145, 0.8);
+                        }
+                    }
+                }
+                > .photo-class-nav:hover {
+                    .photo-class-list {
+                        display: inline-block;
+                    }
+                }
+            }
+        }
+
+        > .navbar-search {
+            display: inline-block;
+            width: 400px;
+            height: 50px;
+            line-height: 50px;
+
+            .search {
+                width: 275px;
+                height: 29px;
+                padding-right: 25px;
+                background: url("../image/search.png") no-repeat right center
+                    #fff;
+                background-size: 35px 35px;
+            }
+        }
+
+        > .navbar-right {
+            float: right;
+            width: 120px;
+            height: 50px;
+            padding-left: 30px;
+            line-height: 50px;
+            background: rgba(123, 200, 130, 0.7);
+            margin-right: 50px;
+
+            .user-name {
+                color: #fff;
+                font-size: 16px;
+                vertical-align: middle;
+            }
+            .user-img {
+                display: none;
+                width: 40px;
+                height: 40px;
+                border-radius: 20px;
+                margin-left: 15px;
+                vertical-align: middle;
+            }
+
+            .default-img {
+                width: 60px;
+                height: 50px;
+                border-radius: 25px;
+                vertical-align: middle;
+            }
+        }
+    }
+}
+
+#container {
+    width: 100%;
+    height: 795px;
+    padding-top: 100px;
+    background: rgba(242, 242, 242, 1);
+
+    > .photo-content {
+        width: 1450px;
+        margin: 0 auto;
+
+        > .photo-path {
+            margin-bottom: 35px;
+            color: #8f8e8e;
+        }
+
+        > .photo-container {
+            float: left;
+            width: 1000px;
+
+            img {
+                width: 1000px;
+            }
+        }
+
+        > .photo-information {
+            float: right;
+            width: 430px;
+            background: #fff;
+
+            > .photo-info {
+                width: 390px;
+                height: 95px;
+                padding: 25px 20px 10px 20px;
+                border-bottom: 1px solid #c4c2c2;
+                color: #646464;
+                font-size: 16px;
+
+                > .photo-info-name {
+                    color: #111;
+                    font-size: 26px;
+                    margin-bottom: 30px;
+                }
+
+                > .photo-info-date {
+                    display: inline-block;
+                    margin-right: 25px;
+                }
+
+                > .photo-info-download {
+                    display: inline-block;
+                }
+            }
+
+            > .photo-description {
+                width: 390px;
+                height: 200px;
+                padding: 100px 20px 0 20px;
+            }
+
+            > .photo-uploader {
+                width: 390px;
+                height: 80px;
+                padding: 0 20px;
+
+                > .uploader-img {
+                    width: 50px;
+                    height: 50px;
+                    border-radius: 25px;
+                    vertical-align: middle;
+                }
+
+                > .uploader-name {
+                    color: #0099ff;
+                    margin-left: 15px;
+                }
+
+                > .origin {
+                    color: #8f8e8e;
+                    vertical-align: middle;
+                }
+
+                > .add-attention {
+                    display: inline-block;
+                    width: 50px;
+                    height: 20px;
+                    margin-left: 100px;
+                    border: 1px solid #0099ff;
+                    color: #0099ff;
+                    font-size: 14px;
+                    text-align: center;
+                    line-height: 20px;
+                }
+            }
+        }
+    }
+
+    > .photo-content::after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+}

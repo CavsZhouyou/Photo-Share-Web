@@ -1,0 +1,117 @@
+/*
+ * @Author: zhouyou@weruan 
+ * @Descriptions: 个人信息界面样式文件
+ * @Date: 2017-12-18 16:18:54 
+ * @Last Modified by: zhouyou@weruan
+ * @Last Modified time: 2017-12-18 17:54:30
+ */
+
+@import url("../../scss/normalize.css");
+
+#personal-info {
+    width: 910px;
+    height: 815px;
+    padding: 30px 20px 0;
+
+    > .title {
+        display: block;
+        height: 60px;
+        width: 880px;
+        padding-left: 30px;
+        margin-bottom: 0;
+        border-bottom: 1px solid #dddcdc;
+        font-size: 28px;
+    }
+
+    > .container {
+        width: 910px;
+        height: 755px;
+
+        > .row {
+            width: 910px;
+            height: 100px;
+            border-bottom: 1px solid #dddcdc;
+            line-height: 100px;
+
+            input {
+                width: 250px;
+                height: 30px;
+                border: 1px solid #dddcdc;
+            }
+        }
+
+        .operation {
+            float: left;
+            width: 100px;
+            height: 100px;
+            font-size: 16px;
+            text-align: center;
+            line-height: 100px;
+        }
+
+        > .upload {
+            height: 150px;
+            line-height: 25px;
+            .operation {
+                height: 150px;
+                line-height: 150px;
+            }
+            > .content {
+                float: right;
+                width: 800px;
+                > .photo {
+                    float: left;
+                    width: 150px;
+                    height: 130px;
+                    padding-top: 20px;
+                    line-height: 150px;
+                    img {
+                        width: 100px;
+                        height: 100px;
+                    }
+                }
+                > .upload-photo {
+                    float: left;
+                    width: 300px;
+                    height: 110px;
+                    padding-top: 40px;
+                    span {
+                        display: inline-block;
+                        width: 300px;
+                        height: 25px;
+                    }
+                    > .file {
+                        width: 100px;
+                        height: 30px;
+                        margin-top: 10px;
+                        background: rgba(22, 155, 213, 1);
+                        color: #fff;
+                        font-size: 14px;
+                        line-height: 25px;
+                        text-align: center;
+                        border-radius: 5px;
+                        cursor: pointer;
+
+                        input {
+                            position: absolute;
+                            opacity: 0;
+                        }
+                    }
+                }
+            }
+        }
+
+        #upload {
+            float: right;
+            width: 140px;
+            height: 40px;
+            margin-top: 30px;
+            border: none;
+            border-radius: 5px;
+            background: rgba(22, 155, 213, 1);
+            color: #fff;
+            line-height: 40px;
+            text-align: center;
+        }
+    }
+}
