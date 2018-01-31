@@ -3,7 +3,7 @@
  * @Descriptions: 首页js依赖文件
  * @Date: 2017-11-26 20:01:16 
  * @Last Modified by: zhouyou@werun
- * @Last Modified time: 2018-01-31 16:07:47
+ * @Last Modified time: 2018-01-31 20:23:12
  */
 
 //import scss
@@ -12,6 +12,7 @@ require("./index.scss");
 //import js
 require("../js/jquery.backstretch.js");
 require("../js/iconfont.js");
+require("../js/jquery.cookie.min.js");
 
 $(function() {
     // img 依赖
@@ -28,8 +29,18 @@ $(function() {
         alwaysTestWindowResolution: true
     });
 
+    //判断是否处于登录状态
+    if ($("account").val()) {
+        //显示用户昵称
+        $(".user-login").show();
+        $(".user-default").hide();
+        $(".user-name").text($("username").val());
+        //显示用户头像
+        //$(".user-img").attr("src", data.user.headimg);
+    }
+
     //点击显示登录界面
-    $(".user-name").click(function() {
+    $(".login-button").click(function() {
         $(".login-container").show();
         $(".mask-layer").show();
 
@@ -63,18 +74,110 @@ $(function() {
             $(".mask-layer").hide();
         });
 
+        //点击登录账号
         $("#login").click(function() {
+            var account = $("#loginAccount").val(),
+                password = $("#loginPassword").val(),
+                data = {
+                    account: account,
+                    password: password
+                };
+
+            //判断输入账号密码是否为空
+            if (account === "" || password === "") {
+                alert("账户或密码不能为空！");
+                return;
+            }
+
             $.ajax({
-                url: "/user/login",
-                type: "GET",
+                url: "/share/user/login",
+                type: "POST",
                 dataType: "json",
-                data: {
-                    account: "root",
-                    password: "123456"
-                },
                 contentType: "application/json",
-                success: {}
+                data: JSON.stringify(data),
+                success: function(data) {
+                    if (data.success) {
+                        //将用户信息写入cookie中
+                        $.cookie("account", data.user.account);
+                        $.cookie("username", data.user.username);
+                        $.cookie("headimg", data.user.headimg);
+                        $.cookie("power", data.user.power);
+
+                        //显示用户昵称
+                        $(".user-login").show();
+                        $(".user-default").hide();
+                        $(".user-name").text(data.user.username);
+                        //显示用户头像
+                        //$(".user-img").attr("src", data.user.headimg);
+                        //返回主页面
+                        $(".login-container").hide();
+                        $(".mask-layer").hide();
+                    } else {
+                        alert("登录失败！");
+                    }
+                }
             });
         });
+
+        //点击注册账号
+        $("#regist").click(function() {
+            var account = $("#registAccount").val(),
+                password = $("#registPassword").val(),
+                rePassword = $("#registRePassword").val(),
+                data = {
+                    account: account,
+                    password: password,
+                    power: 1
+                };
+
+            //判断输入账号密码是否为空
+            if (account === "" || password === "") {
+                alert("账户或密码不能为空！");
+                return;
+            }
+
+            //判断两次密码输入是否一致
+            if (password !== rePassword) {
+                alert("两次输入密码不一致！");
+                return;
+            }
+
+            $.ajax({
+                url: "/share/user/regist",
+                type: "POST",
+                dataType: "json",
+                data: JSON.stringify(data),
+                contentType: "application/json",
+                success: function(data) {
+                    if (data.success) {
+                        alert("恭喜你注册成功！");
+                        //返回主页面
+                        location.href = "./index.html";
+                    } else {
+                        alert(data.message);
+                    }
+                }
+            });
+        });
+    });
+
+    //点击退出登录
+    $("#logout").click(function() {
+        //清除cookies
+        $.cookie("username", "", {
+            expires: -1
+        });
+        $.cookie("headimg", "", {
+            expires: -1
+        });
+        $.cookie("power", "", {
+            expires: -1
+        });
+        $.cookie("account", "", {
+            expires: -1
+        });
+
+        //跳转回首页
+        location.href = "./index.html";
     });
 });

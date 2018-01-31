@@ -3,7 +3,7 @@
  * @Descriptions: 图片分享网站前端webpack配置文件
  * @Date: 2017-11-26 19:49:52 
  * @Last Modified by: zhouyou@werun
- * @Last Modified time: 2018-01-31 16:02:58
+ * @Last Modified time: 2018-01-31 20:12:42
  * **************************************************************************************
  * 本文件仅适用于开发环境 ，最终生成的打包文件输出在./dist目录下，你可以根据自己的需求自行设置
  * 开始开发
@@ -36,7 +36,7 @@ module.exports = {
             // 这里可以匹配多个方法，
             // 至于方法怎么调用，不用写localhost:8081,如下面我说的方法，在调用的时候，url直接写'/fanghh/getIdXXX'
             // 调用实例
-            "/user/*": {
+            "/share/*": {
                 //这里将相应的匹配项更换为方法名的匹配，如方法为“./fanghh/getIdXXXXX”，那就"fanghh"
                 target: "http://localhost:8080/", //这里更改你的相应的端口，如后端端口在8081，就改成8081
                 secure: false

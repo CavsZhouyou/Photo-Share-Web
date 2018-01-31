@@ -70,9 +70,22 @@
                 </ul>
             </div>
             <div class="navbar-right">
-                <a href="javascript:;" class="user-name">登录</a>
-                <img src="../image/login.png" alt="默认头像" title="默认头像" class="default-img">
-                <img src="./img/user.jpg" alt="用户头像" title="用户头像" class="user-img">
+                <div class="user-default">
+                    <a href="javascript:;" class="login-button">登录</a>
+                    <img src="../image/login.png" alt="默认头像" title="默认头像" class="default-img">
+                </div>
+                <div class="user-login">
+                    <a href="javascript:;" class="user-name"></a>
+                    <img src="./img/user.jpg" alt="用户头像" title="用户头像" class="user-img">
+                    <ul class="personal-setting">
+                        <li class="setting-list">
+                            <a href="./userManage.html">个人中心</a>
+                        </li>
+                        <li class="setting-list">
+                            <a href="javascript:;" id="logout">退出登录</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
     </header>
@@ -94,10 +107,10 @@
             <div class="content-container">
                 <div id="login-content">
                     <div class="account row">
-                        <input type="text" name="account" id="account" placeholder="请输入登录账号">
+                        <input type="text" name="account" class="account" id="loginAccount" placeholder="请输入登录账号">
                     </div>
                     <div class="password row">
-                        <input type="password" name="password" id="password" placeholder="6-16位密码，区分大小写，不能用空格">
+                        <input type="password" name="password" class="password" id="loginPassword" placeholder="6-16位密码，区分大小写，不能用空格">
                     </div>
                     <div class="password-operate row">
                         <input type="checkbox">
@@ -108,13 +121,13 @@
                 </div>
                 <div id="regist-content">
                     <div class="account row">
-                        <input type="text" name="account" id="account" placeholder="请输入登录账号">
+                        <input type="text" name="account" class="account" id="registAccount" placeholder="请输入登录账号">
                     </div>
                     <div class="password row">
-                        <input type="password" name="password" id="password" placeholder="6-16位密码，区分大小写，不能用空格">
+                        <input type="password" name="password" class="password" id="registPassword" placeholder="6-16位密码，区分大小写，不能用空格">
                     </div>
                     <div class="repassword row">
-                        <input type="password" name="re-password" id="repassword" placeholder="重复密码">
+                        <input type="password" name="re-password" class="password" id="registRePassword" placeholder="重复密码">
                     </div>
                     <button id="regist">注册</button>
                 </div>
