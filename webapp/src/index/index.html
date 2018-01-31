@@ -125,37 +125,6 @@
         <!-- 遮罩层  -->
     </div>
 </body>
-<script>
-    $(function () {
 
-
-        //点击登录
-        $("#login").click(function () {
-
-            const account = $("#account").val(),
-                password = $("#password").val();
-
-            $.ajax({
-                type: "POST",
-                url: "", //接口地址
-                dataType: "JSON",
-                data: { //传送数据json数据格式
-                    account: account,
-                    password: password
-                },
-                success: function (data) { //判断是否成功，建议返回数据加一个success字段来判断是否登录成功，message作为登录失败返回的提示信息
-                    if (data.success == true) {
-                        //定义登录成功后的操作
-                    } else {
-                        alert(data.message);
-                    }
-                }
-
-            })
-
-        })
-
-    });
-</script>
 
 </html>

@@ -2,8 +2,8 @@
  * @Author: zhouyou@weruan 
  * @Descriptions: 首页js依赖文件
  * @Date: 2017-11-26 20:01:16 
- * @Last Modified by: zhouyou@weruan
- * @Last Modified time: 2017-12-21 09:40:43
+ * @Last Modified by: zhouyou@werun
+ * @Last Modified time: 2018-01-31 16:07:47
  */
 
 //import scss
@@ -13,7 +13,7 @@ require("./index.scss");
 require("../js/jquery.backstretch.js");
 require("../js/iconfont.js");
 
-$(function () {
+$(function() {
     // img 依赖
     const jpg1 = require("./img/banner1.jpg");
     const jpg2 = require("./img/banner2.jpg");
@@ -29,22 +29,21 @@ $(function () {
     });
 
     //点击显示登录界面
-    $(".user-name").click(function () {
+    $(".user-name").click(function() {
         $(".login-container").show();
         $(".mask-layer").show();
 
         //点击切换登录界面
-        $(".login").click(function () {
+        $(".login").click(function() {
             $(this).addClass("doing");
             $(".regist").removeClass("doing");
 
             $("#regist-content").hide();
             $("#login-content").show();
-
         });
 
         //点击切换注册界面
-        $(".regist").click(function () {
+        $(".regist").click(function() {
             $(this).addClass("doing");
             $(".login").removeClass("doing");
 
@@ -53,15 +52,29 @@ $(function () {
         });
 
         //点击遮罩层返回
-        $(".mask-layer").click(function () {
+        $(".mask-layer").click(function() {
             $(".login-container").hide();
             $(".mask-layer").hide();
         });
 
         //点击取消按钮返回
-        $(".return").click(function () {
+        $(".return").click(function() {
             $(".login-container").hide();
             $(".mask-layer").hide();
+        });
+
+        $("#login").click(function() {
+            $.ajax({
+                url: "/user/login",
+                type: "GET",
+                dataType: "json",
+                data: {
+                    account: "root",
+                    password: "123456"
+                },
+                contentType: "application/json",
+                success: {}
+            });
         });
     });
 });
