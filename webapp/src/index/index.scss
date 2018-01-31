@@ -3,14 +3,10 @@
  * @Descriptions: 首页js样式文件
  * @Date: 2017-11-26 20:01:37 
  * @Last Modified by: zhouyou@werun
- * @Last Modified time: 2018-01-31 17:48:01
+ * @Last Modified time: 2018-01-31 21:52:17
  */
 
 @import url("../scss/normalize.css");
-
-a {
-    color: #fff;
-}
 
 #navbar {
     width: 100%;
@@ -63,6 +59,7 @@ a {
             width: 150px;
             height: 50px;
             line-height: 50px;
+
             .login-button {
                 color: #fff;
                 font-size: 16px;

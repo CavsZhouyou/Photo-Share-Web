@@ -3,7 +3,7 @@
  * @Descriptions: 首页js依赖文件
  * @Date: 2017-11-26 20:01:16 
  * @Last Modified by: zhouyou@werun
- * @Last Modified time: 2018-01-31 20:23:12
+ * @Last Modified time: 2018-01-31 22:00:19
  */
 
 //import scss
@@ -30,11 +30,11 @@ $(function() {
     });
 
     //判断是否处于登录状态
-    if ($("account").val()) {
+    if ($.cookie("account")) {
         //显示用户昵称
         $(".user-login").show();
         $(".user-default").hide();
-        $(".user-name").text($("username").val());
+        $(".user-name").text($.cookie("username"));
         //显示用户头像
         //$(".user-img").attr("src", data.user.headimg);
     }
@@ -98,10 +98,18 @@ $(function() {
                 success: function(data) {
                     if (data.success) {
                         //将用户信息写入cookie中
-                        $.cookie("account", data.user.account);
-                        $.cookie("username", data.user.username);
-                        $.cookie("headimg", data.user.headimg);
-                        $.cookie("power", data.user.power);
+                        $.cookie("account", data.user.account, {
+                            expires: 7
+                        });
+                        $.cookie("username", data.user.username, {
+                            expires: 7
+                        });
+                        $.cookie("headimg", data.user.headimg, {
+                            expires: 7
+                        });
+                        $.cookie("power", data.user.power, {
+                            expires: 7
+                        });
 
                         //显示用户昵称
                         $(".user-login").show();
@@ -127,7 +135,7 @@ $(function() {
                 data = {
                     account: account,
                     password: password,
-                    power: 1
+                    power: 2
                 };
 
             //判断输入账号密码是否为空

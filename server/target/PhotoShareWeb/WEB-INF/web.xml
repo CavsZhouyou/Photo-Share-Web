@@ -9,12 +9,12 @@
 
   <!--默认的首页-->
   <welcome-file-list>
-    <welcome-file>index.html</welcome-file>
-    <welcome-file>index.htm</welcome-file>
-    <welcome-file>index.jsp</welcome-file>
-    <welcome-file>default.html</welcome-file>
-    <welcome-file>default.htm</welcome-file>
-    <welcome-file>default.jsp</welcome-file>
+    <welcome-file>/webapp/dist/index.html</welcome-file>
+    <!--<welcome-file>index.htm</welcome-file>-->
+    <!--<welcome-file>index.jsp</welcome-file>-->
+    <!--<welcome-file>default.html</welcome-file>-->
+    <!--<welcome-file>default.htm</welcome-file>-->
+    <!--<welcome-file>default.jsp</welcome-file>-->
   </welcome-file-list>
 
   <!--如果是用maven命令生成的xml，需要修改servlet版本为3.1-->

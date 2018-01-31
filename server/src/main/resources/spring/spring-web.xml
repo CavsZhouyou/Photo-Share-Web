@@ -20,9 +20,10 @@
         (1)加入对静态资源的处理：js,gif,png
         (2)允许使用"/"做整体映射
      -->
-    <mvc:resources mapping="/css/**" location="/webapp/css/" />
-    <mvc:resources mapping="/images/**" location="/webapp/images/" />
-    <mvc:resources mapping="/view/**" location="/webapp/view/" />
+    <mvc:resources mapping="/css/**" location="/webapp/dist/css/" />
+    <mvc:resources mapping="/img/**" location="/webapp/dist/img/" />
+    <mvc:resources mapping="/*.html" location="/webapp/dist/" />
+    <mvc:resources mapping="/js/**" location="/webapp/dist/js/" />
     <mvc:default-servlet-handler/>
 
     <!-- 3.配置jsp 显示ViewResolver -->
