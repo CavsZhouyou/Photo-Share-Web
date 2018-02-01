@@ -20,4 +20,9 @@ public class UserService {
       public void regist(User user){
           userDao.insertSelective(user);
       }
+
+      public  User getSimpleUserByAccount(User user){
+          User result = userDao.getSimpleUserByAccount(user);
+          return  result;
+      }
 }

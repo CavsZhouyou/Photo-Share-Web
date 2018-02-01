@@ -26,4 +26,13 @@ public class UserTest {
         result = userDao.hasAccount(user);
         System.out.println(result.getAccount());
     }
+
+    @Test
+    public  void testGetUser(){
+        User user = new User();
+        user.setAccount("yyc");
+        User result;
+        result = userDao.getSimpleUserByAccount(user);
+        System.out.println(result.getUsername());
+    }
 }

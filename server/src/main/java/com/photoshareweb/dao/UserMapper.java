@@ -20,4 +20,6 @@ public interface UserMapper {
     int insertSelective(User record);
 
     User hasAccount(User record);
+
+    User getSimpleUserByAccount(User record);
 }

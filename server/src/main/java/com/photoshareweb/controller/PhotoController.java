@@ -27,7 +27,7 @@ public class PhotoController {
     public @ResponseBody Map<String, Object> getPhotoByClass(HttpServletRequest request, HttpServletResponse response){
         List<Photo> resultList = new ArrayList<Photo>();
         HashMap<String, Object> map = new HashMap<String, Object>();
-        resultList = photoService.getPhotoByClass(request.getParameter("photoclass"));
+        resultList = photoService.getPhotoByClass(request.getParameter("photoClass"));
         if(resultList!=null){
             map.put("success", true);
             map.put("photoList",resultList);

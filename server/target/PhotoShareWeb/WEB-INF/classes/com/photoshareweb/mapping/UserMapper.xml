@@ -96,4 +96,13 @@
   account = #{account} AND password = #{password}
   </select>
 
+  <select id="getSimpleUserByAccount" resultType="User" parameterType="com.photoshareweb.entitys.User">
+    SELECT
+    account, username, headimg
+    FROM
+    `user`
+    WHERE
+    account = #{account}
+  </select>
+
 </mapper>

@@ -3,7 +3,7 @@
  * @Descriptions: 单张图片浏览界面js依赖文件
  * @Date: 2017-12-17 20:43:42 
  * @Last Modified by: zhouyou@werun
- * @Last Modified time: 2018-01-31 22:04:58
+ * @Last Modified time: 2018-02-01 20:28:43
  */
 
 //import css
@@ -23,6 +23,25 @@ $(function() {
         //显示用户头像
         //$(".user-img").attr("src", data.user.headimg);
     }
+
+    var data = {
+        account: "yyc"
+    };
+
+    //获取用户信息
+    $.ajax({
+        url: "/share/user/getSimpleUserByAccount",
+        type: "POST",
+        dataType: "json",
+        contentType: "application/json",
+        data: JSON.stringify(data),
+        success: function(data) {
+            if (data.success) {
+            } else {
+                alert("登录失败！");
+            }
+        }
+    });
 
     //点击显示登录界面
     $(".login-button").click(function() {
@@ -101,7 +120,7 @@ $(function() {
                         $(".user-default").hide();
                         $(".user-name").text(data.user.username);
                         //显示用户头像
-                        //$(".user-img").attr("src", data.user.headimg);
+                        $(".user-img").attr("src", data.user.headimg);
                         //返回主页面
                         $(".login-container").hide();
                         $(".mask-layer").hide();
