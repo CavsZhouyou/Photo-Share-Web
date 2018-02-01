@@ -3,7 +3,7 @@
  * @Descriptions: 图片分类页面js依赖文件
  * @Date: 2017-12-17 17:33:38 
  * @Last Modified by: zhouyou@werun
- * @Last Modified time: 2018-02-01 13:08:07
+ * @Last Modified time: 2018-02-01 19:47:11
  */
 
 //import css
@@ -12,6 +12,7 @@ require("./photoClass.scss");
 //import js
 require("../js/iconfont.js");
 require("../js/jquery.cookie.min.js");
+const getParamsUrl = require("../js/getParamsUrl.js");
 
 $(function() {
     //判断是否处于登录状态
@@ -25,15 +26,7 @@ $(function() {
     }
 
     //加载图片列表
-    $.ajax({
-        url: "/share/photo/getPhotoByClass",
-        type: "POST",
-        data: {
-            photoclass: "1001"
-        },
-        dataType: "json",
-        success: function() {}
-    });
+    getPhotoList();
 
     //点击显示登录界面
     $(".login-button").click(function() {
@@ -184,4 +177,47 @@ $(function() {
         //跳转回首页
         location.href = "./index.html";
     });
+
+    /**
+     * @description 加载图片列表
+     */
+    function getPhotoList() {
+        var photoClass = getParamsUrl("type");
+
+        $.ajax({
+            url: "/share/photo/getPhotoByClass",
+            type: "POST",
+            data: {
+                photoClass: photoClass
+            },
+            dataType: "json",
+            success: function(data) {
+                if (data.success) {
+                    //向页面插入图片
+                    appendPhotoList(data.photoList);
+                }
+            }
+        });
+    }
+
+    /**
+     * @description 向页面插入图片
+     * @param {Arrey} photoList
+     */
+    function appendPhotoList(photoList) {
+        var photoBoxString,
+            $photoContainer = $("#photo-container"),
+            $photoBox;
+
+        photoList.forEach(photo => {
+            photoBoxString = require("./box.html");
+            photoBoxString = photoBoxString
+                .replace("$photoURL", photo.photourl)
+                .replace("$photoID", photo.id)
+                .replace("$potoName", photo.photoname);
+
+            $photoBox = $(photoBoxString);
+            $photoContainer.append($photoBox);
+        });
+    }
 });

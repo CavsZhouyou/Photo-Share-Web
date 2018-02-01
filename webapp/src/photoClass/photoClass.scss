@@ -3,7 +3,7 @@
  * @Descriptions: 图片分类网站页面样式文件
  * @Date: 2017-12-17 17:37:30 
  * @Last Modified by: zhouyou@werun
- * @Last Modified time: 2018-01-31 21:47:43
+ * @Last Modified time: 2018-02-01 19:53:53
  */
 
 @import "../scss/normalize.css";
@@ -114,6 +114,7 @@
 
                 .personal-setting {
                     display: none;
+                    margin-left: -30px;
                     position: relative;
                     animation: 5s infinite;
                     > .setting-list {
