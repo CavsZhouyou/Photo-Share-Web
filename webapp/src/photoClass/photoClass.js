@@ -3,7 +3,7 @@
  * @Descriptions: 图片分类页面js依赖文件
  * @Date: 2017-12-17 17:33:38 
  * @Last Modified by: zhouyou@werun
- * @Last Modified time: 2018-01-31 21:51:42
+ * @Last Modified time: 2018-02-01 13:08:07
  */
 
 //import css
@@ -23,6 +23,17 @@ $(function() {
         //显示用户头像
         //$(".user-img").attr("src", data.user.headimg);
     }
+
+    //加载图片列表
+    $.ajax({
+        url: "/share/photo/getPhotoByClass",
+        type: "POST",
+        data: {
+            photoclass: "1001"
+        },
+        dataType: "json",
+        success: function() {}
+    });
 
     //点击显示登录界面
     $(".login-button").click(function() {
