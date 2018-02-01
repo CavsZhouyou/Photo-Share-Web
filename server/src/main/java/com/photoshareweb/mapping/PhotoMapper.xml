@@ -9,7 +9,7 @@
     <id column="id" property="id" jdbcType="INTEGER" />
     <result column="photourl" property="photourl" jdbcType="VARCHAR" />
     <result column="photoname" property="photoname" jdbcType="VARCHAR" />
-    <result column="photoclass" property="photoclass" jdbcType="INTEGER" />
+    <result column="photoclass" property="photoclass" jdbcType="VARCHAR" />
     <result column="descriptions" property="descriptions" jdbcType="VARCHAR" />
     <result column="uploadtime" property="uploadtime" jdbcType="TIMESTAMP" />
     <result column="uploaduser" property="uploaduser" jdbcType="VARCHAR" />
@@ -48,8 +48,8 @@
     insert into photo (id, photourl, photoname, 
       photoclass, descriptions, uploadtime, 
       uploaduser, status)
-    values (#{id,jdbcType=INTEGER}, #{photourl,jdbcType=VARCHAR}, #{photoname,jdbcType=VARCHAR}, 
-      #{photoclass,jdbcType=INTEGER}, #{descriptions,jdbcType=VARCHAR}, #{uploadtime,jdbcType=TIMESTAMP}, 
+    values (#{id,jdbcType=INTEGER}, #{photourl,jdbcType=VARCHAR}, #{photoname,jdbcType=VARCHAR},
+      #{photoclass,jdbcType=VARCHAR}, #{descriptions,jdbcType=VARCHAR}, #{uploadtime,jdbcType=TIMESTAMP},
       #{uploaduser,jdbcType=VARCHAR}, #{status,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="com.photoshareweb.entitys.Photo" >
@@ -95,7 +95,7 @@
         #{photoname,jdbcType=VARCHAR},
       </if>
       <if test="photoclass != null" >
-        #{photoclass,jdbcType=INTEGER},
+        #{photoclass,jdbcType=VARCHAR},
       </if>
       <if test="descriptions != null" >
         #{descriptions,jdbcType=VARCHAR},
@@ -125,7 +125,7 @@
         photoname = #{photoname,jdbcType=VARCHAR},
       </if>
       <if test="photoclass != null" >
-        photoclass = #{photoclass,jdbcType=INTEGER},
+        photoclass = #{photoclass,jdbcType=VARCHAR},
       </if>
       <if test="descriptions != null" >
         descriptions = #{descriptions,jdbcType=VARCHAR},
@@ -150,7 +150,7 @@
     update photo
     set photourl = #{photourl,jdbcType=VARCHAR},
       photoname = #{photoname,jdbcType=VARCHAR},
-      photoclass = #{photoclass,jdbcType=INTEGER},
+      photoclass = #{photoclass,jdbcType=VARCHAR},
       descriptions = #{descriptions,jdbcType=VARCHAR},
       uploadtime = #{uploadtime,jdbcType=TIMESTAMP},
       uploaduser = #{uploaduser,jdbcType=VARCHAR},
@@ -166,7 +166,7 @@
     select
     *
     from photo
-    where photoclass = #{photoclass,jdbcType=INTEGER}
+    where photoclass = #{photoclass,jdbcType=VARCHAR}
   </select>
 
 </mapper>
