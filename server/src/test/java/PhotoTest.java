@@ -18,12 +18,18 @@ public class PhotoTest {
 
 
     @Test
-    public void  testGetPhoo(){
+    public void  testGetPhoto(){
         List<Photo> resultList = new ArrayList<Photo>();;
         resultList = photoDao.selectByClass("1001");
 
         for (Photo photo : resultList) {
             System.out.println(photo.getPhotourl());
         }
+    }
+
+    @Test
+    public void testGetGetPhotoByID(){
+        Photo result = photoDao.selectByPrimaryKey(1);
+        System.out.println(result.getPhotourl());
     }
 }

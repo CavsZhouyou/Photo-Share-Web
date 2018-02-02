@@ -23,6 +23,7 @@ public class PhotoController {
     @Autowired
     private PhotoService photoService;
 
+    //通过分类获取图片列表接口
     @RequestMapping(value = "/getPhotoByClass",method = RequestMethod.POST)
     public @ResponseBody Map<String, Object> getPhotoByClass(HttpServletRequest request, HttpServletResponse response){
         List<Photo> resultList = new ArrayList<Photo>();
@@ -35,6 +36,20 @@ public class PhotoController {
             map.put("success", false);
         }
         return map;
+    }
 
+    //通过ID获取图片接口
+    @RequestMapping(value = "/getPhotoByID",method = RequestMethod.POST)
+    public @ResponseBody Map<String, Object> getPhotoByID(HttpServletRequest request, HttpServletResponse response){
+        Photo result =photoService.getPhotoByID(Integer.parseInt(request.getParameter("id")));
+        HashMap<String, Object> map = new HashMap<String, Object>();
+
+        if(result!=null){
+            map.put("success", true);
+            map.put("photo",result);
+        }else{
+            map.put("success", false);
+        }
+        return map;
     }
 }

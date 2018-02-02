@@ -20,4 +20,9 @@ public class PhotoService {
 
         return resultList;
     }
+
+    public  Photo getPhotoByID(int id){
+        Photo result = photoDao.selectByPrimaryKey(id);
+        return result;
+    }
 }
