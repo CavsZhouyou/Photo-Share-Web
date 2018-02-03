@@ -48,4 +48,5 @@ public class PhotoService {
        int result =  photoDao.updateStatusByID(photo);
        return  result;
     }
+    
 }

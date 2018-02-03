@@ -3,7 +3,7 @@
  * @Descriptions: 图片查看界面js依赖文件
  * @Date: 2017-12-18 11:00:51 
  * @Last Modified by: zhouyou@werun
- * @Last Modified time: 2018-02-03 17:40:19
+ * @Last Modified time: 2018-02-03 20:25:37
  */
 
 //get the view
@@ -58,7 +58,7 @@ SPA_RESOLVE_INIT = function(transition) {
             photoBoxString = require("./photo.html");
             photoBoxString = photoBoxString
                 .replace("$className", getPhotoClass(photo.photoclass))
-                .replace("$photoName", photo.photoname)
+                .replace(/photoName/g, photo.photoname)
                 .replace("$photoURL", photo.photourl)
                 .replace("$photoDescription", photo.descriptions)
                 .replace("$photoID", photo.id);
