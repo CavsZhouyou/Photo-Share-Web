@@ -25,4 +25,9 @@ public class UserService {
           User result = userDao.getSimpleUserByAccount(user);
           return  result;
       }
+
+    public  User getUserByAccount(User user){
+        User result = userDao.getUserByAccount(user);
+        return  result;
+    }
 }

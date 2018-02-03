@@ -22,4 +22,6 @@ public interface UserMapper {
     User hasAccount(User record);
 
     User getSimpleUserByAccount(User record);
+
+    User getUserByAccount(User record);
 }

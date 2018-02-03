@@ -65,4 +65,19 @@ public class UserController {
         return map;
     }
 
+    //获取用户信息接口
+    @RequestMapping(value = "/getUserByAccount",method = RequestMethod.POST)
+    public  @ResponseBody Map<String, Object> getUserByAccount(@RequestBody User user) {
+        User result;
+        HashMap<String, Object> map = new HashMap<String, Object>();
+        result = userService.getUserByAccount(user);
+        if(result!=null){
+            map.put("success", true);
+            map.put("user",result);
+        }else{
+            map.put("success", false);
+        }
+        return map;
+    }
+
 }

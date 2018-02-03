@@ -105,4 +105,15 @@
     account = #{account}
   </select>
 
+  <select id="getUserByAccount" resultType="User" parameterType="com.photoshareweb.entitys.User">
+    SELECT
+    account, username,
+      headimg, email, phonenumber,
+      descriptions
+    FROM
+    `user`
+    WHERE
+    account = #{account}
+  </select>
+
 </mapper>

@@ -7,7 +7,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4328949a-5f1e-4050-b749-3b3dd1138886" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/photoshareweb/service/PhotoService.java" afterPath="$PROJECT_DIR$/src/main/java/com/photoshareweb/service/PhotoService.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/photoshareweb/controller/UserController.java" afterPath="$PROJECT_DIR$/src/main/java/com/photoshareweb/controller/UserController.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/photoshareweb/dao/UserMapper.java" afterPath="$PROJECT_DIR$/src/main/java/com/photoshareweb/dao/UserMapper.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/photoshareweb/mapping/UserMapper.xml" afterPath="$PROJECT_DIR$/src/main/java/com/photoshareweb/mapping/UserMapper.xml" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/photoshareweb/service/UserService.java" afterPath="$PROJECT_DIR$/src/main/java/com/photoshareweb/service/UserService.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -55,38 +58,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="PhotoController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/photoshareweb/controller/PhotoController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="653">
-              <caret line="118" column="38" lean-forward="true" selection-start-line="118" selection-start-column="38" selection-end-line="118" selection-end-column="38" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#1716#1723#0" expanded="true" />
-                <element signature="e#1776#1792#0" expanded="true" />
-                <element signature="e#2917#2924#0" expanded="true" />
-                <element signature="e#2977#2993#0" expanded="true" />
-                <element signature="e#3630#3646#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Photo.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/photoshareweb/entitys/Photo.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="189">
-              <caret line="48" column="6" lean-forward="true" selection-start-line="48" selection-start-column="6" selection-end-line="48" selection-end-column="6" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UserController.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="UserController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/photoshareweb/controller/UserController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-46">
-              <caret line="50" column="5" lean-forward="true" selection-start-line="36" selection-start-column="4" selection-end-line="50" selection-end-column="5" />
+            <state relative-caret-position="202">
+              <caret line="76" column="14" lean-forward="true" selection-start-line="76" selection-start-column="14" selection-end-line="76" selection-end-column="14" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -94,57 +70,38 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PhotoService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/photoshareweb/service/PhotoService.java">
+      <file leaf-file-name="UserMapper.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/photoshareweb/mapping/UserMapper.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="256">
-              <caret line="52" column="36" lean-forward="false" selection-start-line="52" selection-start-column="36" selection-end-line="52" selection-end-column="36" />
+            <state relative-caret-position="93">
+              <caret line="107" column="17" lean-forward="false" selection-start-line="107" selection-start-column="17" selection-end-line="107" selection-end-column="17" />
               <folding>
-                <element signature="e#698#705#0" expanded="true" />
-                <element signature="e#903#910#0" expanded="true" />
-                <element signature="e#1169#1170#0" expanded="true" />
-                <element signature="e#1216#1217#0" expanded="true" />
+                <marker date="1517663667728" expanded="true" signature="1200:1575" ph="insert into user... " />
+                <marker date="1517663667728" expanded="true" signature="3277:3314" ph="SELECT * FRO... user" />
+                <marker date="1517663667728" expanded="true" signature="3277:3361" ph="SELECT * FRO... user" />
+                <marker date="1517663667728" expanded="true" signature="3483:3575" ph="SELECT accou... user" />
+                <marker date="1517663667728" expanded="true" signature="3691:3829" ph="SELECT accou... user" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PhotoTest.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/PhotoTest.java">
+      <file leaf-file-name="UserService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/photoshareweb/service/UserService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="116">
-              <caret line="35" column="9" lean-forward="true" selection-start-line="35" selection-start-column="9" selection-end-line="35" selection-end-column="9" />
+            <state relative-caret-position="418">
+              <caret line="29" column="33" lean-forward="false" selection-start-line="29" selection-start-column="33" selection-end-line="29" selection-end-column="33" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PhotoMapper.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/photoshareweb/dao/PhotoMapper.java">
+      <file leaf-file-name="UserMapper.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/photoshareweb/dao/UserMapper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1188">
-              <caret line="58" column="48" lean-forward="true" selection-start-line="58" selection-start-column="48" selection-end-line="58" selection-end-column="48" />
+            <state relative-caret-position="391">
+              <caret line="25" column="39" lean-forward="true" selection-start-line="25" selection-start-column="39" selection-end-line="25" selection-end-column="39" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PhotoMapper.xml" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/photoshareweb/mapping/PhotoMapper.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4225">
-              <caret line="193" column="32" lean-forward="false" selection-start-line="193" selection-start-column="16" selection-end-line="193" selection-end-column="32" />
-              <folding>
-                <marker date="1517658748701" expanded="true" signature="1489:1590" ph="select from photo" />
-                <marker date="1517658748701" expanded="true" signature="1807:1862" ph="delete from photo... " />
-                <marker date="1517658748701" expanded="true" signature="2081:2465" ph="insert into photo... " />
-                <marker date="1517658748701" expanded="true" signature="4319:5099" ph="update photo... " />
-                <marker date="1517658748701" expanded="true" signature="5330:5730" ph="update photo... " />
-                <marker date="1517658748701" expanded="true" signature="5968:6049" ph="select from photo" />
-                <marker date="1517658748701" expanded="true" signature="6289:6367" ph="select * fro... photo" />
-                <marker date="1517658748701" expanded="true" signature="6628:6713" ph="select * fro... photo" />
-                <marker date="1517658748701" expanded="true" signature="6967:7069" ph="update photo... " />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -182,11 +139,7 @@
         <option value="$PROJECT_DIR$/src/main/resources/mybatis-generator.properties" />
         <option value="$PROJECT_DIR$/src/main/resources/generatorConfig.xml" />
         <option value="$PROJECT_DIR$/src/main/resources/spring/spring-service.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/photoshareweb/service/UserService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/photoshareweb/dao/UserMapper.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/photoshareweb/controller/UserController.java" />
         <option value="$PROJECT_DIR$/src/test/java/UserTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/photoshareweb/mapping/UserMapper.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/photoshareweb/dao/PhotoClassMapper.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/photoshareweb/mapping/PhotoClassMapper.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/photoshareweb/service/PhotoClassService.java" />
@@ -199,6 +152,10 @@
         <option value="$PROJECT_DIR$/src/test/java/PhotoTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/photoshareweb/controller/PhotoController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/photoshareweb/service/PhotoService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/photoshareweb/service/UserService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/photoshareweb/mapping/UserMapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/photoshareweb/dao/UserMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/photoshareweb/controller/UserController.java" />
       </list>
     </option>
   </component>
@@ -255,7 +212,7 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
     <option name="width" value="1936" />
@@ -724,7 +681,7 @@
       <workItem from="1517478004922" duration="7270000" />
       <workItem from="1517543312536" duration="2438000" />
       <workItem from="1517640906974" duration="39000" />
-      <workItem from="1517641262548" duration="8248000" />
+      <workItem from="1517641262548" duration="8942000" />
     </task>
     <servers />
   </component>
@@ -761,7 +718,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="40960000" />
+    <option name="totallyTimeSpent" value="41654000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -773,7 +730,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -786,7 +743,7 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.37323177" sideWeight="0.4978678" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.37323177" sideWeight="0.4978678" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297062" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297062" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -935,10 +892,11 @@
         <state relative-caret-position="2511">
           <caret line="93" column="8" lean-forward="true" selection-start-line="93" selection-start-column="8" selection-end-line="93" selection-end-column="8" />
           <folding>
-            <marker date="1517488025909" expanded="true" signature="1200:1575" ph="insert into user... " />
-            <marker date="1517488025909" expanded="true" signature="3277:3314" ph="SELECT * FRO... user" />
-            <marker date="1517488025909" expanded="true" signature="3277:3361" ph="SELECT * FRO... user" />
-            <marker date="1517488025909" expanded="true" signature="3483:3575" ph="SELECT accou... user" />
+            <marker date="1517663667728" expanded="true" signature="1200:1575" ph="insert into user... " />
+            <marker date="1517663667728" expanded="true" signature="3277:3314" ph="SELECT * FRO... user" />
+            <marker date="1517663667728" expanded="true" signature="3277:3361" ph="SELECT * FRO... user" />
+            <marker date="1517663667728" expanded="true" signature="3483:3575" ph="SELECT accou... user" />
+            <marker date="1517663667728" expanded="true" signature="3691:3829" ph="SELECT accou... user" />
           </folding>
         </state>
       </provider>
@@ -1096,19 +1054,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/photoshareweb/mapping/UserMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="370">
-          <caret line="100" column="23" lean-forward="false" selection-start-line="100" selection-start-column="23" selection-end-line="100" selection-end-column="23" />
-          <folding>
-            <marker date="1517488025909" expanded="true" signature="1200:1575" ph="insert into user... " />
-            <marker date="1517488025909" expanded="true" signature="3277:3314" ph="SELECT * FRO... user" />
-            <marker date="1517488025909" expanded="true" signature="3277:3361" ph="SELECT * FRO... user" />
-            <marker date="1517488025909" expanded="true" signature="3483:3575" ph="SELECT accou... user" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/generatorConfig.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1431">
@@ -1140,14 +1085,6 @@
           <folding>
             <element signature="imports" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/photoshareweb/dao/UserMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="621">
-          <caret line="23" column="31" lean-forward="false" selection-start-line="23" selection-start-column="31" selection-end-line="23" selection-end-column="31" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1188,36 +1125,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/PhotoTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="116">
-          <caret line="35" column="9" lean-forward="true" selection-start-line="35" selection-start-column="9" selection-end-line="35" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/photoshareweb/controller/PhotoClassController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="491">
           <caret line="31" column="31" lean-forward="false" selection-start-line="31" selection-start-column="21" selection-end-line="31" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/photoshareweb/controller/UserController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-46">
-          <caret line="50" column="5" lean-forward="true" selection-start-line="36" selection-start-column="4" selection-end-line="50" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/photoshareweb/service/UserService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="496">
-          <caret line="24" column="54" lean-forward="false" selection-start-line="24" selection-start-column="54" selection-end-line="24" selection-end-column="54" />
           <folding />
         </state>
       </provider>
@@ -1245,6 +1156,32 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/photoshareweb/mapping/PhotoMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4225">
+          <caret line="193" column="32" lean-forward="false" selection-start-line="193" selection-start-column="16" selection-end-line="193" selection-end-column="32" />
+          <folding>
+            <marker date="1517658748701" expanded="true" signature="1489:1590" ph="select from photo" />
+            <marker date="1517658748701" expanded="true" signature="1807:1862" ph="delete from photo... " />
+            <marker date="1517658748701" expanded="true" signature="2081:2465" ph="insert into photo... " />
+            <marker date="1517658748701" expanded="true" signature="4319:5099" ph="update photo... " />
+            <marker date="1517658748701" expanded="true" signature="5330:5730" ph="update photo... " />
+            <marker date="1517658748701" expanded="true" signature="5968:6049" ph="select from photo" />
+            <marker date="1517658748701" expanded="true" signature="6289:6367" ph="select * fro... photo" />
+            <marker date="1517658748701" expanded="true" signature="6628:6713" ph="select * fro... photo" />
+            <marker date="1517658748701" expanded="true" signature="6967:7069" ph="update photo... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/PhotoTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="121">
+          <caret line="35" column="9" lean-forward="true" selection-start-line="35" selection-start-column="9" selection-end-line="35" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/photoshareweb/service/PhotoService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="256">
@@ -1266,20 +1203,42 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/photoshareweb/mapping/PhotoMapper.xml">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/photoshareweb/mapping/UserMapper.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4225">
-          <caret line="193" column="32" lean-forward="false" selection-start-line="193" selection-start-column="16" selection-end-line="193" selection-end-column="32" />
+        <state relative-caret-position="93">
+          <caret line="107" column="17" lean-forward="false" selection-start-line="107" selection-start-column="17" selection-end-line="107" selection-end-column="17" />
           <folding>
-            <marker date="1517658748701" expanded="true" signature="1489:1590" ph="select from photo" />
-            <marker date="1517658748701" expanded="true" signature="1807:1862" ph="delete from photo... " />
-            <marker date="1517658748701" expanded="true" signature="2081:2465" ph="insert into photo... " />
-            <marker date="1517658748701" expanded="true" signature="4319:5099" ph="update photo... " />
-            <marker date="1517658748701" expanded="true" signature="5330:5730" ph="update photo... " />
-            <marker date="1517658748701" expanded="true" signature="5968:6049" ph="select from photo" />
-            <marker date="1517658748701" expanded="true" signature="6289:6367" ph="select * fro... photo" />
-            <marker date="1517658748701" expanded="true" signature="6628:6713" ph="select * fro... photo" />
-            <marker date="1517658748701" expanded="true" signature="6967:7069" ph="update photo... " />
+            <marker date="1517663667728" expanded="true" signature="1200:1575" ph="insert into user... " />
+            <marker date="1517663667728" expanded="true" signature="3277:3314" ph="SELECT * FRO... user" />
+            <marker date="1517663667728" expanded="true" signature="3277:3361" ph="SELECT * FRO... user" />
+            <marker date="1517663667728" expanded="true" signature="3483:3575" ph="SELECT accou... user" />
+            <marker date="1517663667728" expanded="true" signature="3691:3829" ph="SELECT accou... user" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/photoshareweb/service/UserService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="29" column="33" lean-forward="false" selection-start-line="29" selection-start-column="33" selection-end-line="29" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/photoshareweb/dao/UserMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="25" column="39" lean-forward="true" selection-start-line="25" selection-start-column="39" selection-end-line="25" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/photoshareweb/controller/UserController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="202">
+          <caret line="76" column="14" lean-forward="true" selection-start-line="76" selection-start-column="14" selection-end-line="76" selection-end-column="14" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
