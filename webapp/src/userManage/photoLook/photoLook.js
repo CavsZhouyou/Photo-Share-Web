@@ -3,7 +3,7 @@
  * @Descriptions: 图片查看界面js依赖文件
  * @Date: 2017-12-18 11:00:51 
  * @Last Modified by: zhouyou@werun
- * @Last Modified time: 2018-02-03 17:26:47
+ * @Last Modified time: 2018-02-03 17:40:19
  */
 
 //get the view
@@ -88,10 +88,27 @@ SPA_RESOLVE_INIT = function(transition) {
             $photoBox = $(photoBoxString);
 
             $photoBox.find(".delete").click(function() {
-                $(this)
-                    .parent()
-                    .parent()
-                    .remove();
+                const self = this;
+                var photoID = $(this).attr("data-ID");
+
+                $.ajax({
+                    url: "/share/photo/deletePhotoByID",
+                    type: "POST",
+                    data: {
+                        id: photoID
+                    },
+                    dataType: "json",
+                    success: function(data) {
+                        if (data.success) {
+                            $(self)
+                                .parent()
+                                .parent()
+                                .remove();
+                        } else {
+                            alert("删除图片失败！");
+                        }
+                    }
+                });
             });
 
             $photoContainer.append($photoBox);
