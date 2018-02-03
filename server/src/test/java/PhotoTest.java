@@ -20,7 +20,7 @@ public class PhotoTest {
     @Test
     public void  testGetPhoto(){
         List<Photo> resultList = new ArrayList<Photo>();;
-        resultList = photoDao.selectByClass("1001");
+        resultList = photoDao.selectByAccount("yyc");
 
         for (Photo photo : resultList) {
             System.out.println(photo.getPhotourl());

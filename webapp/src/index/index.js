@@ -3,7 +3,7 @@
  * @Descriptions: 首页js依赖文件
  * @Date: 2017-11-26 20:01:16 
  * @Last Modified by: zhouyou@werun
- * @Last Modified time: 2018-02-01 20:23:15
+ * @Last Modified time: 2018-02-03 15:49:23
  */
 
 //import scss
@@ -36,7 +36,7 @@ $(function() {
         $(".user-default").hide();
         $(".user-name").text($.cookie("username"));
         //显示用户头像
-        //$(".user-img").attr("src", data.user.headimg);
+        $(".user-img").attr("src", $.cookie("headimg"));
     }
 
     //点击显示登录界面

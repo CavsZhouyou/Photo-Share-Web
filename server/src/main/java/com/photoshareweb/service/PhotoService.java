@@ -21,6 +21,13 @@ public class PhotoService {
         return resultList;
     }
 
+    public List<Photo> getPhotoByAccount(String account){
+        List<Photo> resultList = new ArrayList<Photo>();;
+        resultList = photoDao.selectByAccount(account);
+
+        return resultList;
+    }
+
     public  Photo getPhotoByID(int id){
         Photo result = photoDao.selectByPrimaryKey(id);
         return result;

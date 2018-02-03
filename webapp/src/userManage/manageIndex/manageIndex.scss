@@ -2,8 +2,8 @@
  * @Author: zhouyou@weruan 
  * @Descriptions: 用户管理界面样式表
  * @Date: 2017-12-17 23:20:34 
- * @Last Modified by: zhouyou@weruan
- * @Last Modified time: 2017-12-18 21:05:06
+ * @Last Modified by: zhouyou@werun
+ * @Last Modified time: 2018-02-03 15:33:37
  */
 
 @import url("../../scss/normalize.css");
@@ -85,26 +85,57 @@
             line-height: 50px;
             background: rgba(123, 200, 130, 0.7);
             margin-right: 50px;
-
-            .user-name {
+            .login-button {
                 color: #fff;
                 font-size: 16px;
                 vertical-align: middle;
             }
-            .user-img {
-                display: none;
-                width: 40px;
-                height: 40px;
-                border-radius: 20px;
-                margin-left: 15px;
-                vertical-align: middle;
-            }
-
             .default-img {
                 width: 60px;
                 height: 50px;
                 border-radius: 25px;
                 vertical-align: middle;
+            }
+
+            > .user-login {
+                display: none;
+
+                .user-name {
+                    color: #fff;
+                    font-size: 16px;
+                    vertical-align: middle;
+                }
+                .user-img {
+                    width: 40px;
+                    height: 40px;
+                    border-radius: 20px;
+                    margin-left: 15px;
+                    vertical-align: middle;
+                }
+
+                .personal-setting {
+                    display: none;
+                    margin-left: -30px;
+                    position: relative;
+                    animation: 5s infinite;
+                    > .setting-list {
+                        width: 150px;
+                        height: 35px;
+                        line-height: 35px;
+                        border-bottom: 1px solid #fff;
+                        background: rgba(72, 138, 145, 0.5);
+                        text-align: center;
+                    }
+                    > .setting-list:hover {
+                        background: rgba(72, 138, 145, 0.8);
+                    }
+                }
+            }
+
+            > .user-login:hover {
+                .personal-setting {
+                    display: inline-block;
+                }
             }
         }
     }

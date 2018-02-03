@@ -73,9 +73,22 @@
                 <input type="text" class="search">
             </div>
             <div class="navbar-right">
-                <a href="javascript:;" class="user-name">登录</a>
-                <img src="../../image/login.png" alt="默认头像" title="默认头像" class="default-img">
-                <img src="" alt="用户头像" title="用户头像" class="user-img">
+                <div class="user-default">
+                    <a href="javascript:;" class="login-button">登录</a>
+                    <img src="../../image/login.png" alt="默认头像" title="默认头像" class="default-img">
+                </div>
+                <div class="user-login">
+                    <a href="javascript:;" class="user-name"></a>
+                    <img src="./img/user.jpg" alt="用户头像" title="用户头像" class="user-img">
+                    <ul class="personal-setting">
+                        <li class="setting-list">
+                            <a href="./userManage.html">个人中心</a>
+                        </li>
+                        <li class="setting-list">
+                            <a href="javascript:;" id="logout">退出登录</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
     </header>

@@ -3,7 +3,7 @@
  * @Descriptions: 单张图片浏览界面js依赖文件
  * @Date: 2017-12-17 20:43:42 
  * @Last Modified by: zhouyou@werun
- * @Last Modified time: 2018-02-03 15:23:55
+ * @Last Modified time: 2018-02-03 15:49:15
  */
 
 //import css
@@ -22,42 +22,11 @@ $(function() {
         $(".user-default").hide();
         $(".user-name").text($.cookie("username"));
         //显示用户头像
-        //$(".user-img").attr("src", data.user.headimg);
+        $(".user-img").attr("src", $.cookie("headimg"));
     }
 
     //加载图片信息
     LoadPhotoInformation();
-
-    // var data = {
-    //     account: "yyc"
-    // };
-
-    // $.ajax({
-    //     url: "/share/photo/getPhotoByID",
-    //     type: "POST",
-    //     data: {
-    //         id: "1"
-    //     },
-    //     dataType: "json",
-    //     success: function (data) {
-    //         if (data.success) {}
-    //     }
-    // });
-
-    //获取用户信息
-    // $.ajax({
-    //     url: "/share/user/getSimpleUserByAccount",
-    //     type: "POST",
-    //     dataType: "json",
-    //     contentType: "application/json",
-    //     data: JSON.stringify(data),
-    //     success: function(data) {
-    //         if (data.success) {
-    //         } else {
-    //             alert("登录失败！");
-    //         }
-    //     }
-    // });
 
     //点击显示登录界面
     $(".login-button").click(function() {
