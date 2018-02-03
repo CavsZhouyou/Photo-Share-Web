@@ -28,6 +28,13 @@ public class PhotoService {
         return resultList;
     }
 
+    public List<Photo> getPhotoByStatus(String status){
+        List<Photo> resultList = new ArrayList<Photo>();;
+        resultList = photoDao.selectByStatus(status);
+
+        return resultList;
+    }
+
     public  Photo getPhotoByID(int id){
         Photo result = photoDao.selectByPrimaryKey(id);
         return result;

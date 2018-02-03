@@ -57,4 +57,6 @@ public interface PhotoMapper {
     List<Photo> selectByClass(String photoClass);
 
     List<Photo> selectByAccount(String account);
+
+    List<Photo> selectByStatus(String status);
 }
