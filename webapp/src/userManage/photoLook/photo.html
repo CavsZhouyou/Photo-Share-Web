@@ -1,0 +1,41 @@
+<div class="photo-info">
+    <div class="photo-class">
+        <span>$className</span>
+    </div>
+    <div class="photo-name">
+        <span>$photoName</span>
+    </div>
+    <div class="photo-description">
+        <div class="photo">
+            <img src="$photoURL" alt="图片 $photoName" title="图片 $photoName">
+        </div>
+        <div class="photo-description-content">
+            <p>$photoDescription</p>
+        </div>
+    </div>
+    <div class="check">
+        <div class="check-status $statusID">
+            <svg class="icon" aria-hidden="true">
+                <use xlink:href="#icon-$icon"></use>
+            </svg>
+            <span>$status</span>
+        </div>
+        <!-- <div class="check-status nopass">
+            <svg class="icon" aria-hidden="true">
+                <use xlink:href="#icon-wrong"></use>
+            </svg>
+            <span>审核未通过</span>
+        </div>
+        <div class="check-status checking">
+            <svg class="icon" aria-hidden="true">
+                <use xlink:href="#icon-help"></use>
+            </svg>
+            <span>待审核</span>
+        </div> -->
+        <div class="delete" data-ID="$photoID">
+            <svg class="icon" aria-hidden="true">
+                <use xlink:href="#icon-delete"></use>
+            </svg>
+        </div>
+    </div>
+</div>

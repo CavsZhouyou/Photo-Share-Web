@@ -2,8 +2,8 @@
  * @Author: zhouyou@weruan 
  * @Descriptions: 图片查看界面样式文件
  * @Date: 2017-12-18 11:04:41 
- * @Last Modified by: zhouyou@weruan
- * @Last Modified time: 2017-12-18 17:54:51
+ * @Last Modified by: zhouyou@werun
+ * @Last Modified time: 2018-02-03 17:10:06
  */
 
 @import url("../../scss/normalize.css");
@@ -12,6 +12,7 @@
     width: 910px;
     height: 815px;
     padding: 30px 20px 0;
+    overflow: auto;
 
     > .title {
         display: block;
@@ -23,7 +24,7 @@
         font-size: 28px;
     }
 
-    > .container {
+    > .photo-look-container {
         width: 910px;
 
         > .photo-info {
@@ -69,6 +70,7 @@
                     img {
                         width: 100px;
                         height: 100px;
+                        margin-top: -30px;
                         vertical-align: middle;
                     }
                 }
@@ -76,8 +78,13 @@
                 > .photo-description-content {
                     display: inline-block;
                     width: 490px;
-                    height: 150px;
+                    height: 83px;
                     color: #8f8e8e;
+
+                    overflow: hidden;
+                    p {
+                        text-overflow: ellipsis;
+                    }
                 }
             }
 

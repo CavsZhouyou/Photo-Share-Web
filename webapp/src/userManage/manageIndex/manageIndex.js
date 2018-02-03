@@ -3,7 +3,7 @@
  * @Descriptions: 用户管理界面页面依赖文件
  * @Date: 2017-12-17 23:19:45 
  * @Last Modified by: zhouyou@werun
- * @Last Modified time: 2018-02-03 15:48:58
+ * @Last Modified time: 2018-02-03 16:17:31
  */
 
 //import css
@@ -71,6 +71,11 @@ $(function() {
         //显示用户头像
         $(".user-img").attr("src", $.cookie("headimg"));
     }
+
+    // //权限控制
+    // if ($.cookie("power") == "2") {
+    //     $("#photoCheck").hide();
+    // }
 
     //添加sider点击事件
     const sidebarList = $("#sidebar").find(".sidebar-item");

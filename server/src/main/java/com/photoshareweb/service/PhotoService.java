@@ -32,4 +32,8 @@ public class PhotoService {
         Photo result = photoDao.selectByPrimaryKey(id);
         return result;
     }
+
+    public void deletePhotoByID(int id){
+        photoDao.deleteByPrimaryKey(id);
+    }
 }

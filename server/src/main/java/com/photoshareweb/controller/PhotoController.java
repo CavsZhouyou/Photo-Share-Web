@@ -38,6 +38,21 @@ public class PhotoController {
         return map;
     }
 
+    //通过分类获取图片列表接口
+    @RequestMapping(value = "/getPhotoByAccount",method = RequestMethod.POST)
+    public @ResponseBody Map<String, Object> getPhotoByAccount(HttpServletRequest request, HttpServletResponse response){
+        List<Photo> resultList = new ArrayList<Photo>();
+        HashMap<String, Object> map = new HashMap<String, Object>();
+        resultList = photoService.getPhotoByAccount(request.getParameter("account"));
+        if(resultList!=null){
+            map.put("success", true);
+            map.put("photoList",resultList);
+        }else{
+            map.put("success", false);
+        }
+        return map;
+    }
+
     //通过ID获取图片接口
     @RequestMapping(value = "/getPhotoByID",method = RequestMethod.POST)
     public @ResponseBody Map<String, Object> getPhotoByID(HttpServletRequest request, HttpServletResponse response){
@@ -50,6 +65,15 @@ public class PhotoController {
         }else{
             map.put("success", false);
         }
+        return map;
+    }
+
+    //通过ID获取图片接口
+    @RequestMapping(value = "/deletePhotoByID",method = RequestMethod.POST)
+    public @ResponseBody Map<String, Object> deletePhotoByID(HttpServletRequest request, HttpServletResponse response){
+       photoService.deletePhotoByID(Integer.parseInt(request.getParameter("id")));
+        HashMap<String, Object> map = new HashMap<String, Object>();
+        map.put("success", true);
         return map;
     }
 }
