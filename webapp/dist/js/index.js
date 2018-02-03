@@ -1,4 +1,4 @@
-webpackJsonp([0],[
+webpackJsonp([1],[
 /* 0 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -10435,29 +10435,82 @@ return jQuery;
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
+var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;
+
+(function (e) {
+  if (true) {
+    !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(0)], __WEBPACK_AMD_DEFINE_FACTORY__ = (e),
+				__WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ?
+				(__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__),
+				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+  } else {
+    e(jQuery);
+  }
+})(function (e) {
+  function n(e) {
+    return u.raw ? e : encodeURIComponent(e);
+  }function r(e) {
+    return u.raw ? e : decodeURIComponent(e);
+  }function i(e) {
+    return n(u.json ? JSON.stringify(e) : String(e));
+  }function s(e) {
+    if (e.indexOf('"') === 0) {
+      e = e.slice(1, -1).replace(/\\"/g, '"').replace(/\\\\/g, "\\");
+    }try {
+      e = decodeURIComponent(e.replace(t, " "));return u.json ? JSON.parse(e) : e;
+    } catch (n) {}
+  }function o(t, n) {
+    var r = u.raw ? t : s(t);return e.isFunction(n) ? n(r) : r;
+  }var t = /\+/g;var u = e.cookie = function (t, s, a) {
+    if (s !== undefined && !e.isFunction(s)) {
+      a = e.extend({}, u.defaults, a);if (typeof a.expires === "number") {
+        var f = a.expires,
+            l = a.expires = new Date();l.setDate(l.getDate() + f);
+      }return document.cookie = [n(t), "=", i(s), a.expires ? "; expires=" + a.expires.toUTCString() : "", a.path ? "; path=" + a.path : "", a.domain ? "; domain=" + a.domain : "", a.secure ? "; secure" : ""].join("");
+    }var c = t ? undefined : {};var h = document.cookie ? document.cookie.split("; ") : [];for (var p = 0, d = h.length; p < d; p++) {
+      var v = h[p].split("=");var m = r(v.shift());var g = v.join("=");if (t && t === m) {
+        c = o(g, s);break;
+      }if (!t && (g = o(g)) !== undefined) {
+        c[m] = g;
+      }
+    }return c;
+  };u.defaults = {};e.removeCookie = function (t, n) {
+    if (e.cookie(t) === undefined) {
+      return false;
+    }e.cookie(t, "", e.extend({}, n, { expires: -1 }));return !e.cookie(t);
+  };
+});
+
+/***/ }),
+/* 3 */,
+/* 4 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
 /* WEBPACK VAR INJECTION */(function($, jQuery) {
 
 /*
  * @Author: zhouyou@weruan 
  * @Descriptions: 首页js依赖文件
  * @Date: 2017-11-26 20:01:16 
- * @Last Modified by: zhouyou@weruan
- * @Last Modified time: 2017-12-21 09:40:43
+ * @Last Modified by: zhouyou@werun
+ * @Last Modified time: 2018-02-03 15:49:23
  */
 
 //import scss
-__webpack_require__(3);
+__webpack_require__(5);
 
 //import js
-__webpack_require__(4);
+__webpack_require__(6);
 __webpack_require__(1);
+__webpack_require__(2);
 
 $(function () {
     // img 依赖
-    var jpg1 = __webpack_require__(5);
-    var jpg2 = __webpack_require__(6);
-    var jpg3 = __webpack_require__(7);
-    var jpg4 = __webpack_require__(8);
+    var jpg1 = __webpack_require__(7);
+    var jpg2 = __webpack_require__(8);
+    var jpg3 = __webpack_require__(9);
+    var jpg4 = __webpack_require__(10);
 
     // Handle Backstretch 背景轮换
     jQuery.backstretch([jpg1, jpg2, jpg3, jpg4], {
@@ -10467,8 +10520,18 @@ $(function () {
         alwaysTestWindowResolution: true
     });
 
+    //判断是否处于登录状态
+    if ($.cookie("account")) {
+        //显示用户昵称
+        $(".user-login").show();
+        $(".user-default").hide();
+        $(".user-name").text($.cookie("username"));
+        //显示用户头像
+        $(".user-img").attr("src", $.cookie("headimg"));
+    }
+
     //点击显示登录界面
-    $(".user-name").click(function () {
+    $(".login-button").click(function () {
         $(".login-container").show();
         $(".mask-layer").show();
 
@@ -10501,18 +10564,132 @@ $(function () {
             $(".login-container").hide();
             $(".mask-layer").hide();
         });
+
+        //点击登录账号
+        $("#login").click(function () {
+            var account = $("#loginAccount").val(),
+                password = $("#loginPassword").val(),
+                data = {
+                account: account,
+                password: password
+            };
+
+            //判断输入账号密码是否为空
+            if (account === "" || password === "") {
+                alert("账户或密码不能为空！");
+                return;
+            }
+
+            $.ajax({
+                url: "/share/user/login",
+                type: "POST",
+                dataType: "json",
+                contentType: "application/json",
+                data: JSON.stringify(data),
+                success: function success(data) {
+                    if (data.success) {
+                        //将用户信息写入cookie中
+                        $.cookie("account", data.user.account, {
+                            expires: 7
+                        });
+                        $.cookie("username", data.user.username, {
+                            expires: 7
+                        });
+                        $.cookie("headimg", data.user.headimg, {
+                            expires: 7
+                        });
+                        $.cookie("power", data.user.power, {
+                            expires: 7
+                        });
+
+                        //显示用户昵称
+                        $(".user-login").show();
+                        $(".user-default").hide();
+                        $(".user-name").text(data.user.username);
+                        //显示用户头像
+                        $(".user-img").attr("src", data.user.headimg);
+                        //返回主页面
+                        $(".login-container").hide();
+                        $(".mask-layer").hide();
+                    } else {
+                        alert("登录失败！");
+                    }
+                }
+            });
+        });
+
+        //点击注册账号
+        $("#regist").click(function () {
+            var account = $("#registAccount").val(),
+                password = $("#registPassword").val(),
+                rePassword = $("#registRePassword").val(),
+                data = {
+                account: account,
+                password: password,
+                power: 2
+            };
+
+            //判断输入账号密码是否为空
+            if (account === "" || password === "") {
+                alert("账户或密码不能为空！");
+                return;
+            }
+
+            //判断两次密码输入是否一致
+            if (password !== rePassword) {
+                alert("两次输入密码不一致！");
+                return;
+            }
+
+            $.ajax({
+                url: "/share/user/regist",
+                type: "POST",
+                dataType: "json",
+                data: JSON.stringify(data),
+                contentType: "application/json",
+                success: function success(data) {
+                    if (data.success) {
+                        alert("恭喜你注册成功！");
+                        //返回主页面
+                        location.href = "./index.html";
+                    } else {
+                        alert(data.message);
+                    }
+                }
+            });
+        });
+    });
+
+    //点击退出登录
+    $("#logout").click(function () {
+        //清除cookies
+        $.cookie("username", "", {
+            expires: -1
+        });
+        $.cookie("headimg", "", {
+            expires: -1
+        });
+        $.cookie("power", "", {
+            expires: -1
+        });
+        $.cookie("account", "", {
+            expires: -1
+        });
+
+        //跳转回首页
+        location.href = "./index.html";
     });
 });
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0), __webpack_require__(0)))
 
 /***/ }),
-/* 3 */
+/* 5 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
-/* 4 */
+/* 6 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -12023,28 +12200,28 @@ $(function () {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 5 */
+/* 7 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__.p + "img/banner1.jpg";
 
 /***/ }),
-/* 6 */
+/* 8 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__.p + "img/banner2.jpg";
 
 /***/ }),
-/* 7 */
+/* 9 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__.p + "img/banner3.jpg";
 
 /***/ }),
-/* 8 */
+/* 10 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__.p + "img/banner4.jpg";
 
 /***/ })
-],[2]);
+],[4]);

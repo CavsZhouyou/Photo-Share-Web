@@ -10434,7 +10434,59 @@ return jQuery;
 
 /***/ }),
 
-/***/ 32:
+/***/ 2:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;
+
+(function (e) {
+  if (true) {
+    !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(0)], __WEBPACK_AMD_DEFINE_FACTORY__ = (e),
+				__WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ?
+				(__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__),
+				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+  } else {
+    e(jQuery);
+  }
+})(function (e) {
+  function n(e) {
+    return u.raw ? e : encodeURIComponent(e);
+  }function r(e) {
+    return u.raw ? e : decodeURIComponent(e);
+  }function i(e) {
+    return n(u.json ? JSON.stringify(e) : String(e));
+  }function s(e) {
+    if (e.indexOf('"') === 0) {
+      e = e.slice(1, -1).replace(/\\"/g, '"').replace(/\\\\/g, "\\");
+    }try {
+      e = decodeURIComponent(e.replace(t, " "));return u.json ? JSON.parse(e) : e;
+    } catch (n) {}
+  }function o(t, n) {
+    var r = u.raw ? t : s(t);return e.isFunction(n) ? n(r) : r;
+  }var t = /\+/g;var u = e.cookie = function (t, s, a) {
+    if (s !== undefined && !e.isFunction(s)) {
+      a = e.extend({}, u.defaults, a);if (typeof a.expires === "number") {
+        var f = a.expires,
+            l = a.expires = new Date();l.setDate(l.getDate() + f);
+      }return document.cookie = [n(t), "=", i(s), a.expires ? "; expires=" + a.expires.toUTCString() : "", a.path ? "; path=" + a.path : "", a.domain ? "; domain=" + a.domain : "", a.secure ? "; secure" : ""].join("");
+    }var c = t ? undefined : {};var h = document.cookie ? document.cookie.split("; ") : [];for (var p = 0, d = h.length; p < d; p++) {
+      var v = h[p].split("=");var m = r(v.shift());var g = v.join("=");if (t && t === m) {
+        c = o(g, s);break;
+      }if (!t && (g = o(g)) !== undefined) {
+        c[m] = g;
+      }
+    }return c;
+  };u.defaults = {};e.removeCookie = function (t, n) {
+    if (e.cookie(t) === undefined) {
+      return false;
+    }e.cookie(t, "", e.extend({}, n, { expires: -1 }));return !e.cookie(t);
+  };
+});
+
+/***/ }),
+
+/***/ 37:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10444,46 +10496,116 @@ return jQuery;
  * @Author: zhouyou@weruan 
  * @Descriptions: 个人信息界面js依赖文件
  * @Date: 2017-12-18 16:19:45 
- * @Last Modified by: zhouyou@weruan
- * @Last Modified time: 2017-12-18 16:21:50
+ * @Last Modified by: zhouyou@werun
+ * @Last Modified time: 2018-02-03 21:53:05
  */
 
 //get the view
-var personalInfo = __webpack_require__(33);
+var personalInfo = __webpack_require__(38);
 
 //import css
-__webpack_require__(35);
+__webpack_require__(40);
 
 //import fontIcon
 __webpack_require__(1);
+__webpack_require__(2);
 
 // 路由调用
 SPA_RESOLVE_INIT = function SPA_RESOLVE_INIT(transition) {
-  $("#content").html(personalInfo);
+    $("#content").html(personalInfo);
+
+    //获取个人资料
+    getPersonalData();
+
+    //点击修改个人信息
+    $("#commit").click(function () {
+        var account = $.cookie("account"),
+            username = $("#user-name").val(),
+            headimg = "./img/user.jpg",
+            email = $("#user-mail").val(),
+            phonenumber = parseInt($("#user-phone").val()),
+            descriptions = $("#user-introduce").val(),
+            postData;
+
+        postData = {
+            account: account,
+            username: username,
+            headimg: headimg,
+            email: email,
+            phonenumber: phonenumber,
+            descriptions: descriptions
+        };
+
+        $.ajax({
+            url: "/share/user/updateUser",
+            type: "POST",
+            dataType: "json",
+            contentType: "application/json",
+            data: JSON.stringify(postData),
+            async: false,
+            success: function success(data) {
+                if (data.success) {
+                    alert("修改成功");
+                } else {
+                    alert("修改失败！");
+                }
+            }
+        });
+    });
+
+    /**
+     * @description 获取个人资料
+     */
+    function getPersonalData() {
+        var account = $.cookie("account"),
+            data = {
+            account: account
+        };
+
+        //获取用户信息
+        $.ajax({
+            url: "/share/user/getUserByAccount",
+            type: "POST",
+            dataType: "json",
+            contentType: "application/json",
+            data: JSON.stringify(data),
+            async: false,
+            success: function success(data) {
+                if (data.success) {
+                    $("#user-name").val(data.user.username || "");
+                    $("#user-mail").val(data.user.email || "");
+                    $("#user-phone").val(data.user.phonenumber || "");
+                    $("#user-introduce").val(data.user.descriptions || "");
+                } else {
+                    alert("获取个人资料失败！");
+                }
+            }
+        });
+    }
 };
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
 
-/***/ 33:
+/***/ 38:
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = "<section id=\"personal-info\">\r    <h3 class=\"title\">个人资料</h3>\r    <div class=\"container\">\r        <div class=\"row upload\">\r            <span class=\"operation\">\r                头像\r            </span>\r            <div class=\"content\">\r                <div class=\"photo\">\r                    <img src="+JSON.stringify(__webpack_require__(34))+" alt=\"上传头像\">\r                </div>\r                <div class=\"upload-photo\">\r                    <span>支持jpg，png格式大小5M以内的图片</span>\r                    <div class=\"file\">\r                        <input type=\"file\">上传图片\r                    </div>\r                </div>\r            </div>\r        </div>\r        <div class=\"row user-name\">\r            <span class=\"operation\">昵称</span>\r            <input type=\"text\" id=\"user-name\">\r        </div>\r        <div class=\"row user-mail\">\r            <span class=\"operation\">邮箱</span>\r            <input type=\"text\" id=\"user-mail\">\r        </div>\r        <div class=\"row user-phone\">\r            <span class=\"operation\">手机号</span>\r            <input type=\"text\" id=\"user-phone\">\r        </div>\r        <div class=\"row user-introduce\">\r            <span class=\"operation\">个人介绍</span>\r            <input type=\"text\" id=\"user-introduce\">\r        </div>\r        <button id=\"upload\">确认修改</button>\r    </div>\r</section>"
+module.exports = "<section id=\"personal-info\">\r    <h3 class=\"title\">个人资料</h3>\r    <div class=\"container\">\r        <div class=\"row upload\">\r            <span class=\"operation\">\r                头像\r            </span>\r            <div class=\"content\">\r                <div class=\"photo\">\r                    <img src="+JSON.stringify(__webpack_require__(39))+" alt=\"上传头像\">\r                </div>\r                <div class=\"upload-photo\">\r                    <span>支持jpg，png格式大小5M以内的图片</span>\r                    <div class=\"file\">\r                        <input type=\"file\">上传图片\r                    </div>\r                </div>\r            </div>\r        </div>\r        <div class=\"row user-name\">\r            <span class=\"operation\">昵称</span>\r            <input type=\"text\" id=\"user-name\">\r        </div>\r        <div class=\"row user-mail\">\r            <span class=\"operation\">邮箱</span>\r            <input type=\"text\" id=\"user-mail\">\r        </div>\r        <div class=\"row user-phone\">\r            <span class=\"operation\">手机号</span>\r            <input type=\"text\" id=\"user-phone\">\r        </div>\r        <div class=\"row user-introduce\">\r            <span class=\"operation\">个人介绍</span>\r            <input type=\"text\" id=\"user-introduce\">\r        </div>\r        <button id=\"commit\">确认修改</button>\r    </div>\r</section>"
 
 /***/ }),
 
-/***/ 34:
+/***/ 39:
 /***/ (function(module, exports) {
 
 module.exports = "data:image/png;base64,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"
 
 /***/ }),
 
-/***/ 35:
+/***/ 40:
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ })
 
-},[32]);
+},[37]);

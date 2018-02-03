@@ -1,4 +1,4 @@
-webpackJsonp([6],{
+webpackJsonp([8],{
 
 /***/ 0:
 /***/ (function(module, exports, __webpack_require__) {
@@ -10372,7 +10372,7 @@ return jQuery;
 
 /***/ }),
 
-/***/ 13:
+/***/ 16:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10382,16 +10382,16 @@ return jQuery;
  * @Author: zhouyou@weruan 
  * @Descriptions: 用户管理界面页面依赖文件
  * @Date: 2017-12-17 23:19:45 
- * @Last Modified by: zhouyou@weruan
- * @Last Modified time: 2017-12-18 21:23:25
+ * @Last Modified by: zhouyou@werun
+ * @Last Modified time: 2018-02-03 16:17:31
  */
 
 //import css
-__webpack_require__(14);
+__webpack_require__(17);
 
 //import js
-__webpack_require__(15);
-
+__webpack_require__(18);
+__webpack_require__(2);
 $(function () {
     /**创建路由
      *注意：js文件地址为打包后的文件地址
@@ -10432,30 +10432,193 @@ $(function () {
     /**页面初始化
      *
      */
+    //判断是否处于登录状态
+    if ($.cookie("account")) {
+        //显示用户昵称
+        $(".user-login").show();
+        $(".user-default").hide();
+        $(".user-name").text($.cookie("username"));
+        //显示用户头像
+        $(".user-img").attr("src", $.cookie("headimg"));
+    }
+
+    // //权限控制
+    // if ($.cookie("power") == "2") {
+    //     $("#photoCheck").hide();
+    // }
 
     //添加sider点击事件
     var sidebarList = $("#sidebar").find(".sidebar-item");
 
     sidebarList.each(function () {
         $(this).click(function () {
-            console.log(11);
             $("#sidebar").find(".active").removeClass("active");
             $(this).addClass("active");
         });
+    });
+
+    //点击显示登录界面
+    $(".login-button").click(function () {
+        $(".login-container").show();
+        $(".mask-layer").show();
+
+        //点击切换登录界面
+        $(".login").click(function () {
+            $(this).addClass("doing");
+            $(".regist").removeClass("doing");
+
+            $("#regist-content").hide();
+            $("#login-content").show();
+        });
+
+        //点击切换注册界面
+        $(".regist").click(function () {
+            $(this).addClass("doing");
+            $(".login").removeClass("doing");
+
+            $("#login-content").hide();
+            $("#regist-content").show();
+        });
+
+        //点击遮罩层返回
+        $(".mask-layer").click(function () {
+            $(".login-container").hide();
+            $(".mask-layer").hide();
+        });
+
+        //点击取消按钮返回
+        $(".return").click(function () {
+            $(".login-container").hide();
+            $(".mask-layer").hide();
+        });
+
+        //点击登录账号
+        $("#login").click(function () {
+            var account = $("#loginAccount").val(),
+                password = $("#loginPassword").val(),
+                data = {
+                account: account,
+                password: password
+            };
+
+            //判断输入账号密码是否为空
+            if (account === "" || password === "") {
+                alert("账户或密码不能为空！");
+                return;
+            }
+
+            $.ajax({
+                url: "/share/user/login",
+                type: "POST",
+                dataType: "json",
+                contentType: "application/json",
+                data: JSON.stringify(data),
+                success: function success(data) {
+                    if (data.success) {
+                        //将用户信息写入cookie中
+                        $.cookie("account", data.user.account, {
+                            expires: 7
+                        });
+                        $.cookie("username", data.user.username, {
+                            expires: 7
+                        });
+                        $.cookie("headimg", data.user.headimg, {
+                            expires: 7
+                        });
+                        $.cookie("power", data.user.power, {
+                            expires: 7
+                        });
+
+                        //显示用户昵称
+                        $(".user-login").show();
+                        $(".user-default").hide();
+                        $(".user-name").text(data.user.username);
+                        //显示用户头像
+                        $(".user-img").attr("src", data.user.headimg);
+                        //返回主页面
+                        $(".login-container").hide();
+                        $(".mask-layer").hide();
+                    } else {
+                        alert("登录失败！");
+                    }
+                }
+            });
+        });
+
+        //点击注册账号
+        $("#regist").click(function () {
+            var account = $("#registAccount").val(),
+                password = $("#registPassword").val(),
+                rePassword = $("#registRePassword").val(),
+                data = {
+                account: account,
+                password: password,
+                power: 2
+            };
+
+            //判断输入账号密码是否为空
+            if (account === "" || password === "") {
+                alert("账户或密码不能为空！");
+                return;
+            }
+
+            //判断两次密码输入是否一致
+            if (password !== rePassword) {
+                alert("两次输入密码不一致！");
+                return;
+            }
+
+            $.ajax({
+                url: "/share/user/regist",
+                type: "POST",
+                dataType: "json",
+                data: JSON.stringify(data),
+                contentType: "application/json",
+                success: function success(data) {
+                    if (data.success) {
+                        alert("恭喜你注册成功！");
+                        //返回主页面
+                        location.href = "./index.html";
+                    } else {
+                        alert(data.message);
+                    }
+                }
+            });
+        });
+    });
+
+    //点击退出登录
+    $("#logout").click(function () {
+        //清除cookies
+        $.cookie("username", "", {
+            expires: -1
+        });
+        $.cookie("headimg", "", {
+            expires: -1
+        });
+        $.cookie("power", "", {
+            expires: -1
+        });
+        $.cookie("account", "", {
+            expires: -1
+        });
+
+        //跳转回首页
+        location.href = "./index.html";
     });
 });
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
 
-/***/ 14:
+/***/ 17:
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
 
-/***/ 15:
+/***/ 18:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10474,139 +10637,192 @@ $(function () {
 		3：跳转  href = '#/name'
 */
 (function () {
-	var util = {
-		//获取路由的路径和详细参数
-		getParamsUrl: function getParamsUrl() {
-			var hashDeatail = location.hash.split("?"),
-			    hashName = hashDeatail[0].split("#")[1],
-			    //路由地址
-			params = hashDeatail[1] ? hashDeatail[1].split("&") : [],
-			    //参数内容
-			query = {};
-			for (var i = 0; i < params.length; i++) {
-				var item = params[i].split("=");
-				query[item[0]] = item[1];
-			}
-			return {
-				path: hashName,
-				query: query
-			};
-		}
-	};
+    var util = {
+        //获取路由的路径和详细参数
+        getParamsUrl: function getParamsUrl() {
+            var hashDeatail = location.hash.split("?"),
+                hashName = hashDeatail[0].split("#")[1],
+                //路由地址
+            params = hashDeatail[1] ? hashDeatail[1].split("&") : [],
+                //参数内容
+            query = {};
+            for (var i = 0; i < params.length; i++) {
+                var item = params[i].split("=");
+                query[item[0]] = item[1];
+            }
+            return {
+                path: hashName,
+                query: query
+            };
+        }
+    };
 
-	function spaRouters() {
-		this.routers = {}; //保存注册的所有路由
-		this.beforeFun = null; //切换前
-		this.afterFun = null;
-		this.indexHasBind = false; // 页面是否初始化
-	}
-	spaRouters.prototype = {
-		init: function init() {
-			var self = this;
-			//页面加载匹配路由
-			window.addEventListener('load', function () {
-				self.urlChange();
-			});
-			//路由切换
-			window.addEventListener('hashchange', function () {
-				self.urlChange();
-			});
-			//异步引入js通过回调传递参数
-			window.SPA_RESOLVE_INIT = null;
-		},
-		refresh: function refresh(currentHash) {
-			var self = this;
-			if (self.beforeFun) {
-				self.beforeFun({
-					to: {
-						path: currentHash.path,
-						query: currentHash.query
-					},
-					next: function next() {
-						self.routers[currentHash.path].callback.call(self, currentHash);
-					}
-				});
-			} else {
-				self.routers[currentHash.path].callback.call(self, currentHash);
-			}
-		},
-		//路由处理
-		urlChange: function urlChange() {
-			var currentHash = util.getParamsUrl();
-			if (this.routers[currentHash.path]) {
-				this.refresh(currentHash);
-			} else {
-				//不存在的地址重定向到首页
-				location.hash = '/index';
-			}
-		},
-		//单层路由注册
-		map: function map(path, callback) {
-			path = path.replace(/\s*/g, ""); //过滤空格
-			if (callback && Object.prototype.toString.call(callback) === '[object Function]') {
-				this.routers[path] = {
-					callback: callback, //回调
-					fn: null //存储异步文件状态
-				};
-			} else {
-				console.trace('注册' + path + '地址需要提供正确的的注册回调');
-			}
-		},
-		//切换之前一些处理
-		beforeEach: function beforeEach(callback) {
-			if (Object.prototype.toString.call(callback) === '[object Function]') {
-				this.beforeFun = callback;
-			} else {
-				console.trace('路由切换前钩子函数不正确');
-			}
-		},
-		//切换成功之后
-		afterEach: function afterEach(callback) {
-			if (Object.prototype.toString.call(callback) === '[object Function]') {
-				this.afterFun = callback;
-			} else {
-				console.trace('路由切换后回调函数不正确');
-			}
-		},
-		//路由异步懒加载js文件
-		asyncFun: function asyncFun(file, transition, cssfile) {
-			var self = this;
-			if (self.routers[transition.path].fn) {
-				self.afterFun && self.afterFun(transition);
-				self.routers[transition.path].fn(transition);
-			} else {
-				if (cssfile == "" || cssfile == undefined || cssfile == null) {
-					// 未传递css文件
-				} else {
-					var link = document.createElement("link");
-					link.rel = "stylesheet";
-					link.type = 'text/css';
-					link.href = cssfile;
-					document.getElementsByTagName("head")[0].appendChild(link);
-				}
-				var _body = document.getElementsByTagName('body')[0];
-				var scriptEle = document.createElement('script');
-				scriptEle.type = 'text/javascript';
-				scriptEle.src = file;
-				scriptEle.async = true;
-				SPA_RESOLVE_INIT = null;
-				scriptEle.onload = function () {
-					self.afterFun && self.afterFun(transition);
-					self.routers[transition.path].fn = SPA_RESOLVE_INIT;
-					self.routers[transition.path].fn(transition);
-				};
-				_body.appendChild(scriptEle);
-			}
-		},
-		//同步操作
-		syncFun: function syncFun(callback, transition) {
-			this.afterFun && this.afterFun(transition);
-			callback && callback(transition);
-		}
-		//注册到window全局
-	};window.spaRouters = new spaRouters();
+    function spaRouters() {
+        this.routers = {}; //保存注册的所有路由
+        this.beforeFun = null; //切换前
+        this.afterFun = null;
+        this.indexHasBind = false; // 页面是否初始化
+    }
+    spaRouters.prototype = {
+        init: function init() {
+            var self = this;
+            //页面加载匹配路由
+            window.addEventListener("load", function () {
+                self.urlChange();
+            });
+            //路由切换
+            window.addEventListener("hashchange", function () {
+                self.urlChange();
+            });
+            //异步引入js通过回调传递参数
+            window.SPA_RESOLVE_INIT = null;
+        },
+        refresh: function refresh(currentHash) {
+            var self = this;
+            if (self.beforeFun) {
+                self.beforeFun({
+                    to: {
+                        path: currentHash.path,
+                        query: currentHash.query
+                    },
+                    next: function next() {
+                        self.routers[currentHash.path].callback.call(self, currentHash);
+                    }
+                });
+            } else {
+                self.routers[currentHash.path].callback.call(self, currentHash);
+            }
+        },
+        //路由处理
+        urlChange: function urlChange() {
+            var currentHash = util.getParamsUrl();
+            if (this.routers[currentHash.path]) {
+                this.refresh(currentHash);
+            } else {
+                //不存在的地址重定向到首页
+                location.hash = "#/photoLook";
+            }
+        },
+        //单层路由注册
+        map: function map(path, callback) {
+            path = path.replace(/\s*/g, ""); //过滤空格
+            if (callback && Object.prototype.toString.call(callback) === "[object Function]") {
+                this.routers[path] = {
+                    callback: callback, //回调
+                    fn: null //存储异步文件状态
+                };
+            } else {
+                console.trace("注册" + path + "地址需要提供正确的的注册回调");
+            }
+        },
+        //切换之前一些处理
+        beforeEach: function beforeEach(callback) {
+            if (Object.prototype.toString.call(callback) === "[object Function]") {
+                this.beforeFun = callback;
+            } else {
+                console.trace("路由切换前钩子函数不正确");
+            }
+        },
+        //切换成功之后
+        afterEach: function afterEach(callback) {
+            if (Object.prototype.toString.call(callback) === "[object Function]") {
+                this.afterFun = callback;
+            } else {
+                console.trace("路由切换后回调函数不正确");
+            }
+        },
+        //路由异步懒加载js文件
+        asyncFun: function asyncFun(file, transition, cssfile) {
+            var self = this;
+            if (self.routers[transition.path].fn) {
+                self.afterFun && self.afterFun(transition);
+                self.routers[transition.path].fn(transition);
+            } else {
+                if (cssfile == "" || cssfile == undefined || cssfile == null) {
+                    // 未传递css文件
+                } else {
+                    var link = document.createElement("link");
+                    link.rel = "stylesheet";
+                    link.type = "text/css";
+                    link.href = cssfile;
+                    document.getElementsByTagName("head")[0].appendChild(link);
+                }
+                var _body = document.getElementsByTagName("body")[0];
+                var scriptEle = document.createElement("script");
+                scriptEle.type = "text/javascript";
+                scriptEle.src = file;
+                scriptEle.async = true;
+                SPA_RESOLVE_INIT = null;
+                scriptEle.onload = function () {
+                    self.afterFun && self.afterFun(transition);
+                    self.routers[transition.path].fn = SPA_RESOLVE_INIT;
+                    self.routers[transition.path].fn(transition);
+                };
+                _body.appendChild(scriptEle);
+            }
+        },
+        //同步操作
+        syncFun: function syncFun(callback, transition) {
+            this.afterFun && this.afterFun(transition);
+            callback && callback(transition);
+        }
+    };
+    //注册到window全局
+    window.spaRouters = new spaRouters();
 })();
+
+/***/ }),
+
+/***/ 2:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;
+
+(function (e) {
+  if (true) {
+    !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(0)], __WEBPACK_AMD_DEFINE_FACTORY__ = (e),
+				__WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ?
+				(__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__),
+				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+  } else {
+    e(jQuery);
+  }
+})(function (e) {
+  function n(e) {
+    return u.raw ? e : encodeURIComponent(e);
+  }function r(e) {
+    return u.raw ? e : decodeURIComponent(e);
+  }function i(e) {
+    return n(u.json ? JSON.stringify(e) : String(e));
+  }function s(e) {
+    if (e.indexOf('"') === 0) {
+      e = e.slice(1, -1).replace(/\\"/g, '"').replace(/\\\\/g, "\\");
+    }try {
+      e = decodeURIComponent(e.replace(t, " "));return u.json ? JSON.parse(e) : e;
+    } catch (n) {}
+  }function o(t, n) {
+    var r = u.raw ? t : s(t);return e.isFunction(n) ? n(r) : r;
+  }var t = /\+/g;var u = e.cookie = function (t, s, a) {
+    if (s !== undefined && !e.isFunction(s)) {
+      a = e.extend({}, u.defaults, a);if (typeof a.expires === "number") {
+        var f = a.expires,
+            l = a.expires = new Date();l.setDate(l.getDate() + f);
+      }return document.cookie = [n(t), "=", i(s), a.expires ? "; expires=" + a.expires.toUTCString() : "", a.path ? "; path=" + a.path : "", a.domain ? "; domain=" + a.domain : "", a.secure ? "; secure" : ""].join("");
+    }var c = t ? undefined : {};var h = document.cookie ? document.cookie.split("; ") : [];for (var p = 0, d = h.length; p < d; p++) {
+      var v = h[p].split("=");var m = r(v.shift());var g = v.join("=");if (t && t === m) {
+        c = o(g, s);break;
+      }if (!t && (g = o(g)) !== undefined) {
+        c[m] = g;
+      }
+    }return c;
+  };u.defaults = {};e.removeCookie = function (t, n) {
+    if (e.cookie(t) === undefined) {
+      return false;
+    }e.cookie(t, "", e.extend({}, n, { expires: -1 }));return !e.cookie(t);
+  };
+});
 
 /***/ })
 
-},[13]);
+},[16]);

@@ -1,4 +1,4 @@
-webpackJsonp([1],[
+webpackJsonp([0],[
 /* 0 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -10431,7 +10431,57 @@ return jQuery;
 })(window);
 
 /***/ }),
-/* 2 */,
+/* 2 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;
+
+(function (e) {
+  if (true) {
+    !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(0)], __WEBPACK_AMD_DEFINE_FACTORY__ = (e),
+				__WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ?
+				(__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__),
+				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+  } else {
+    e(jQuery);
+  }
+})(function (e) {
+  function n(e) {
+    return u.raw ? e : encodeURIComponent(e);
+  }function r(e) {
+    return u.raw ? e : decodeURIComponent(e);
+  }function i(e) {
+    return n(u.json ? JSON.stringify(e) : String(e));
+  }function s(e) {
+    if (e.indexOf('"') === 0) {
+      e = e.slice(1, -1).replace(/\\"/g, '"').replace(/\\\\/g, "\\");
+    }try {
+      e = decodeURIComponent(e.replace(t, " "));return u.json ? JSON.parse(e) : e;
+    } catch (n) {}
+  }function o(t, n) {
+    var r = u.raw ? t : s(t);return e.isFunction(n) ? n(r) : r;
+  }var t = /\+/g;var u = e.cookie = function (t, s, a) {
+    if (s !== undefined && !e.isFunction(s)) {
+      a = e.extend({}, u.defaults, a);if (typeof a.expires === "number") {
+        var f = a.expires,
+            l = a.expires = new Date();l.setDate(l.getDate() + f);
+      }return document.cookie = [n(t), "=", i(s), a.expires ? "; expires=" + a.expires.toUTCString() : "", a.path ? "; path=" + a.path : "", a.domain ? "; domain=" + a.domain : "", a.secure ? "; secure" : ""].join("");
+    }var c = t ? undefined : {};var h = document.cookie ? document.cookie.split("; ") : [];for (var p = 0, d = h.length; p < d; p++) {
+      var v = h[p].split("=");var m = r(v.shift());var g = v.join("=");if (t && t === m) {
+        c = o(g, s);break;
+      }if (!t && (g = o(g)) !== undefined) {
+        c[m] = g;
+      }
+    }return c;
+  };u.defaults = {};e.removeCookie = function (t, n) {
+    if (e.cookie(t) === undefined) {
+      return false;
+    }e.cookie(t, "", e.extend({}, n, { expires: -1 }));return !e.cookie(t);
+  };
+});
+
+/***/ }),
 /* 3 */,
 /* 4 */,
 /* 5 */,
@@ -10451,7 +10501,11 @@ return jQuery;
 /* 19 */,
 /* 20 */,
 /* 21 */,
-/* 22 */
+/* 22 */,
+/* 23 */,
+/* 24 */,
+/* 25 */,
+/* 26 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10461,54 +10515,166 @@ return jQuery;
  * @Author: zhouyou@weruan 
  * @Descriptions: 图片查看界面js依赖文件
  * @Date: 2017-12-18 11:00:51 
- * @Last Modified by: zhouyou@weruan
- * @Last Modified time: 2017-12-18 11:08:23
+ * @Last Modified by: zhouyou@werun
+ * @Last Modified time: 2018-02-03 20:25:37
  */
 
 //get the view
-var photoLook = __webpack_require__(23);
+var photoLook = __webpack_require__(27);
 
 //import css
-__webpack_require__(27);
+__webpack_require__(31);
 
 //import js
 __webpack_require__(1);
+__webpack_require__(2);
 
 // 路由调用
 SPA_RESOLVE_INIT = function SPA_RESOLVE_INIT(transition) {
-  $("#content").html(photoLook);
+    $("#content").html(photoLook);
+
+    //加载图片列表
+    getPhotoList();
+
+    /**
+     * @description 加载图片列表
+     */
+    function getPhotoList() {
+        var account = $.cookie("account");
+
+        $.ajax({
+            url: "/share/photo/getPhotoByAccount",
+            type: "POST",
+            data: {
+                account: account
+            },
+            dataType: "json",
+            success: function success(data) {
+                if (data.success) {
+                    //向页面插入图片
+                    appendPhotoList(data.photoList);
+                }
+            }
+        });
+    }
+
+    /**
+     * @description 向页面插入图片
+     * @param {Arrey} photoList
+     */
+    function appendPhotoList(photoList) {
+        var photoBoxString,
+            $photoContainer = $(".photo-look-container"),
+            $photoBox;
+
+        photoList.forEach(function (photo) {
+            photoBoxString = __webpack_require__(32);
+            photoBoxString = photoBoxString.replace("$className", getPhotoClass(photo.photoclass)).replace(/photoName/g, photo.photoname).replace("$photoURL", photo.photourl).replace("$photoDescription", photo.descriptions).replace("$photoID", photo.id);
+
+            switch (photo.status) {
+                case "1":
+                    photoBoxString = photoBoxString.replace("$statusID", "checking").replace("$icon", "help").replace("$status", "审核中");
+                    break;
+                case "2":
+                    photoBoxString = photoBoxString.replace("$statusID", "pass").replace("$icon", "success").replace("$status", "审核通过");
+                    break;
+                case "3":
+                    photoBoxString = photoBoxString.replace("$statusID", "nopass").replace("$icon", "false").replace("$status", "审核未通过");
+                    break;
+                default:
+                    break;
+            }
+            $photoBox = $(photoBoxString);
+
+            $photoBox.find(".delete").click(function () {
+                var self = this;
+                var photoID = $(this).attr("data-ID");
+
+                $.ajax({
+                    url: "/share/photo/deletePhotoByID",
+                    type: "POST",
+                    data: {
+                        id: photoID
+                    },
+                    dataType: "json",
+                    success: function success(data) {
+                        if (data.success) {
+                            $(self).parent().parent().remove();
+                        } else {
+                            alert("删除图片失败！");
+                        }
+                    }
+                });
+            });
+
+            $photoContainer.append($photoBox);
+        });
+    }
+
+    /**
+     * @description 通过ID获取图片分类
+     * @param {String} photoClass
+     */
+    function getPhotoClass(photoClass) {
+        var className;
+
+        $.ajax({
+            url: "/share/photoClass/getPhotoClass",
+            type: "POST",
+            data: {
+                id: photoClass
+            },
+            dataType: "json",
+            async: false,
+            success: function success(data) {
+                if (data.success) {
+                    className = data.photoClass.classname;
+                } else {
+                    alert("获取图片分类失败！");
+                }
+            }
+        });
+
+        return className;
+    }
 };
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 23 */
+/* 27 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = "<section id=\"photo-look-content\">\r    <h3 class=\"title\">图片查看</h3>\r    <div class=\"container\">\r        <div class=\"photo-info\">\r            <div class=\"photo-class\">\r                <span>商务建筑</span>\r            </div>\r            <div class=\"photo-name\">\r                <span>夕阳下的陌路</span>\r            </div>\r            <div class=\"photo-description\">\r                <div class=\"photo\">\r                    <img src="+JSON.stringify(__webpack_require__(24))+" alt=\"图片 夕阳下的陌路\">\r                </div>\r                <div class=\"photo-description-content\">\r                    <p>你有没有想过有一天，放下一切，到一个深山老林里居住，感受大自然的美好，把一切都寄托于山水田园间，远离城市的喧嚣，在山野里放歌..............</p>\r                </div>\r            </div>\r            <div class=\"check\">\r                <div class=\"check-status pass\">\r                    <svg class=\"icon\" aria-hidden=\"true\">\r                        <use xlink:href=\"#icon-success\"></use>\r                    </svg>\r                    <span>审核通过</span>\r                </div>\r                <div class=\"delete\">\r                    <svg class=\"icon\" aria-hidden=\"true\">\r                        <use xlink:href=\"#icon-delete\"></use>\r                    </svg>\r                </div>\r            </div>\r        </div>\r        <div class=\"photo-info\">\r            <div class=\"photo-class\">\r                <span>商务建筑</span>\r            </div>\r            <div class=\"photo-name\">\r                <span>夕阳下的陌路</span>\r            </div>\r            <div class=\"photo-description\">\r                <div class=\"photo\">\r                    <img src="+JSON.stringify(__webpack_require__(25))+" alt=\"图片 夕阳下的陌路\">\r                </div>\r                <div class=\"photo-description-content\">\r                    <p>你有没有想过有一天，放下一切，到一个深山老林里居住，感受大自然的美好，把一切都寄托于山水田园间，远离城市的喧嚣，在山野里放歌..............</p>\r                </div>\r            </div>\r            <div class=\"check\">\r                <div class=\"check-status nopass\">\r                    <svg class=\"icon\" aria-hidden=\"true\">\r                        <use xlink:href=\"#icon-wrong\"></use>\r                    </svg>\r                    <span>审核未通过</span>\r                </div>\r                <div class=\"delete\">\r                    <svg class=\"icon\" aria-hidden=\"true\">\r                        <use xlink:href=\"#icon-delete\"></use>\r                    </svg>\r                </div>\r            </div>\r        </div>\r        <div class=\"photo-info\">\r            <div class=\"photo-class\">\r                <span>商务建筑</span>\r            </div>\r            <div class=\"photo-name\">\r                <span>夕阳下的陌路</span>\r            </div>\r            <div class=\"photo-description\">\r                <div class=\"photo\">\r                    <img src="+JSON.stringify(__webpack_require__(26))+" alt=\"图片 夕阳下的陌路\">\r                </div>\r                <div class=\"photo-description-content\">\r                    <p>你有没有想过有一天，放下一切，到一个深山老林里居住，感受大自然的美好，把一切都寄托于山水田园间，远离城市的喧嚣，在山野里放歌..............</p>\r                </div>\r            </div>\r            <div class=\"check\">\r                <div class=\"check-status checking\">\r                    <svg class=\"icon\" aria-hidden=\"true\">\r                        <use xlink:href=\"#icon-help\"></use>\r                    </svg>\r                    <span>待审核</span>\r                </div>\r                <div class=\"delete\">\r                    <svg class=\"icon\" aria-hidden=\"true\">\r                        <use xlink:href=\"#icon-delete\"></use>\r                    </svg>\r                </div>\r            </div>\r        </div>\r    </div>\r</section>"
+module.exports = "<section id=\"photo-look-content\">\r    <h3 class=\"title\">图片查看</h3>\r    <div class=\"photo-look-container\">\r        <!-- <div class=\"photo-info\">\r            <div class=\"photo-class\">\r                <span>商务建筑</span>\r            </div>\r            <div class=\"photo-name\">\r                <span>夕阳下的陌路</span>\r            </div>\r            <div class=\"photo-description\">\r                <div class=\"photo\">\r                    <img src="+JSON.stringify(__webpack_require__(28))+" alt=\"图片 夕阳下的陌路\">\r                </div>\r                <div class=\"photo-description-content\">\r                    <p>你有没有想过有一天，放下一切，到一个深山老林里居住，感受大自然的美好，把一切都寄托于山水田园间，远离城市的喧嚣，在山野里放歌..............</p>\r                </div>\r            </div>\r            <div class=\"check\">\r                <div class=\"check-status pass\">\r                    <svg class=\"icon\" aria-hidden=\"true\">\r                        <use xlink:href=\"#icon-success\"></use>\r                    </svg>\r                    <span>审核通过</span>\r                </div>\r                <div class=\"delete\">\r                    <svg class=\"icon\" aria-hidden=\"true\">\r                        <use xlink:href=\"#icon-delete\"></use>\r                    </svg>\r                </div>\r            </div>\r        </div>\r        <div class=\"photo-info\">\r            <div class=\"photo-class\">\r                <span>商务建筑</span>\r            </div>\r            <div class=\"photo-name\">\r                <span>夕阳下的陌路</span>\r            </div>\r            <div class=\"photo-description\">\r                <div class=\"photo\">\r                    <img src="+JSON.stringify(__webpack_require__(29))+" alt=\"图片 夕阳下的陌路\">\r                </div>\r                <div class=\"photo-description-content\">\r                    <p>你有没有想过有一天，放下一切，到一个深山老林里居住，感受大自然的美好，把一切都寄托于山水田园间，远离城市的喧嚣，在山野里放歌..............</p>\r                </div>\r            </div>\r            <div class=\"check\">\r                <div class=\"check-status nopass\">\r                    <svg class=\"icon\" aria-hidden=\"true\">\r                        <use xlink:href=\"#icon-wrong\"></use>\r                    </svg>\r                    <span>审核未通过</span>\r                </div>\r                <div class=\"delete\">\r                    <svg class=\"icon\" aria-hidden=\"true\">\r                        <use xlink:href=\"#icon-delete\"></use>\r                    </svg>\r                </div>\r            </div>\r        </div>\r        <div class=\"photo-info\">\r            <div class=\"photo-class\">\r                <span>商务建筑</span>\r            </div>\r            <div class=\"photo-name\">\r                <span>夕阳下的陌路</span>\r            </div>\r            <div class=\"photo-description\">\r                <div class=\"photo\">\r                    <img src="+JSON.stringify(__webpack_require__(30))+" alt=\"图片 夕阳下的陌路\">\r                </div>\r                <div class=\"photo-description-content\">\r                    <p>你有没有想过有一天，放下一切，到一个深山老林里居住，感受大自然的美好，把一切都寄托于山水田园间，远离城市的喧嚣，在山野里放歌..............</p>\r                </div>\r            </div>\r            <div class=\"check\">\r                <div class=\"check-status checking\">\r                    <svg class=\"icon\" aria-hidden=\"true\">\r                        <use xlink:href=\"#icon-help\"></use>\r                    </svg>\r                    <span>待审核</span>\r                </div>\r                <div class=\"delete\">\r                    <svg class=\"icon\" aria-hidden=\"true\">\r                        <use xlink:href=\"#icon-delete\"></use>\r                    </svg>\r                </div>\r            </div>\r        </div> -->\r    </div>\r</section>"
 
 /***/ }),
-/* 24 */
+/* 28 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__.p + "img/photo1.jpg";
 
 /***/ }),
-/* 25 */
+/* 29 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__.p + "img/photo2.jpg";
 
 /***/ }),
-/* 26 */
+/* 30 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__.p + "img/photo3.jpg";
 
 /***/ }),
-/* 27 */
+/* 31 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
+/***/ }),
+/* 32 */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"photo-info\">\r    <div class=\"photo-class\">\r        <span>$className</span>\r    </div>\r    <div class=\"photo-name\">\r        <span>photoName</span>\r    </div>\r    <div class=\"photo-description\">\r        <div class=\"photo\">\r            <img src=\"$photoURL\" alt=\"图片 photoName\" title=\"图片 photoName\">\r        </div>\r        <div class=\"photo-description-content\">\r            <p>$photoDescription</p>\r        </div>\r    </div>\r    <div class=\"check\">\r        <div class=\"check-status $statusID\">\r            <svg class=\"icon\" aria-hidden=\"true\">\r                <use xlink:href=\"#icon-$icon\"></use>\r            </svg>\r            <span>$status</span>\r        </div>\r        <!-- <div class=\"check-status nopass\">\r            <svg class=\"icon\" aria-hidden=\"true\">\r                <use xlink:href=\"#icon-wrong\"></use>\r            </svg>\r            <span>审核未通过</span>\r        </div>\r        <div class=\"check-status checking\">\r            <svg class=\"icon\" aria-hidden=\"true\">\r                <use xlink:href=\"#icon-help\"></use>\r            </svg>\r            <span>待审核</span>\r        </div> -->\r        <div class=\"delete\" data-ID=\"$photoID\">\r            <svg class=\"icon\" aria-hidden=\"true\">\r                <use xlink:href=\"#icon-delete\"></use>\r            </svg>\r        </div>\r    </div>\r</div>"
+
 /***/ })
-],[22]);
+],[26]);
