@@ -80,4 +80,32 @@ public class UserController {
         return map;
     }
 
+    //更新用户个人资料接口
+    @RequestMapping(value="/updateUser",method = RequestMethod.POST)
+    public @ResponseBody Map<String, Object> updateUser(@RequestBody User user){
+        int result;
+        HashMap<String, Object> map = new HashMap<String, Object>();
+        result = userService.updataUser(user);
+        if(result==1){
+            map.put("success", true);
+        }else{
+            map.put("success", false);
+        }
+        return map;
+    }
+
+    //修改密码接口
+    @RequestMapping(value="/changePassword",method = RequestMethod.POST)
+    public @ResponseBody Map<String, Object> changePassword(@RequestBody User user){
+        int result;
+        HashMap<String, Object> map = new HashMap<String, Object>();
+        result = userService.changePassword(user);
+        if(result==1){
+            map.put("success", true);
+        }else{
+            map.put("success", false);
+        }
+        return map;
+    }
+
 }

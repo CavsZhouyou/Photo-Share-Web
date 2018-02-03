@@ -24,4 +24,8 @@ public interface UserMapper {
     User getSimpleUserByAccount(User record);
 
     User getUserByAccount(User record);
+
+    int updateUser(User user);
+
+    int changePassword(User user);
 }

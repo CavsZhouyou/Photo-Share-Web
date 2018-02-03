@@ -8,26 +8,36 @@ import org.springframework.stereotype.Service;
 @Service("userService")
 public class UserService {
 
-      @Autowired
-      private UserMapper userDao;
+    @Autowired
+    private UserMapper userDao;
 
-      public User login(User user){
-          User result = null;
-          result = userDao.hasAccount(user);
-          return result;
-      }
+    public User login(User user){
+        User result = null;
+        result = userDao.hasAccount(user);
+        return result;
+    }
 
-      public void regist(User user){
-          userDao.insertSelective(user);
-      }
+    public void regist(User user){
+        userDao.insertSelective(user);
+    }
 
-      public  User getSimpleUserByAccount(User user){
-          User result = userDao.getSimpleUserByAccount(user);
-          return  result;
-      }
+    public  User getSimpleUserByAccount(User user){
+        User result = userDao.getSimpleUserByAccount(user);
+        return  result;
+    }
 
     public  User getUserByAccount(User user){
         User result = userDao.getUserByAccount(user);
         return  result;
+    }
+
+    public int updataUser(User user){
+        int result = userDao.updateUser(user);
+        return result;
+    }
+
+    public int changePassword(User user){
+        int result = userDao.changePassword(user);
+        return result;
     }
 }
