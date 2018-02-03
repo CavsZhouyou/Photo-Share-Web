@@ -7,12 +7,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4328949a-5f1e-4050-b749-3b3dd1138886" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/photoshareweb/controller/PhotoController.java" afterPath="$PROJECT_DIR$/src/main/java/com/photoshareweb/controller/PhotoController.java" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/photoshareweb/service/PhotoService.java" afterPath="$PROJECT_DIR$/src/main/java/com/photoshareweb/service/PhotoService.java" />
-      <change beforePath="$PROJECT_DIR$/../webapp/src/userManage/photoCheck/photo.html" afterPath="$PROJECT_DIR$/../webapp/src/userManage/photoCheck/photo.html" />
-      <change beforePath="$PROJECT_DIR$/../webapp/src/userManage/photoCheck/photoCheck.html" afterPath="$PROJECT_DIR$/../webapp/src/userManage/photoCheck/photoCheck.html" />
-      <change beforePath="$PROJECT_DIR$/../webapp/src/userManage/photoCheck/photoCheck.js" afterPath="$PROJECT_DIR$/../webapp/src/userManage/photoCheck/photoCheck.js" />
-      <change beforePath="$PROJECT_DIR$/../webapp/src/userManage/photoCheck/photoCheck.scss" afterPath="$PROJECT_DIR$/../webapp/src/userManage/photoCheck/photoCheck.scss" />
-      <change beforePath="$PROJECT_DIR$/../webapp/src/userManage/photoLook/photoLook.scss" afterPath="$PROJECT_DIR$/../webapp/src/userManage/photoLook/photoLook.scss" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -60,11 +56,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="PhotoController.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="PhotoController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/photoshareweb/controller/PhotoController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1112">
-              <caret line="94" column="0" lean-forward="true" selection-start-line="94" selection-start-column="0" selection-end-line="94" selection-end-column="0" />
+            <state relative-caret-position="202">
+              <caret line="108" column="0" lean-forward="true" selection-start-line="108" selection-start-column="0" selection-end-line="108" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#1716#1723#0" expanded="true" />
@@ -89,11 +85,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PhotoService.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="PhotoService.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/photoshareweb/service/PhotoService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="359">
-              <caret line="50" column="4" lean-forward="false" selection-start-line="50" selection-start-column="4" selection-end-line="50" selection-end-column="4" />
+            <state relative-caret-position="440">
+              <caret line="53" column="22" lean-forward="true" selection-start-line="53" selection-start-column="22" selection-end-line="53" selection-end-column="22" />
               <folding>
                 <element signature="e#698#705#0" expanded="true" />
                 <element signature="e#903#910#0" expanded="true" />
@@ -192,8 +188,8 @@
         <option value="$PROJECT_DIR$/src/main/java/com/photoshareweb/mapping/PhotoMapper.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/photoshareweb/dao/PhotoMapper.java" />
         <option value="$PROJECT_DIR$/src/test/java/PhotoTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/photoshareweb/controller/PhotoController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/photoshareweb/service/PhotoService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/photoshareweb/controller/PhotoController.java" />
       </list>
     </option>
   </component>
@@ -719,7 +715,7 @@
       <workItem from="1517478004922" duration="7270000" />
       <workItem from="1517543312536" duration="2438000" />
       <workItem from="1517640906974" duration="39000" />
-      <workItem from="1517641262548" duration="6827000" />
+      <workItem from="1517641262548" duration="7043000" />
     </task>
     <servers />
   </component>
@@ -756,7 +752,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="39539000" />
+    <option name="totallyTimeSpent" value="39755000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1235,21 +1231,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/photoshareweb/controller/PhotoController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1112">
-          <caret line="94" column="0" lean-forward="true" selection-start-line="94" selection-start-column="0" selection-end-line="94" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1716#1723#0" expanded="true" />
-            <element signature="e#1776#1792#0" expanded="true" />
-            <element signature="e#2917#2924#0" expanded="true" />
-            <element signature="e#2977#2993#0" expanded="true" />
-            <element signature="e#3630#3646#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/photoshareweb/service/UserService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="496">
@@ -1268,13 +1249,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/photoshareweb/service/PhotoService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="359">
-          <caret line="50" column="4" lean-forward="false" selection-start-line="50" selection-start-column="4" selection-end-line="50" selection-end-column="4" />
+        <state relative-caret-position="440">
+          <caret line="53" column="22" lean-forward="true" selection-start-line="53" selection-start-column="22" selection-end-line="53" selection-end-column="22" />
           <folding>
             <element signature="e#698#705#0" expanded="true" />
             <element signature="e#903#910#0" expanded="true" />
             <element signature="e#1169#1170#0" expanded="true" />
             <element signature="e#1216#1217#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/photoshareweb/controller/PhotoController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="202">
+          <caret line="108" column="0" lean-forward="true" selection-start-line="108" selection-start-column="0" selection-end-line="108" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1716#1723#0" expanded="true" />
+            <element signature="e#1776#1792#0" expanded="true" />
+            <element signature="e#2917#2924#0" expanded="true" />
+            <element signature="e#2977#2993#0" expanded="true" />
+            <element signature="e#3630#3646#0" expanded="true" />
           </folding>
         </state>
       </provider>

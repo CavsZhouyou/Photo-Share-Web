@@ -106,4 +106,18 @@ public class PhotoController {
         }
         return map;
     }
+
+    //上传图片接口
+    @RequestMapping(value = "/addPhoto",method = RequestMethod.POST)
+    public @ResponseBody Map<String, Object> addPhoto(@RequestBody Photo photo){
+        int result;
+        HashMap<String, Object> map = new HashMap<String, Object>();
+        result = photoService.addPhoto(photo);
+        if(result==1){
+            map.put("success", true);
+        }else{
+            map.put("success", false);
+        }
+        return map;
+    }
 }

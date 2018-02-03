@@ -48,5 +48,9 @@ public class PhotoService {
        int result =  photoDao.updateStatusByID(photo);
        return  result;
     }
-    
+
+    public int addPhoto(Photo photo){
+        int result = photoDao.insertSelective(photo);
+        return result;
+    }
 }
