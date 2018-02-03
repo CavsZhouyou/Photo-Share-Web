@@ -50,7 +50,7 @@ public class PhotoService {
     }
 
     public int addPhoto(Photo photo){
-        int result = photoDao.insertSelective(photo);
+        int result = photoDao.insert(photo);
         return result;
     }
 }
