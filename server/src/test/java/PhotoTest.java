@@ -32,4 +32,13 @@ public class PhotoTest {
         Photo result = photoDao.selectByPrimaryKey(1);
         System.out.println(result.getPhotourl());
     }
+
+    @Test
+    public void testUplataStatus(){
+        Photo photo = new Photo();
+        photo.setId(1);
+        photo.setStatus("2");
+       int result =  photoDao.updateStatusByID(photo);
+       System.out.println(result);
+    }
 }

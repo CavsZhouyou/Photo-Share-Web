@@ -43,4 +43,9 @@ public class PhotoService {
     public void deletePhotoByID(int id){
         photoDao.deleteByPrimaryKey(id);
     }
+
+    public int updataStatus(Photo photo){
+       int result =  photoDao.updateStatusByID(photo);
+       return  result;
+    }
 }

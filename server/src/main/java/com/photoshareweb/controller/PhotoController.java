@@ -4,6 +4,7 @@ import com.photoshareweb.entitys.Photo;
 import com.photoshareweb.service.PhotoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -89,6 +90,20 @@ public class PhotoController {
        photoService.deletePhotoByID(Integer.parseInt(request.getParameter("id")));
         HashMap<String, Object> map = new HashMap<String, Object>();
         map.put("success", true);
+        return map;
+    }
+
+    //更新图片审核状态接口
+    @RequestMapping(value = "/updateStatus",method = RequestMethod.POST)
+    public @ResponseBody Map<String, Object> updateStatus(@RequestBody Photo photo){
+        int result;
+        HashMap<String, Object> map = new HashMap<String, Object>();
+        result = photoService.updataStatus(photo);
+        if(result==1){
+            map.put("success", true);
+        }else{
+            map.put("success", false);
+        }
         return map;
     }
 }

@@ -59,4 +59,6 @@ public interface PhotoMapper {
     List<Photo> selectByAccount(String account);
 
     List<Photo> selectByStatus(String status);
+
+    int updateStatusByID(Photo record);
 }
