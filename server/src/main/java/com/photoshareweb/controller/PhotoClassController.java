@@ -15,7 +15,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 @Controller
-@RequestMapping(value = "/share/photoClass")
+@RequestMapping(value = "/PhotoShareWeb/share/photoClass")
 public class PhotoClassController {
 
     @Autowired

@@ -13,7 +13,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 @Controller
-@RequestMapping(value = "/share/user")
+@RequestMapping(value = "/PhotoShareWeb/share/user")
 public class UserController {
 
     @Autowired

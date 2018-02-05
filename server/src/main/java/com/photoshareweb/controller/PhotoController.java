@@ -17,7 +17,7 @@ import java.util.List;
 import java.util.Map;
 
 @Controller
-@RequestMapping(value = "/share/photo")
+@RequestMapping(value = "/PhotoShareWeb/share/photo")
 
 public class PhotoController {
 
