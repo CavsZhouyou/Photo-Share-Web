@@ -31,7 +31,7 @@ SPA_RESOLVE_INIT = function(transition) {
         };
 
         $.ajax({
-            url: "/share/user/changePassword",
+            url: "/PhotoShareWeb/user/changePassword",
             type: "POST",
             dataType: "json",
             contentType: "application/json",

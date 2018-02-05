@@ -10599,7 +10599,7 @@ $(function () {
             }
 
             $.ajax({
-                url: "/share/user/login",
+                url: "/PhotoShareWeb/user/login",
                 type: "POST",
                 dataType: "json",
                 contentType: "application/json",
@@ -10660,7 +10660,7 @@ $(function () {
             }
 
             $.ajax({
-                url: "/share/user/regist",
+                url: "/PhotoShareWeb/user/regist",
                 type: "POST",
                 dataType: "json",
                 data: JSON.stringify(data),
@@ -10705,7 +10705,7 @@ $(function () {
         var photoClass = getParamsUrl("type");
 
         $.ajax({
-            url: "/share/photo/getPhotoByClass",
+            url: "/PhotoShareWeb/photo/getPhotoByClass",
             type: "POST",
             data: {
                 photoClass: photoClass

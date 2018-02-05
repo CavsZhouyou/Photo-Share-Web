@@ -30,7 +30,7 @@ SPA_RESOLVE_INIT = function(transition) {
         var account = $.cookie("account");
 
         $.ajax({
-            url: "/share/photo/getPhotoByAccount",
+            url: "/PhotoShareWeb/photo/getPhotoByAccount",
             type: "POST",
             data: {
                 account: account
@@ -92,7 +92,7 @@ SPA_RESOLVE_INIT = function(transition) {
                 var photoID = $(this).attr("data-ID");
 
                 $.ajax({
-                    url: "/share/photo/deletePhotoByID",
+                    url: "/PhotoShareWeb/photo/deletePhotoByID",
                     type: "POST",
                     data: {
                         id: photoID
@@ -123,7 +123,7 @@ SPA_RESOLVE_INIT = function(transition) {
         var className;
 
         $.ajax({
-            url: "/share/photoClass/getPhotoClass",
+            url: "/PhotoShareWeb/photoClass/getPhotoClass",
             type: "POST",
             data: {
                 id: photoClass

@@ -10537,7 +10537,7 @@ SPA_RESOLVE_INIT = function SPA_RESOLVE_INIT(transition) {
         };
 
         $.ajax({
-            url: "/share/user/updateUser",
+            url: "/PhotoShareWeb/user/updateUser",
             type: "POST",
             dataType: "json",
             contentType: "application/json",
@@ -10564,7 +10564,7 @@ SPA_RESOLVE_INIT = function SPA_RESOLVE_INIT(transition) {
 
         //获取用户信息
         $.ajax({
-            url: "/share/user/getUserByAccount",
+            url: "/PhotoShareWeb/user/getUserByAccount",
             type: "POST",
             dataType: "json",
             contentType: "application/json",

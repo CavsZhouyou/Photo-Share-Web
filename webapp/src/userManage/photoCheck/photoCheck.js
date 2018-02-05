@@ -27,7 +27,7 @@ SPA_RESOLVE_INIT = function(transition) {
      */
     function getPhotoList() {
         $.ajax({
-            url: "/share/photo/getPhotoByStatus",
+            url: "/PhotoShareWeb/photo/getPhotoByStatus",
             type: "POST",
             data: {
                 status: "1"
@@ -71,7 +71,7 @@ SPA_RESOLVE_INIT = function(transition) {
                     };
 
                 $.ajax({
-                    url: "/share/photo/updateStatus",
+                    url: "/PhotoShareWeb/photo/updateStatus",
                     type: "POST",
                     data: JSON.stringify(data),
                     dataType: "json",
@@ -99,7 +99,7 @@ SPA_RESOLVE_INIT = function(transition) {
                     };
 
                 $.ajax({
-                    url: "/share/photo/updateStatus",
+                    url: "/PhotoShareWeb/photo/updateStatus",
                     type: "POST",
                     data: JSON.stringify(data),
                     dataType: "json",
@@ -130,7 +130,7 @@ SPA_RESOLVE_INIT = function(transition) {
         var className;
 
         $.ajax({
-            url: "/share/photoClass/getPhotoClass",
+            url: "/PhotoShareWeb/photoClass/getPhotoClass",
             type: "POST",
             data: {
                 id: photoClass

@@ -10536,7 +10536,7 @@ SPA_RESOLVE_INIT = function SPA_RESOLVE_INIT(transition) {
         };
 
         $.ajax({
-            url: "/share/photo/addPhoto",
+            url: "/PhotoShareWeb/photo/addPhoto",
             type: "POST",
             data: JSON.stringify(postData),
             dataType: "json",
