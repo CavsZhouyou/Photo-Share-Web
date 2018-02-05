@@ -6,27 +6,7 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4328949a-5f1e-4050-b749-3b3dd1138886" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/server_war_exploded.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/server_war_exploded.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change beforePath="$PROJECT_DIR$/server.iml" afterPath="$PROJECT_DIR$/server.iml" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/photoshareweb/controller/PhotoClassController.java" afterPath="$PROJECT_DIR$/src/main/java/com/photoshareweb/controller/PhotoClassController.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/photoshareweb/controller/PhotoController.java" afterPath="$PROJECT_DIR$/src/main/java/com/photoshareweb/controller/PhotoController.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/photoshareweb/controller/UserController.java" afterPath="$PROJECT_DIR$/src/main/java/com/photoshareweb/controller/UserController.java" />
-      <change beforePath="$PROJECT_DIR$/target/PhotoShareWeb.war" afterPath="$PROJECT_DIR$/target/PhotoShareWeb.war" />
-      <change beforePath="$PROJECT_DIR$/target/PhotoShareWeb/WEB-INF/classes/com/photoshareweb/controller/PhotoClassController.class" afterPath="$PROJECT_DIR$/target/PhotoShareWeb/WEB-INF/classes/com/photoshareweb/controller/PhotoClassController.class" />
-      <change beforePath="$PROJECT_DIR$/target/PhotoShareWeb/WEB-INF/classes/com/photoshareweb/controller/PhotoController.class" afterPath="$PROJECT_DIR$/target/PhotoShareWeb/WEB-INF/classes/com/photoshareweb/controller/PhotoController.class" />
-      <change beforePath="$PROJECT_DIR$/target/PhotoShareWeb/WEB-INF/classes/com/photoshareweb/controller/UserController.class" afterPath="$PROJECT_DIR$/target/PhotoShareWeb/WEB-INF/classes/com/photoshareweb/controller/UserController.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/photoshareweb/controller/PhotoClassController.class" afterPath="$PROJECT_DIR$/target/classes/com/photoshareweb/controller/PhotoClassController.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/photoshareweb/controller/PhotoController.class" afterPath="$PROJECT_DIR$/target/classes/com/photoshareweb/controller/PhotoController.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/photoshareweb/controller/UserController.class" afterPath="$PROJECT_DIR$/target/classes/com/photoshareweb/controller/UserController.class" />
-      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/PhotoClassTest.txt" afterPath="$PROJECT_DIR$/target/surefire-reports/PhotoClassTest.txt" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/PhotoTest.txt" afterPath="$PROJECT_DIR$/target/surefire-reports/PhotoTest.txt" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-PhotoClassTest.xml" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-PhotoClassTest.xml" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-PhotoTest.xml" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-PhotoTest.xml" />
-    </list>
+    <list default="true" id="4328949a-5f1e-4050-b749-3b3dd1138886" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -121,10 +101,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AuthTest.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="AuthTest.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/AuthTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="243">
+            <state relative-caret-position="324">
               <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -133,7 +113,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AuthController.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="AuthController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/photoshareweb/controller/AuthController.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="432">
@@ -263,7 +243,7 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
     <option name="width" value="1936" />
@@ -685,7 +665,7 @@
       <workItem from="1517641262548" duration="11880000" />
       <workItem from="1517806479612" duration="5984000" />
       <workItem from="1517822386922" duration="1080000" />
-      <workItem from="1517832878101" duration="1707000" />
+      <workItem from="1517832878101" duration="2424000" />
     </task>
     <servers />
   </component>
@@ -722,7 +702,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="53363000" />
+    <option name="totallyTimeSpent" value="54080000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -734,8 +714,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.40914038" sideWeight="0.5021322" order="7" side_tool="true" content_ui="tabs" />
@@ -747,7 +726,7 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.37323177" sideWeight="0.4978678" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.37323177" sideWeight="0.4978678" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297062" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297062" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -843,7 +822,7 @@
         <state relative-caret-position="972">
           <caret line="36" column="0" lean-forward="true" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1105,16 +1084,8 @@
         <state relative-caret-position="0">
           <caret line="15" column="39" lean-forward="false" selection-start-line="15" selection-start-column="39" selection-end-line="15" selection-end-column="39" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/PhotoTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="702">
-          <caret line="35" column="9" lean-forward="true" selection-start-line="35" selection-start-column="9" selection-end-line="35" selection-end-column="9" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1131,16 +1102,6 @@
         <state relative-caret-position="351">
           <caret line="25" column="24" lean-forward="true" selection-start-line="25" selection-start-column="11" selection-end-line="25" selection-end-column="24" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/AuthTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1174,6 +1135,24 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="432">
           <caret line="16" column="11" lean-forward="false" selection-start-line="16" selection-start-column="11" selection-end-line="16" selection-end-column="11" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/PhotoTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="702">
+          <caret line="35" column="9" lean-forward="true" selection-start-line="35" selection-start-column="9" selection-end-line="35" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/AuthTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
