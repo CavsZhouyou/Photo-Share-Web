@@ -10602,7 +10602,7 @@ $(function () {
             }
 
             $.ajax({
-                url: "/PhotoShareWeb/user/login",
+                url: "/PhotoShareWeb/share/user/login",
                 type: "POST",
                 dataType: "json",
                 contentType: "application/json",
@@ -10663,7 +10663,7 @@ $(function () {
             }
 
             $.ajax({
-                url: "/PhotoShareWeb/user/regist",
+                url: "/PhotoShareWeb/share/user/regist",
                 type: "POST",
                 dataType: "json",
                 data: JSON.stringify(data),
@@ -10711,7 +10711,7 @@ $(function () {
             photo;
 
         $.ajax({
-            url: "/PhotoShareWeb/photo/getPhotoByID",
+            url: "/PhotoShareWeb/share/photo/getPhotoByID",
             type: "POST",
             data: {
                 id: photoID
@@ -10759,7 +10759,7 @@ $(function () {
         };
         //获取用户信息
         $.ajax({
-            url: "/PhotoShareWeb/user/getSimpleUserByAccount",
+            url: "/PhotoShareWeb/share/user/getSimpleUserByAccount",
             type: "POST",
             dataType: "json",
             contentType: "application/json",
@@ -10785,7 +10785,7 @@ $(function () {
         var className;
 
         $.ajax({
-            url: "/PhotoShareWeb/photoClass/getPhotoClass",
+            url: "/PhotoShareWeb/share/photoClass/getPhotoClass",
             type: "POST",
             data: {
                 id: photoClass

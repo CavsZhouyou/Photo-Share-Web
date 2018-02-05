@@ -1,4 +1,4 @@
-webpackJsonp([5],{
+webpackJsonp([6],{
 
 /***/ 0:
 /***/ (function(module, exports, __webpack_require__) {
@@ -10434,7 +10434,59 @@ return jQuery;
 
 /***/ }),
 
-/***/ 36:
+/***/ 2:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;
+
+(function (e) {
+  if (true) {
+    !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(0)], __WEBPACK_AMD_DEFINE_FACTORY__ = (e),
+				__WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ?
+				(__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__),
+				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+  } else {
+    e(jQuery);
+  }
+})(function (e) {
+  function n(e) {
+    return u.raw ? e : encodeURIComponent(e);
+  }function r(e) {
+    return u.raw ? e : decodeURIComponent(e);
+  }function i(e) {
+    return n(u.json ? JSON.stringify(e) : String(e));
+  }function s(e) {
+    if (e.indexOf('"') === 0) {
+      e = e.slice(1, -1).replace(/\\"/g, '"').replace(/\\\\/g, "\\");
+    }try {
+      e = decodeURIComponent(e.replace(t, " "));return u.json ? JSON.parse(e) : e;
+    } catch (n) {}
+  }function o(t, n) {
+    var r = u.raw ? t : s(t);return e.isFunction(n) ? n(r) : r;
+  }var t = /\+/g;var u = e.cookie = function (t, s, a) {
+    if (s !== undefined && !e.isFunction(s)) {
+      a = e.extend({}, u.defaults, a);if (typeof a.expires === "number") {
+        var f = a.expires,
+            l = a.expires = new Date();l.setDate(l.getDate() + f);
+      }return document.cookie = [n(t), "=", i(s), a.expires ? "; expires=" + a.expires.toUTCString() : "", a.path ? "; path=" + a.path : "", a.domain ? "; domain=" + a.domain : "", a.secure ? "; secure" : ""].join("");
+    }var c = t ? undefined : {};var h = document.cookie ? document.cookie.split("; ") : [];for (var p = 0, d = h.length; p < d; p++) {
+      var v = h[p].split("=");var m = r(v.shift());var g = v.join("=");if (t && t === m) {
+        c = o(g, s);break;
+      }if (!t && (g = o(g)) !== undefined) {
+        c[m] = g;
+      }
+    }return c;
+  };u.defaults = {};e.removeCookie = function (t, n) {
+    if (e.cookie(t) === undefined) {
+      return false;
+    }e.cookie(t, "", e.extend({}, n, { expires: -1 }));return !e.cookie(t);
+  };
+});
+
+/***/ }),
+
+/***/ 41:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10444,39 +10496,67 @@ return jQuery;
  * @Author: zhouyou@weruan 
  * @Descriptions: 修改密码界面js依赖文件
  * @Date: 2017-12-18 17:44:41 
- * @Last Modified by: zhouyou@weruan
- * @Last Modified time: 2017-12-18 17:47:15
+ * @Last Modified by: zhouyou@werun
+ * @Last Modified time: 2018-02-03 22:00:50
  */
 
 //get the view
-var changePassword = __webpack_require__(37);
+var changePassword = __webpack_require__(42);
 
 //import css
-__webpack_require__(38);
+__webpack_require__(43);
 
 //import fontIcon
 __webpack_require__(1);
-
+__webpack_require__(2);
 // 路由调用
 SPA_RESOLVE_INIT = function SPA_RESOLVE_INIT(transition) {
-  $("#content").html(changePassword);
+    $("#content").html(changePassword);
+
+    //点击修改密码
+    $("#commit").click(function () {
+        var account = $.cookie("account"),
+            password = $("#new-password").val(),
+            postData;
+
+        postData = {
+            account: account,
+            password: password
+        };
+
+        $.ajax({
+            url: "/PhotoShareWeb/share/user/changePassword",
+            type: "POST",
+            dataType: "json",
+            contentType: "application/json",
+            data: JSON.stringify(postData),
+            async: false,
+            success: function success(data) {
+                if (data.success) {
+                    alert("修改成功");
+                } else {
+                    alert("修改失败！");
+                }
+            }
+        });
+    });
 };
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
 
-/***/ 37:
+/***/ 42:
 /***/ (function(module, exports) {
 
 module.exports = "<section id=\"change-password\">\r    <h3 class=\"title\">修改密码</h3>\r    <div class=\"container\">\r        <div class=\"row old-password\">\r            <span class=\"operation\">旧密码</span>\r            <input type=\"text\" id=\"old-password\">\r        </div>\r        <div class=\"row new-password\">\r            <span class=\"operation\">新密码</span>\r            <input type=\"password\" id=\"new-password\">\r        </div>\r        <div class=\"row confirm-password\">\r            <span class=\"operation\">确认新密码</span>\r            <input type=\"password\" id=\"confirm-password\">\r        </div>\r        <button id=\"commit\">确认修改</button>\r    </div>\r</section>"
 
 /***/ }),
 
-/***/ 38:
+/***/ 43:
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ })
 
-},[36]);
+},[41]);

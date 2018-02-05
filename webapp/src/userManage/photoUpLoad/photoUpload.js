@@ -44,7 +44,7 @@ SPA_RESOLVE_INIT = function(transition) {
         };
 
         $.ajax({
-            url: "/PhotoShareWeb/photo/addPhoto",
+            url: "/PhotoShareWeb/share/photo/addPhoto",
             type: "POST",
             data: JSON.stringify(postData),
             dataType: "json",

@@ -10525,7 +10525,7 @@ SPA_RESOLVE_INIT = function SPA_RESOLVE_INIT(transition) {
         };
 
         $.ajax({
-            url: "/PhotoShareWeb/user/changePassword",
+            url: "/PhotoShareWeb/share/user/changePassword",
             type: "POST",
             dataType: "json",
             contentType: "application/json",

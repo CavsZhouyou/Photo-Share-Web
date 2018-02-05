@@ -535,6 +535,7 @@ table {
  */
 
 a {
+    color: #fff;
     text-decoration: none;
 }
 
@@ -562,8 +563,8 @@ ul {
  * @Author: zhouyou@weruan 
  * @Descriptions: 个人信息界面样式文件
  * @Date: 2017-12-18 16:18:54 
- * @Last Modified by: zhouyou@weruan
- * @Last Modified time: 2017-12-18 17:54:30
+ * @Last Modified by: zhouyou@werun
+ * @Last Modified time: 2018-02-03 21:43:33
  */
 #personal-info {
   width: 910px;
@@ -637,7 +638,7 @@ ul {
             #personal-info > .container > .upload > .content > .upload-photo > .file input {
               position: absolute;
               opacity: 0; }
-    #personal-info > .container #upload {
+    #personal-info > .container #commit {
       float: right;
       width: 140px;
       height: 40px;

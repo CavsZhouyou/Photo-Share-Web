@@ -90,7 +90,7 @@ $(function() {
             }
 
             $.ajax({
-                url: "/PhotoShareWeb/user/login",
+                url: "/PhotoShareWeb/share/user/login",
                 type: "POST",
                 dataType: "json",
                 contentType: "application/json",
@@ -151,7 +151,7 @@ $(function() {
             }
 
             $.ajax({
-                url: "/PhotoShareWeb/user/regist",
+                url: "/PhotoShareWeb/share/user/regist",
                 type: "POST",
                 dataType: "json",
                 data: JSON.stringify(data),

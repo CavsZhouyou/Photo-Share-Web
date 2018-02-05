@@ -10383,7 +10383,7 @@ return jQuery;
  * @Descriptions: 用户管理界面页面依赖文件
  * @Date: 2017-12-17 23:19:45 
  * @Last Modified by: zhouyou@werun
- * @Last Modified time: 2018-02-03 16:17:31
+ * @Last Modified time: 2018-02-05 14:07:37
  */
 
 //import css
@@ -10508,7 +10508,7 @@ $(function () {
             }
 
             $.ajax({
-                url: "/PhotoShareWeb/user/login",
+                url: "/PhotoShareWeb/share/user/login",
                 type: "POST",
                 dataType: "json",
                 contentType: "application/json",
@@ -10569,7 +10569,7 @@ $(function () {
             }
 
             $.ajax({
-                url: "/PhotoShareWeb/user/regist",
+                url: "/PhotoShareWeb/share/user/regist",
                 type: "POST",
                 dataType: "json",
                 data: JSON.stringify(data),

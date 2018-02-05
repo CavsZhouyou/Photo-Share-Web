@@ -535,6 +535,7 @@ table {
  */
 
 a {
+    color: #fff;
     text-decoration: none;
 }
 
@@ -562,13 +563,14 @@ ul {
  * @Author: zhouyou@weruan 
  * @Descriptions: 图片审核页面样式文件
  * @Date: 2017-12-18 00:47:23 
- * @Last Modified by: zhouyou@weruan
- * @Last Modified time: 2017-12-18 17:54:44
+ * @Last Modified by: zhouyou@werun
+ * @Last Modified time: 2018-02-03 20:10:10
  */
 #photo-check-content {
   width: 910px;
   height: 815px;
-  padding: 30px 20px 0; }
+  padding: 30px 20px 0;
+  overflow: auto; }
   #photo-check-content > .title {
     display: block;
     height: 60px;
@@ -577,58 +579,63 @@ ul {
     margin-bottom: 0;
     border-bottom: 1px solid #dddcdc;
     font-size: 28px; }
-  #photo-check-content > .container {
+  #photo-check-content > .photo-check-container {
     width: 910px; }
-    #photo-check-content > .container > .photo-info {
+    #photo-check-content > .photo-check-container > .photo-info {
       width: 910px;
       height: 150px;
       border-bottom: 1px solid #dddcdc; }
-      #photo-check-content > .container > .photo-info > .photo-class {
+      #photo-check-content > .photo-check-container > .photo-info > .photo-class {
         position: relative;
         float: left;
         width: 70px;
         height: 100%;
         color: #8f8e8e;
         font-size: 14px; }
-        #photo-check-content > .container > .photo-info > .photo-class span {
+        #photo-check-content > .photo-check-container > .photo-info > .photo-class span {
           position: absolute;
           top: 10px; }
-      #photo-check-content > .container > .photo-info > .photo-name {
+      #photo-check-content > .photo-check-container > .photo-info > .photo-name {
         float: left;
         width: 100px;
         height: 90px;
         padding-top: 60px;
         font-size: 16px;
         font-weight: bold; }
-      #photo-check-content > .container > .photo-info > .photo-description {
+      #photo-check-content > .photo-check-container > .photo-info > .photo-description {
         float: left;
         width: 640px;
         height: 150px; }
-        #photo-check-content > .container > .photo-info > .photo-description > .photo {
+        #photo-check-content > .photo-check-container > .photo-info > .photo-description > .photo {
           display: inline-block;
           width: 140px;
           height: 120px;
           padding-top: 30px;
           text-align: center; }
-          #photo-check-content > .container > .photo-info > .photo-description > .photo img {
+          #photo-check-content > .photo-check-container > .photo-info > .photo-description > .photo img {
             width: 100px;
             height: 100px;
+            margin-top: -25px;
             vertical-align: middle; }
-        #photo-check-content > .container > .photo-info > .photo-description > .photo-description-content {
+        #photo-check-content > .photo-check-container > .photo-info > .photo-description > .photo-description-content {
           display: inline-block;
           width: 490px;
-          height: 150px;
-          color: #8f8e8e; }
-      #photo-check-content > .container > .photo-info .check {
+          height: 83px;
+          color: #8f8e8e;
+          overflow: hidden; }
+          #photo-check-content > .photo-check-container > .photo-info > .photo-description > .photo-description-content p {
+            -o-text-overflow: ellipsis;
+            text-overflow: ellipsis; }
+      #photo-check-content > .photo-check-container > .photo-info .check {
         display: inline-block;
         width: 100px;
         height: 150px;
         cursor: pointer; }
-        #photo-check-content > .container > .photo-info .check > .pass {
+        #photo-check-content > .photo-check-container > .photo-info .check > .pass {
           margin-top: 40px;
           font-size: 14px;
           color: #0099ff; }
-        #photo-check-content > .container > .photo-info .check > .nopass {
+        #photo-check-content > .photo-check-container > .photo-info .check > .nopass {
           margin-top: 30px;
           font-size: 14px;
           color: #fd0000; }

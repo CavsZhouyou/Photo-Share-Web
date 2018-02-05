@@ -535,6 +535,7 @@ table {
  */
 
 a {
+    color: #fff;
     text-decoration: none;
 }
 
@@ -562,13 +563,14 @@ ul {
  * @Author: zhouyou@weruan 
  * @Descriptions: 图片查看界面样式文件
  * @Date: 2017-12-18 11:04:41 
- * @Last Modified by: zhouyou@weruan
- * @Last Modified time: 2017-12-18 17:54:51
+ * @Last Modified by: zhouyou@werun
+ * @Last Modified time: 2018-02-03 20:06:27
  */
 #photo-look-content {
   width: 910px;
   height: 815px;
-  padding: 30px 20px 0; }
+  padding: 30px 20px 0;
+  overflow: auto; }
   #photo-look-content > .title {
     display: block;
     height: 60px;
@@ -577,62 +579,67 @@ ul {
     margin-bottom: 0;
     border-bottom: 1px solid #dddcdc;
     font-size: 28px; }
-  #photo-look-content > .container {
+  #photo-look-content > .photo-look-container {
     width: 910px; }
-    #photo-look-content > .container > .photo-info {
+    #photo-look-content > .photo-look-container > .photo-info {
       width: 910px;
       height: 150px;
       border-bottom: 1px solid #dddcdc; }
-      #photo-look-content > .container > .photo-info > .photo-class {
+      #photo-look-content > .photo-look-container > .photo-info > .photo-class {
         position: relative;
         float: left;
         width: 70px;
         height: 100%;
         color: #8f8e8e;
         font-size: 14px; }
-        #photo-look-content > .container > .photo-info > .photo-class span {
+        #photo-look-content > .photo-look-container > .photo-info > .photo-class span {
           position: absolute;
           top: 10px; }
-      #photo-look-content > .container > .photo-info > .photo-name {
+      #photo-look-content > .photo-look-container > .photo-info > .photo-name {
         float: left;
         width: 100px;
         height: 90px;
         padding-top: 60px;
         font-size: 16px;
         font-weight: bold; }
-      #photo-look-content > .container > .photo-info > .photo-description {
+      #photo-look-content > .photo-look-container > .photo-info > .photo-description {
         float: left;
         width: 640px;
         height: 150px; }
-        #photo-look-content > .container > .photo-info > .photo-description > .photo {
+        #photo-look-content > .photo-look-container > .photo-info > .photo-description > .photo {
           display: inline-block;
           width: 140px;
           height: 120px;
           padding-top: 30px;
           text-align: center; }
-          #photo-look-content > .container > .photo-info > .photo-description > .photo img {
+          #photo-look-content > .photo-look-container > .photo-info > .photo-description > .photo img {
             width: 100px;
             height: 100px;
+            margin-top: -25px;
             vertical-align: middle; }
-        #photo-look-content > .container > .photo-info > .photo-description > .photo-description-content {
+        #photo-look-content > .photo-look-container > .photo-info > .photo-description > .photo-description-content {
           display: inline-block;
           width: 490px;
-          height: 150px;
-          color: #8f8e8e; }
-      #photo-look-content > .container > .photo-info .check {
+          height: 83px;
+          color: #8f8e8e;
+          overflow: hidden; }
+          #photo-look-content > .photo-look-container > .photo-info > .photo-description > .photo-description-content p {
+            -o-text-overflow: ellipsis;
+            text-overflow: ellipsis; }
+      #photo-look-content > .photo-look-container > .photo-info .check {
         display: inline-block;
         width: 100px;
         height: 150px;
         font-size: 14px;
         cursor: pointer; }
-        #photo-look-content > .container > .photo-info .check div {
+        #photo-look-content > .photo-look-container > .photo-info .check div {
           margin-top: 20px; }
-        #photo-look-content > .container > .photo-info .check > .pass {
+        #photo-look-content > .photo-look-container > .photo-info .check > .pass {
           color: #66cc33; }
-        #photo-look-content > .container > .photo-info .check > .nopass {
+        #photo-look-content > .photo-look-container > .photo-info .check > .nopass {
           color: #fd0000; }
-        #photo-look-content > .container > .photo-info .check > .checking {
+        #photo-look-content > .photo-look-container > .photo-info .check > .checking {
           color: #0099ff; }
-        #photo-look-content > .container > .photo-info .check > .delete {
+        #photo-look-content > .photo-look-container > .photo-info .check > .delete {
           font-size: 16px;
           margin-top: 80px; }

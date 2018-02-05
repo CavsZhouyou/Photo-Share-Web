@@ -10483,7 +10483,7 @@ SPA_RESOLVE_INIT = function SPA_RESOLVE_INIT(transition) {
      */
     function getPhotoList() {
         $.ajax({
-            url: "/PhotoShareWeb/photo/getPhotoByStatus",
+            url: "/PhotoShareWeb/share/photo/getPhotoByStatus",
             type: "POST",
             data: {
                 status: "1"
@@ -10522,7 +10522,7 @@ SPA_RESOLVE_INIT = function SPA_RESOLVE_INIT(transition) {
                 };
 
                 $.ajax({
-                    url: "/PhotoShareWeb/photo/updateStatus",
+                    url: "/PhotoShareWeb/share/photo/updateStatus",
                     type: "POST",
                     data: JSON.stringify(data),
                     dataType: "json",
@@ -10547,7 +10547,7 @@ SPA_RESOLVE_INIT = function SPA_RESOLVE_INIT(transition) {
                 };
 
                 $.ajax({
-                    url: "/PhotoShareWeb/photo/updateStatus",
+                    url: "/PhotoShareWeb/share/photo/updateStatus",
                     type: "POST",
                     data: JSON.stringify(data),
                     dataType: "json",
@@ -10575,7 +10575,7 @@ SPA_RESOLVE_INIT = function SPA_RESOLVE_INIT(transition) {
         var className;
 
         $.ajax({
-            url: "/PhotoShareWeb/photoClass/getPhotoClass",
+            url: "/PhotoShareWeb/share/photoClass/getPhotoClass",
             type: "POST",
             data: {
                 id: photoClass

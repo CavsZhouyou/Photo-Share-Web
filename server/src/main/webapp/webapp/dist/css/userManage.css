@@ -535,6 +535,7 @@ table {
  */
 
 a {
+    color: #fff;
     text-decoration: none;
 }
 
@@ -562,8 +563,8 @@ ul {
  * @Author: zhouyou@weruan 
  * @Descriptions: 用户管理界面样式表
  * @Date: 2017-12-17 23:20:34 
- * @Last Modified by: zhouyou@weruan
- * @Last Modified time: 2017-12-18 21:05:06
+ * @Last Modified by: zhouyou@werun
+ * @Last Modified time: 2018-02-03 15:33:37
  */
 #navbar {
   width: 100%;
@@ -626,22 +627,44 @@ ul {
       line-height: 50px;
       background: rgba(123, 200, 130, 0.7);
       margin-right: 50px; }
-      #navbar > .navbar-container > .navbar-right .user-name {
+      #navbar > .navbar-container > .navbar-right .login-button {
         color: #fff;
         font-size: 16px;
-        vertical-align: middle; }
-      #navbar > .navbar-container > .navbar-right .user-img {
-        display: none;
-        width: 40px;
-        height: 40px;
-        border-radius: 20px;
-        margin-left: 15px;
         vertical-align: middle; }
       #navbar > .navbar-container > .navbar-right .default-img {
         width: 60px;
         height: 50px;
         border-radius: 25px;
         vertical-align: middle; }
+      #navbar > .navbar-container > .navbar-right > .user-login {
+        display: none; }
+        #navbar > .navbar-container > .navbar-right > .user-login .user-name {
+          color: #fff;
+          font-size: 16px;
+          vertical-align: middle; }
+        #navbar > .navbar-container > .navbar-right > .user-login .user-img {
+          width: 40px;
+          height: 40px;
+          border-radius: 20px;
+          margin-left: 15px;
+          vertical-align: middle; }
+        #navbar > .navbar-container > .navbar-right > .user-login .personal-setting {
+          display: none;
+          margin-left: -30px;
+          position: relative;
+          -webkit-animation: 5s infinite;
+          animation: 5s infinite; }
+          #navbar > .navbar-container > .navbar-right > .user-login .personal-setting > .setting-list {
+            width: 150px;
+            height: 35px;
+            line-height: 35px;
+            border-bottom: 1px solid #fff;
+            background: rgba(72, 138, 145, 0.5);
+            text-align: center; }
+          #navbar > .navbar-container > .navbar-right > .user-login .personal-setting > .setting-list:hover {
+            background: rgba(72, 138, 145, 0.8); }
+      #navbar > .navbar-container > .navbar-right > .user-login:hover .personal-setting {
+        display: inline-block; }
 
 #operation-content {
   width: 100%;
