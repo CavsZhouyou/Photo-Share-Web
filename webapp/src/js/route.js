@@ -48,6 +48,8 @@
             });
             //异步引入js通过回调传递参数
             window.SPA_RESOLVE_INIT = null;
+
+            self.urlChange();
         },
         refresh: function(currentHash) {
             var self = this;

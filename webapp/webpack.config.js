@@ -3,7 +3,7 @@
  * @Descriptions: 图片分享网站前端webpack配置文件
  * @Date: 2017-11-26 19:49:52 
  * @Last Modified by: zhouyou@werun
- * @Last Modified time: 2018-02-05 13:46:11
+ * @Last Modified time: 2018-02-06 13:44:38
  * **************************************************************************************
  * 本文件仅适用于开发环境 ，最终生成的打包文件输出在./dist目录下，你可以根据自己的需求自行设置
  * 开始开发
@@ -64,7 +64,8 @@ module.exports = {
     },
 
     module: {
-        loaders: [{
+        loaders: [
+            {
                 test: /\.js[x]?$/,
                 loader: "babel-loader",
                 exclude: /(node_modules|bower_components)/,
@@ -97,11 +98,13 @@ module.exports = {
             },
             {
                 test: /\.woff$/,
-                loader: "url-loader?limit=10000&mimetype=application/font-woff&name=fonts/[name].[ext]"
+                loader:
+                    "url-loader?limit=10000&mimetype=application/font-woff&name=fonts/[name].[ext]"
             },
             {
                 test: /\.ttf$/,
-                loader: "url-loader?limit=10000&mimetype=application/octet-stream&name=fonts/[name].[ext]"
+                loader:
+                    "url-loader?limit=10000&mimetype=application/octet-stream&name=fonts/[name].[ext]"
             },
             {
                 test: /\.eot$/,
@@ -109,7 +112,8 @@ module.exports = {
             },
             {
                 test: /\.svg$/,
-                loader: "url-loader?limit=10000&mimetype=image/svg+xml&name=fonts/[name].[ext]"
+                loader:
+                    "url-loader?limit=10000&mimetype=image/svg+xml&name=fonts/[name].[ext]"
             },
             {
                 test: /\.html$/,
@@ -124,7 +128,7 @@ module.exports = {
         // 自动补全css属性中的浏览器前缀
         new webpack.LoaderOptionsPlugin({
             options: {
-                postcss: function () {
+                postcss: function() {
                     return [
                         require("autoprefixer")({
                             browsers: ["ie>=8", ">1% in CN"]
