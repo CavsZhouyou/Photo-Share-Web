@@ -564,7 +564,7 @@ ul {
  * @Descriptions: 个人信息界面样式文件
  * @Date: 2017-12-18 16:18:54 
  * @Last Modified by: zhouyou@werun
- * @Last Modified time: 2018-02-03 21:43:33
+ * @Last Modified time: 2018-02-06 11:33:27
  */
 #personal-info {
   width: 910px;
@@ -624,7 +624,7 @@ ul {
             display: inline-block;
             width: 300px;
             height: 25px; }
-          #personal-info > .container > .upload > .content > .upload-photo > .file {
+          #personal-info > .container > .upload > .content > .upload-photo #file {
             width: 100px;
             height: 30px;
             margin-top: 10px;
@@ -634,10 +634,8 @@ ul {
             line-height: 25px;
             text-align: center;
             border-radius: 5px;
+            border: none;
             cursor: pointer; }
-            #personal-info > .container > .upload > .content > .upload-photo > .file input {
-              position: absolute;
-              opacity: 0; }
     #personal-info > .container #commit {
       float: right;
       width: 140px;

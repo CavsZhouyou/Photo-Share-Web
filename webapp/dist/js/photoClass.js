@@ -1,4 +1,4 @@
-webpackJsonp([5],[
+webpackJsonp([4],[
 /* 0 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -10482,7 +10482,10 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
 });
 
 /***/ }),
-/* 3 */
+/* 3 */,
+/* 4 */,
+/* 5 */,
+/* 6 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10505,14 +10508,15 @@ var getParamsUrl = function getUrlParam(name) {
 module.exports = getParamsUrl;
 
 /***/ }),
-/* 4 */,
-/* 5 */,
-/* 6 */,
 /* 7 */,
 /* 8 */,
 /* 9 */,
 /* 10 */,
-/* 11 */
+/* 11 */,
+/* 12 */,
+/* 13 */,
+/* 14 */,
+/* 15 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10523,16 +10527,16 @@ module.exports = getParamsUrl;
  * @Descriptions: 图片分类页面js依赖文件
  * @Date: 2017-12-17 17:33:38 
  * @Last Modified by: zhouyou@werun
- * @Last Modified time: 2018-02-03 15:49:05
+ * @Last Modified time: 2018-02-06 12:11:53
  */
 
 //import css
-__webpack_require__(12);
+__webpack_require__(16);
 
 //import js
 __webpack_require__(1);
 __webpack_require__(2);
-var getParamsUrl = __webpack_require__(3);
+var getParamsUrl = __webpack_require__(6);
 
 $(function () {
     //判断是否处于登录状态
@@ -10542,7 +10546,7 @@ $(function () {
         $(".user-default").hide();
         $(".user-name").text($.cookie("username"));
         //显示用户头像
-        $(".user-img").attr("src", $.cookie("headimg"));
+        $(".user-img").attr("src", $.cookie("headimg") || "../image/login.png");
     }
 
     //加载图片列表
@@ -10625,7 +10629,7 @@ $(function () {
                         $(".user-default").hide();
                         $(".user-name").text(data.user.username);
                         //显示用户头像
-                        $(".user-img").attr("src", data.user.headimg);
+                        $(".user-img").attr("src", data.user.headimg || "../image/login.png");
                         //返回主页面
                         $(".login-container").hide();
                         $(".mask-layer").hide();
@@ -10729,8 +10733,13 @@ $(function () {
             $photoContainer = $("#photo-container"),
             $photoBox;
 
+        if (photoList.length === 0) {
+            alert("该分类还没有人上传图片，快快登录一起上传图片吧！");
+            return;
+        }
+
         photoList.forEach(function (photo) {
-            photoBoxString = __webpack_require__(13);
+            photoBoxString = __webpack_require__(17);
             photoBoxString = photoBoxString.replace("$photoURL", photo.photourl).replace("$photoID", photo.id).replace("$potoName", photo.photoname);
 
             $photoBox = $(photoBoxString);
@@ -10741,16 +10750,16 @@ $(function () {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 12 */
+/* 16 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
-/* 13 */
+/* 17 */
 /***/ (function(module, exports) {
 
 module.exports = "<div class=\"box\">\r    <div class=\"pic\">\r        <a href=\"./photoDetails.html?id=$photoID\">\r            <img src=\"$photoURL\" alt=\"$photoName\">\r        </a>\r    </div>\r</div>"
 
 /***/ })
-],[11]);
+],[15]);

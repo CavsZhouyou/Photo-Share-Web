@@ -1,4 +1,4 @@
-webpackJsonp([1],[
+webpackJsonp([2],[
 /* 0 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -10483,7 +10483,11 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
 
 /***/ }),
 /* 3 */,
-/* 4 */
+/* 4 */,
+/* 5 */,
+/* 6 */,
+/* 7 */,
+/* 8 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10494,23 +10498,23 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
  * @Descriptions: 首页js依赖文件
  * @Date: 2017-11-26 20:01:16 
  * @Last Modified by: zhouyou@werun
- * @Last Modified time: 2018-02-03 15:49:23
+ * @Last Modified time: 2018-02-06 12:10:48
  */
 
 //import scss
-__webpack_require__(5);
+__webpack_require__(9);
 
 //import js
-__webpack_require__(6);
+__webpack_require__(10);
 __webpack_require__(1);
 __webpack_require__(2);
 
 $(function () {
     // img 依赖
-    var jpg1 = __webpack_require__(7);
-    var jpg2 = __webpack_require__(8);
-    var jpg3 = __webpack_require__(9);
-    var jpg4 = __webpack_require__(10);
+    var jpg1 = __webpack_require__(11);
+    var jpg2 = __webpack_require__(12);
+    var jpg3 = __webpack_require__(13);
+    var jpg4 = __webpack_require__(14);
 
     // Handle Backstretch 背景轮换
     jQuery.backstretch([jpg1, jpg2, jpg3, jpg4], {
@@ -10527,7 +10531,7 @@ $(function () {
         $(".user-default").hide();
         $(".user-name").text($.cookie("username"));
         //显示用户头像
-        $(".user-img").attr("src", $.cookie("headimg"));
+        $(".user-img").attr("src", $.cookie("headimg") || "../image/login.png");
     }
 
     //点击显示登录界面
@@ -10607,7 +10611,7 @@ $(function () {
                         $(".user-default").hide();
                         $(".user-name").text(data.user.username);
                         //显示用户头像
-                        $(".user-img").attr("src", data.user.headimg);
+                        $(".user-img").attr("src", data.user.headimg || "../image/login.png");
                         //返回主页面
                         $(".login-container").hide();
                         $(".mask-layer").hide();
@@ -10683,13 +10687,13 @@ $(function () {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0), __webpack_require__(0)))
 
 /***/ }),
-/* 5 */
+/* 9 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
-/* 6 */
+/* 10 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -12200,28 +12204,28 @@ $(function () {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 7 */
+/* 11 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__.p + "img/banner1.jpg";
 
 /***/ }),
-/* 8 */
+/* 12 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__.p + "img/banner2.jpg";
 
 /***/ }),
-/* 9 */
+/* 13 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__.p + "img/banner3.jpg";
 
 /***/ }),
-/* 10 */
+/* 14 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__.p + "img/banner4.jpg";
 
 /***/ })
-],[4]);
+],[8]);

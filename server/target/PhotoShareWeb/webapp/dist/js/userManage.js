@@ -10372,7 +10372,59 @@ return jQuery;
 
 /***/ }),
 
-/***/ 16:
+/***/ 2:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;
+
+(function (e) {
+  if (true) {
+    !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(0)], __WEBPACK_AMD_DEFINE_FACTORY__ = (e),
+				__WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ?
+				(__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__),
+				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+  } else {
+    e(jQuery);
+  }
+})(function (e) {
+  function n(e) {
+    return u.raw ? e : encodeURIComponent(e);
+  }function r(e) {
+    return u.raw ? e : decodeURIComponent(e);
+  }function i(e) {
+    return n(u.json ? JSON.stringify(e) : String(e));
+  }function s(e) {
+    if (e.indexOf('"') === 0) {
+      e = e.slice(1, -1).replace(/\\"/g, '"').replace(/\\\\/g, "\\");
+    }try {
+      e = decodeURIComponent(e.replace(t, " "));return u.json ? JSON.parse(e) : e;
+    } catch (n) {}
+  }function o(t, n) {
+    var r = u.raw ? t : s(t);return e.isFunction(n) ? n(r) : r;
+  }var t = /\+/g;var u = e.cookie = function (t, s, a) {
+    if (s !== undefined && !e.isFunction(s)) {
+      a = e.extend({}, u.defaults, a);if (typeof a.expires === "number") {
+        var f = a.expires,
+            l = a.expires = new Date();l.setDate(l.getDate() + f);
+      }return document.cookie = [n(t), "=", i(s), a.expires ? "; expires=" + a.expires.toUTCString() : "", a.path ? "; path=" + a.path : "", a.domain ? "; domain=" + a.domain : "", a.secure ? "; secure" : ""].join("");
+    }var c = t ? undefined : {};var h = document.cookie ? document.cookie.split("; ") : [];for (var p = 0, d = h.length; p < d; p++) {
+      var v = h[p].split("=");var m = r(v.shift());var g = v.join("=");if (t && t === m) {
+        c = o(g, s);break;
+      }if (!t && (g = o(g)) !== undefined) {
+        c[m] = g;
+      }
+    }return c;
+  };u.defaults = {};e.removeCookie = function (t, n) {
+    if (e.cookie(t) === undefined) {
+      return false;
+    }e.cookie(t, "", e.extend({}, n, { expires: -1 }));return !e.cookie(t);
+  };
+});
+
+/***/ }),
+
+/***/ 20:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10383,14 +10435,14 @@ return jQuery;
  * @Descriptions: 用户管理界面页面依赖文件
  * @Date: 2017-12-17 23:19:45 
  * @Last Modified by: zhouyou@werun
- * @Last Modified time: 2018-02-05 14:07:37
+ * @Last Modified time: 2018-02-06 13:45:11
  */
 
 //import css
-__webpack_require__(17);
+__webpack_require__(21);
 
 //import js
-__webpack_require__(18);
+__webpack_require__(22);
 __webpack_require__(2);
 $(function () {
     /**创建路由
@@ -10443,9 +10495,9 @@ $(function () {
     }
 
     // //权限控制
-    // if ($.cookie("power") == "2") {
-    //     $("#photoCheck").hide();
-    // }
+    if ($.cookie("power") == "2") {
+        $("#photoCheck").hide();
+    }
 
     //添加sider点击事件
     var sidebarList = $("#sidebar").find(".sidebar-item");
@@ -10611,14 +10663,14 @@ $(function () {
 
 /***/ }),
 
-/***/ 17:
+/***/ 21:
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
 
-/***/ 18:
+/***/ 22:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10676,6 +10728,8 @@ $(function () {
             });
             //异步引入js通过回调传递参数
             window.SPA_RESOLVE_INIT = null;
+
+            self.urlChange();
         },
         refresh: function refresh(currentHash) {
             var self = this;
@@ -10771,58 +10825,6 @@ $(function () {
     window.spaRouters = new spaRouters();
 })();
 
-/***/ }),
-
-/***/ 2:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;
-
-(function (e) {
-  if (true) {
-    !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(0)], __WEBPACK_AMD_DEFINE_FACTORY__ = (e),
-				__WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ?
-				(__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__),
-				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
-  } else {
-    e(jQuery);
-  }
-})(function (e) {
-  function n(e) {
-    return u.raw ? e : encodeURIComponent(e);
-  }function r(e) {
-    return u.raw ? e : decodeURIComponent(e);
-  }function i(e) {
-    return n(u.json ? JSON.stringify(e) : String(e));
-  }function s(e) {
-    if (e.indexOf('"') === 0) {
-      e = e.slice(1, -1).replace(/\\"/g, '"').replace(/\\\\/g, "\\");
-    }try {
-      e = decodeURIComponent(e.replace(t, " "));return u.json ? JSON.parse(e) : e;
-    } catch (n) {}
-  }function o(t, n) {
-    var r = u.raw ? t : s(t);return e.isFunction(n) ? n(r) : r;
-  }var t = /\+/g;var u = e.cookie = function (t, s, a) {
-    if (s !== undefined && !e.isFunction(s)) {
-      a = e.extend({}, u.defaults, a);if (typeof a.expires === "number") {
-        var f = a.expires,
-            l = a.expires = new Date();l.setDate(l.getDate() + f);
-      }return document.cookie = [n(t), "=", i(s), a.expires ? "; expires=" + a.expires.toUTCString() : "", a.path ? "; path=" + a.path : "", a.domain ? "; domain=" + a.domain : "", a.secure ? "; secure" : ""].join("");
-    }var c = t ? undefined : {};var h = document.cookie ? document.cookie.split("; ") : [];for (var p = 0, d = h.length; p < d; p++) {
-      var v = h[p].split("=");var m = r(v.shift());var g = v.join("=");if (t && t === m) {
-        c = o(g, s);break;
-      }if (!t && (g = o(g)) !== undefined) {
-        c[m] = g;
-      }
-    }return c;
-  };u.defaults = {};e.removeCookie = function (t, n) {
-    if (e.cookie(t) === undefined) {
-      return false;
-    }e.cookie(t, "", e.extend({}, n, { expires: -1 }));return !e.cookie(t);
-  };
-});
-
 /***/ })
 
-},[16]);
+},[20]);

@@ -8,12 +8,132 @@
   <component name="ChangeListManager">
     <list default="true" id="4328949a-5f1e-4050-b749-3b3dd1138886" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/photoshareweb/controller/PhotoClassController.java" afterPath="$PROJECT_DIR$/src/main/java/com/photoshareweb/controller/PhotoClassController.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/photoshareweb/mapping/PhotoClassMapper.xml" afterPath="$PROJECT_DIR$/src/main/java/com/photoshareweb/mapping/PhotoClassMapper.xml" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/photoshareweb/service/PhotoClassService.java" afterPath="$PROJECT_DIR$/src/main/java/com/photoshareweb/service/PhotoClassService.java" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/photoshareweb/dao/PhotoClassMapper.class" afterPath="$PROJECT_DIR$/target/classes/com/photoshareweb/dao/PhotoClassMapper.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/photoshareweb/mapping/PhotoClassMapper.xml" afterPath="$PROJECT_DIR$/target/classes/com/photoshareweb/mapping/PhotoClassMapper.xml" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/PhotoClassTest.class" afterPath="$PROJECT_DIR$/target/test-classes/PhotoClassTest.class" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/webapp/dist/css/personalInfo.css" afterPath="$PROJECT_DIR$/src/main/webapp/webapp/dist/css/personalInfo.css" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/webapp/dist/css/photoDetails.css" afterPath="$PROJECT_DIR$/src/main/webapp/webapp/dist/css/photoDetails.css" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/webapp/dist/css/photoUpload.css" afterPath="$PROJECT_DIR$/src/main/webapp/webapp/dist/css/photoUpload.css" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/webapp/dist/img/photo10.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/webapp/dist/img/photo11.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/webapp/dist/img/photo12.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/webapp/dist/img/photo13.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/webapp/dist/img/photo14.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/webapp/dist/img/photo15.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/webapp/dist/img/photo16.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/webapp/dist/img/photo17.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/webapp/dist/img/photo18.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/webapp/dist/img/photo19.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/webapp/dist/img/photo20.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/webapp/dist/img/photo21.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/webapp/dist/img/photo22.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/webapp/dist/img/photo23.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/webapp/dist/img/photo4.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/webapp/dist/img/photo5.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/webapp/dist/img/photo6.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/webapp/dist/img/photo7.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/webapp/dist/img/photo8.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/webapp/dist/img/photo9.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/webapp/dist/img/user.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/webapp/dist/index.html" afterPath="$PROJECT_DIR$/src/main/webapp/webapp/dist/index.html" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/webapp/dist/js/changePassword.js" afterPath="$PROJECT_DIR$/src/main/webapp/webapp/dist/js/changePassword.js" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/webapp/dist/js/index.js" afterPath="$PROJECT_DIR$/src/main/webapp/webapp/dist/js/index.js" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/webapp/dist/js/modernizr.js" afterPath="$PROJECT_DIR$/src/main/webapp/webapp/dist/js/modernizr.js" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/webapp/dist/js/personalInfo.js" afterPath="$PROJECT_DIR$/src/main/webapp/webapp/dist/js/personalInfo.js" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/webapp/dist/js/photoCheck.js" afterPath="$PROJECT_DIR$/src/main/webapp/webapp/dist/js/photoCheck.js" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/webapp/dist/js/photoClass.js" afterPath="$PROJECT_DIR$/src/main/webapp/webapp/dist/js/photoClass.js" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/webapp/dist/js/photoDetails.js" afterPath="$PROJECT_DIR$/src/main/webapp/webapp/dist/js/photoDetails.js" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/webapp/dist/js/photoLook.js" afterPath="$PROJECT_DIR$/src/main/webapp/webapp/dist/js/photoLook.js" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/webapp/dist/js/photoUpload.js" afterPath="$PROJECT_DIR$/src/main/webapp/webapp/dist/js/photoUpload.js" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/webapp/dist/js/userManage.js" afterPath="$PROJECT_DIR$/src/main/webapp/webapp/dist/js/userManage.js" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/webapp/dist/js/userManageCombine.js" afterPath="$PROJECT_DIR$/src/main/webapp/webapp/dist/js/userManageCombine.js" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/webapp/dist/photoClass.html" afterPath="$PROJECT_DIR$/src/main/webapp/webapp/dist/photoClass.html" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/webapp/dist/photoDetails.html" afterPath="$PROJECT_DIR$/src/main/webapp/webapp/dist/photoDetails.html" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/webapp/dist/userManage.html" afterPath="$PROJECT_DIR$/src/main/webapp/webapp/dist/userManage.html" />
+      <change beforePath="$PROJECT_DIR$/target/PhotoShareWeb.war" afterPath="$PROJECT_DIR$/target/PhotoShareWeb.war" />
+      <change beforePath="$PROJECT_DIR$/target/PhotoShareWeb/META-INF/MANIFEST.MF" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/PhotoShareWeb/webapp/dist/css/personalInfo.css" afterPath="$PROJECT_DIR$/target/PhotoShareWeb/webapp/dist/css/personalInfo.css" />
+      <change beforePath="$PROJECT_DIR$/target/PhotoShareWeb/webapp/dist/css/photoDetails.css" afterPath="$PROJECT_DIR$/target/PhotoShareWeb/webapp/dist/css/photoDetails.css" />
+      <change beforePath="$PROJECT_DIR$/target/PhotoShareWeb/webapp/dist/css/photoUpload.css" afterPath="$PROJECT_DIR$/target/PhotoShareWeb/webapp/dist/css/photoUpload.css" />
+      <change beforePath="$PROJECT_DIR$/target/PhotoShareWeb/webapp/dist/img/photo10.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/PhotoShareWeb/webapp/dist/img/photo11.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/PhotoShareWeb/webapp/dist/img/photo12.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/PhotoShareWeb/webapp/dist/img/photo13.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/PhotoShareWeb/webapp/dist/img/photo14.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/PhotoShareWeb/webapp/dist/img/photo15.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/PhotoShareWeb/webapp/dist/img/photo16.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/PhotoShareWeb/webapp/dist/img/photo17.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/PhotoShareWeb/webapp/dist/img/photo18.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/PhotoShareWeb/webapp/dist/img/photo19.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/PhotoShareWeb/webapp/dist/img/photo20.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/PhotoShareWeb/webapp/dist/img/photo21.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/PhotoShareWeb/webapp/dist/img/photo22.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/PhotoShareWeb/webapp/dist/img/photo23.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/PhotoShareWeb/webapp/dist/img/photo4.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/PhotoShareWeb/webapp/dist/img/photo5.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/PhotoShareWeb/webapp/dist/img/photo6.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/PhotoShareWeb/webapp/dist/img/photo7.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/PhotoShareWeb/webapp/dist/img/photo8.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/PhotoShareWeb/webapp/dist/img/photo9.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/PhotoShareWeb/webapp/dist/img/user.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/PhotoShareWeb/webapp/dist/index.html" afterPath="$PROJECT_DIR$/target/PhotoShareWeb/webapp/dist/index.html" />
+      <change beforePath="$PROJECT_DIR$/target/PhotoShareWeb/webapp/dist/js/changePassword.js" afterPath="$PROJECT_DIR$/target/PhotoShareWeb/webapp/dist/js/changePassword.js" />
+      <change beforePath="$PROJECT_DIR$/target/PhotoShareWeb/webapp/dist/js/index.js" afterPath="$PROJECT_DIR$/target/PhotoShareWeb/webapp/dist/js/index.js" />
+      <change beforePath="$PROJECT_DIR$/target/PhotoShareWeb/webapp/dist/js/modernizr.js" afterPath="$PROJECT_DIR$/target/PhotoShareWeb/webapp/dist/js/modernizr.js" />
+      <change beforePath="$PROJECT_DIR$/target/PhotoShareWeb/webapp/dist/js/personalInfo.js" afterPath="$PROJECT_DIR$/target/PhotoShareWeb/webapp/dist/js/personalInfo.js" />
+      <change beforePath="$PROJECT_DIR$/target/PhotoShareWeb/webapp/dist/js/photoCheck.js" afterPath="$PROJECT_DIR$/target/PhotoShareWeb/webapp/dist/js/photoCheck.js" />
+      <change beforePath="$PROJECT_DIR$/target/PhotoShareWeb/webapp/dist/js/photoClass.js" afterPath="$PROJECT_DIR$/target/PhotoShareWeb/webapp/dist/js/photoClass.js" />
+      <change beforePath="$PROJECT_DIR$/target/PhotoShareWeb/webapp/dist/js/photoDetails.js" afterPath="$PROJECT_DIR$/target/PhotoShareWeb/webapp/dist/js/photoDetails.js" />
+      <change beforePath="$PROJECT_DIR$/target/PhotoShareWeb/webapp/dist/js/photoLook.js" afterPath="$PROJECT_DIR$/target/PhotoShareWeb/webapp/dist/js/photoLook.js" />
+      <change beforePath="$PROJECT_DIR$/target/PhotoShareWeb/webapp/dist/js/photoUpload.js" afterPath="$PROJECT_DIR$/target/PhotoShareWeb/webapp/dist/js/photoUpload.js" />
+      <change beforePath="$PROJECT_DIR$/target/PhotoShareWeb/webapp/dist/js/userManage.js" afterPath="$PROJECT_DIR$/target/PhotoShareWeb/webapp/dist/js/userManage.js" />
+      <change beforePath="$PROJECT_DIR$/target/PhotoShareWeb/webapp/dist/js/userManageCombine.js" afterPath="$PROJECT_DIR$/target/PhotoShareWeb/webapp/dist/js/userManageCombine.js" />
+      <change beforePath="$PROJECT_DIR$/target/PhotoShareWeb/webapp/dist/photoClass.html" afterPath="$PROJECT_DIR$/target/PhotoShareWeb/webapp/dist/photoClass.html" />
+      <change beforePath="$PROJECT_DIR$/target/PhotoShareWeb/webapp/dist/photoDetails.html" afterPath="$PROJECT_DIR$/target/PhotoShareWeb/webapp/dist/photoDetails.html" />
+      <change beforePath="$PROJECT_DIR$/target/PhotoShareWeb/webapp/dist/userManage.html" afterPath="$PROJECT_DIR$/target/PhotoShareWeb/webapp/dist/userManage.html" />
+      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/PhotoClassTest.txt" afterPath="$PROJECT_DIR$/target/surefire-reports/PhotoClassTest.txt" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/PhotoTest.txt" afterPath="$PROJECT_DIR$/target/surefire-reports/PhotoTest.txt" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-PhotoClassTest.xml" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-PhotoClassTest.xml" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-PhotoTest.xml" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-PhotoTest.xml" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-UserTest.xml" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-UserTest.xml" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/UserTest.txt" afterPath="$PROJECT_DIR$/target/surefire-reports/UserTest.txt" />
+      <change beforePath="$PROJECT_DIR$/../webapp/dist/css/personalInfo.css" afterPath="$PROJECT_DIR$/../webapp/dist/css/personalInfo.css" />
+      <change beforePath="$PROJECT_DIR$/../webapp/dist/css/photoDetails.css" afterPath="$PROJECT_DIR$/../webapp/dist/css/photoDetails.css" />
+      <change beforePath="$PROJECT_DIR$/../webapp/dist/css/photoUpload.css" afterPath="$PROJECT_DIR$/../webapp/dist/css/photoUpload.css" />
+      <change beforePath="$PROJECT_DIR$/../webapp/dist/img/photo10.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../webapp/dist/img/photo11.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../webapp/dist/img/photo12.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../webapp/dist/img/photo13.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../webapp/dist/img/photo14.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../webapp/dist/img/photo15.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../webapp/dist/img/photo16.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../webapp/dist/img/photo17.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../webapp/dist/img/photo18.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../webapp/dist/img/photo19.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../webapp/dist/img/photo20.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../webapp/dist/img/photo21.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../webapp/dist/img/photo22.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../webapp/dist/img/photo23.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../webapp/dist/img/photo4.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../webapp/dist/img/photo5.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../webapp/dist/img/photo6.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../webapp/dist/img/photo7.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../webapp/dist/img/photo8.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../webapp/dist/img/photo9.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../webapp/dist/img/user.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../webapp/dist/index.html" afterPath="$PROJECT_DIR$/../webapp/dist/index.html" />
+      <change beforePath="$PROJECT_DIR$/../webapp/dist/js/changePassword.js" afterPath="$PROJECT_DIR$/../webapp/dist/js/changePassword.js" />
+      <change beforePath="$PROJECT_DIR$/../webapp/dist/js/index.js" afterPath="$PROJECT_DIR$/../webapp/dist/js/index.js" />
+      <change beforePath="$PROJECT_DIR$/../webapp/dist/js/modernizr.js" afterPath="$PROJECT_DIR$/../webapp/dist/js/modernizr.js" />
+      <change beforePath="$PROJECT_DIR$/../webapp/dist/js/personalInfo.js" afterPath="$PROJECT_DIR$/../webapp/dist/js/personalInfo.js" />
+      <change beforePath="$PROJECT_DIR$/../webapp/dist/js/photoCheck.js" afterPath="$PROJECT_DIR$/../webapp/dist/js/photoCheck.js" />
+      <change beforePath="$PROJECT_DIR$/../webapp/dist/js/photoClass.js" afterPath="$PROJECT_DIR$/../webapp/dist/js/photoClass.js" />
+      <change beforePath="$PROJECT_DIR$/../webapp/dist/js/photoDetails.js" afterPath="$PROJECT_DIR$/../webapp/dist/js/photoDetails.js" />
+      <change beforePath="$PROJECT_DIR$/../webapp/dist/js/photoLook.js" afterPath="$PROJECT_DIR$/../webapp/dist/js/photoLook.js" />
+      <change beforePath="$PROJECT_DIR$/../webapp/dist/js/photoUpload.js" afterPath="$PROJECT_DIR$/../webapp/dist/js/photoUpload.js" />
+      <change beforePath="$PROJECT_DIR$/../webapp/dist/js/userManage.js" afterPath="$PROJECT_DIR$/../webapp/dist/js/userManage.js" />
+      <change beforePath="$PROJECT_DIR$/../webapp/dist/js/userManageCombine.js" afterPath="$PROJECT_DIR$/../webapp/dist/js/userManageCombine.js" />
+      <change beforePath="$PROJECT_DIR$/../webapp/dist/photoClass.html" afterPath="$PROJECT_DIR$/../webapp/dist/photoClass.html" />
+      <change beforePath="$PROJECT_DIR$/../webapp/dist/photoDetails.html" afterPath="$PROJECT_DIR$/../webapp/dist/photoDetails.html" />
+      <change beforePath="$PROJECT_DIR$/../webapp/dist/userManage.html" afterPath="$PROJECT_DIR$/../webapp/dist/userManage.html" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -64,8 +184,8 @@
       <file leaf-file-name="PhotoClassController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/photoshareweb/controller/PhotoClassController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="329">
-              <caret line="40" column="47" lean-forward="true" selection-start-line="40" selection-start-column="29" selection-end-line="40" selection-end-column="47" />
+            <state relative-caret-position="330">
+              <caret line="40" column="47" lean-forward="false" selection-start-line="40" selection-start-column="29" selection-end-line="40" selection-end-column="47" />
               <folding />
             </state>
           </provider>
@@ -75,7 +195,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/com/photoshareweb/service/PhotoClassService.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="405">
-              <caret line="20" column="48" lean-forward="true" selection-start-line="20" selection-start-column="48" selection-end-line="20" selection-end-column="48" />
+              <caret line="20" column="48" lean-forward="false" selection-start-line="20" selection-start-column="48" selection-end-line="20" selection-end-column="48" />
               <folding />
             </state>
           </provider>
@@ -84,7 +204,7 @@
       <file leaf-file-name="PhotoClassMapper.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/photoshareweb/mapping/PhotoClassMapper.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="201">
+            <state relative-caret-position="2430">
               <caret line="90" column="31" lean-forward="false" selection-start-line="90" selection-start-column="31" selection-end-line="90" selection-end-column="31" />
               <folding>
                 <marker date="1517893163307" expanded="true" signature="980:1086" ph="select from photoclass" />
@@ -102,7 +222,7 @@
         <entry file="file://$PROJECT_DIR$/src/test/java/PhotoClassTest.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="297">
-              <caret line="19" column="76" lean-forward="true" selection-start-line="19" selection-start-column="76" selection-end-line="19" selection-end-column="76" />
+              <caret line="19" column="76" lean-forward="false" selection-start-line="19" selection-start-column="76" selection-end-line="19" selection-end-column="76" />
               <folding />
             </state>
           </provider>
@@ -111,7 +231,7 @@
       <file leaf-file-name="PhotoClassMapper.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/photoshareweb/dao/PhotoClassMapper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="332">
+            <state relative-caret-position="1431">
               <caret line="54" column="39" lean-forward="false" selection-start-line="54" selection-start-column="39" selection-end-line="54" selection-end-column="39" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -252,10 +372,10 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="AndroidView" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -678,7 +798,8 @@
       <workItem from="1517806479612" duration="5984000" />
       <workItem from="1517822386922" duration="1080000" />
       <workItem from="1517832878101" duration="2424000" />
-      <workItem from="1517885055547" duration="5289000" />
+      <workItem from="1517885055547" duration="5970000" />
+      <workItem from="1517897187151" duration="53000" />
     </task>
     <servers />
   </component>
@@ -715,7 +836,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="59369000" />
+    <option name="totallyTimeSpent" value="60103000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -728,37 +849,36 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
-    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.40914038" sideWeight="0.5021322" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32861805" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32995737" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32995737" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.37323177" sideWeight="0.4978678" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297062" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297062" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297062" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.40914038" sideWeight="0.5021322" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32861805" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="true" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32995737" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297062" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.37867248" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.37867248" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297062" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297062" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1748401" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17643923" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32995737" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.37323177" sideWeight="0.4978678" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297062" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
@@ -1081,23 +1201,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="27">
           <caret line="124" column="16" lean-forward="false" selection-start-line="124" selection-start-column="16" selection-end-line="124" selection-end-column="16" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#3051#3052#0" expanded="false" />
-            <element signature="e#3107#3108#0" expanded="false" />
-            <element signature="e#3319#3320#0" expanded="false" />
-            <element signature="e#3383#3384#0" expanded="false" />
-            <element signature="e#4998#4999#0" expanded="false" />
-            <element signature="e#5054#5055#0" expanded="false" />
-            <element signature="e#6148#6149#0" expanded="false" />
-            <element signature="e#6214#6215#0" expanded="false" />
-            <element signature="e#6451#6452#0" expanded="false" />
-            <element signature="e#6516#6517#0" expanded="false" />
-            <element signature="e#8593#8594#0" expanded="false" />
-            <element signature="e#8646#8647#0" expanded="false" />
-            <element signature="e#10315#10316#0" expanded="false" />
-            <element signature="e#10377#10378#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1106,7 +1209,7 @@
         <state relative-caret-position="202">
           <caret line="15" column="38" lean-forward="false" selection-start-line="15" selection-start-column="25" selection-end-line="15" selection-end-column="38" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1116,7 +1219,7 @@
         <state relative-caret-position="256">
           <caret line="22" column="23" lean-forward="true" selection-start-line="22" selection-start-column="23" selection-end-line="22" selection-end-column="23" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1139,7 +1242,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/photoshareweb/dao/PhotoClassMapper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="332">
+        <state relative-caret-position="1431">
           <caret line="54" column="39" lean-forward="false" selection-start-line="54" selection-start-column="39" selection-end-line="54" selection-end-column="39" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1150,14 +1253,14 @@
     <entry file="file://$PROJECT_DIR$/src/test/java/PhotoClassTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="297">
-          <caret line="19" column="76" lean-forward="true" selection-start-line="19" selection-start-column="76" selection-end-line="19" selection-end-column="76" />
+          <caret line="19" column="76" lean-forward="false" selection-start-line="19" selection-start-column="76" selection-end-line="19" selection-end-column="76" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/photoshareweb/mapping/PhotoClassMapper.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="201">
+        <state relative-caret-position="2430">
           <caret line="90" column="31" lean-forward="false" selection-start-line="90" selection-start-column="31" selection-end-line="90" selection-end-column="31" />
           <folding>
             <marker date="1517893163307" expanded="true" signature="980:1086" ph="select from photoclass" />
@@ -1173,15 +1276,15 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/com/photoshareweb/service/PhotoClassService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="405">
-          <caret line="20" column="48" lean-forward="true" selection-start-line="20" selection-start-column="48" selection-end-line="20" selection-end-column="48" />
+          <caret line="20" column="48" lean-forward="false" selection-start-line="20" selection-start-column="48" selection-end-line="20" selection-end-column="48" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/photoshareweb/controller/PhotoClassController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="329">
-          <caret line="40" column="47" lean-forward="true" selection-start-line="40" selection-start-column="29" selection-end-line="40" selection-end-column="47" />
+        <state relative-caret-position="330">
+          <caret line="40" column="47" lean-forward="false" selection-start-line="40" selection-start-column="29" selection-end-line="40" selection-end-column="47" />
           <folding />
         </state>
       </provider>

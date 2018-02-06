@@ -10486,7 +10486,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
 
 /***/ }),
 
-/***/ 41:
+/***/ 39:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10501,10 +10501,10 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
  */
 
 //get the view
-var changePassword = __webpack_require__(42);
+var changePassword = __webpack_require__(40);
 
 //import css
-__webpack_require__(43);
+__webpack_require__(41);
 
 //import fontIcon
 __webpack_require__(1);
@@ -10545,18 +10545,18 @@ SPA_RESOLVE_INIT = function SPA_RESOLVE_INIT(transition) {
 
 /***/ }),
 
-/***/ 42:
+/***/ 40:
 /***/ (function(module, exports) {
 
 module.exports = "<section id=\"change-password\">\r    <h3 class=\"title\">修改密码</h3>\r    <div class=\"container\">\r        <div class=\"row old-password\">\r            <span class=\"operation\">旧密码</span>\r            <input type=\"text\" id=\"old-password\">\r        </div>\r        <div class=\"row new-password\">\r            <span class=\"operation\">新密码</span>\r            <input type=\"password\" id=\"new-password\">\r        </div>\r        <div class=\"row confirm-password\">\r            <span class=\"operation\">确认新密码</span>\r            <input type=\"password\" id=\"confirm-password\">\r        </div>\r        <button id=\"commit\">确认修改</button>\r    </div>\r</section>"
 
 /***/ }),
 
-/***/ 43:
+/***/ 41:
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ })
 
-},[41]);
+},[39]);

@@ -1,5 +1,6 @@
-webpackJsonp([7],[
-/* 0 */
+webpackJsonp([7],{
+
+/***/ 0:
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
@@ -10370,7 +10371,8 @@ return jQuery;
 
 
 /***/ }),
-/* 1 */
+
+/***/ 1:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10431,91 +10433,8 @@ return jQuery;
 })(window);
 
 /***/ }),
-/* 2 */
-/***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
-var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;
-
-(function (e) {
-  if (true) {
-    !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(0)], __WEBPACK_AMD_DEFINE_FACTORY__ = (e),
-				__WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ?
-				(__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__),
-				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
-  } else {
-    e(jQuery);
-  }
-})(function (e) {
-  function n(e) {
-    return u.raw ? e : encodeURIComponent(e);
-  }function r(e) {
-    return u.raw ? e : decodeURIComponent(e);
-  }function i(e) {
-    return n(u.json ? JSON.stringify(e) : String(e));
-  }function s(e) {
-    if (e.indexOf('"') === 0) {
-      e = e.slice(1, -1).replace(/\\"/g, '"').replace(/\\\\/g, "\\");
-    }try {
-      e = decodeURIComponent(e.replace(t, " "));return u.json ? JSON.parse(e) : e;
-    } catch (n) {}
-  }function o(t, n) {
-    var r = u.raw ? t : s(t);return e.isFunction(n) ? n(r) : r;
-  }var t = /\+/g;var u = e.cookie = function (t, s, a) {
-    if (s !== undefined && !e.isFunction(s)) {
-      a = e.extend({}, u.defaults, a);if (typeof a.expires === "number") {
-        var f = a.expires,
-            l = a.expires = new Date();l.setDate(l.getDate() + f);
-      }return document.cookie = [n(t), "=", i(s), a.expires ? "; expires=" + a.expires.toUTCString() : "", a.path ? "; path=" + a.path : "", a.domain ? "; domain=" + a.domain : "", a.secure ? "; secure" : ""].join("");
-    }var c = t ? undefined : {};var h = document.cookie ? document.cookie.split("; ") : [];for (var p = 0, d = h.length; p < d; p++) {
-      var v = h[p].split("=");var m = r(v.shift());var g = v.join("=");if (t && t === m) {
-        c = o(g, s);break;
-      }if (!t && (g = o(g)) !== undefined) {
-        c[m] = g;
-      }
-    }return c;
-  };u.defaults = {};e.removeCookie = function (t, n) {
-    if (e.cookie(t) === undefined) {
-      return false;
-    }e.cookie(t, "", e.extend({}, n, { expires: -1 }));return !e.cookie(t);
-  };
-});
-
-/***/ }),
-/* 3 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-/*
-* @Author: Neeze@ZJS
-* @Date:   2017-10-11
- * @Last Modified by: zhouyou@werun
- * @Last Modified time: 2018-02-01 19:14:31
-*/
-//获取url中的参数
-var getParamsUrl = function getUrlParam(name) {
-    var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)"); //构造一个含有目标参数的正则表达式对象
-    var r = window.location.search.substr(1).match(reg); //匹配目标参数
-    if (r != null) return unescape(r[2]);
-    return null; //返回参数值
-};
-
-module.exports = getParamsUrl;
-
-/***/ }),
-/* 4 */,
-/* 5 */,
-/* 6 */,
-/* 7 */,
-/* 8 */,
-/* 9 */,
-/* 10 */,
-/* 11 */,
-/* 12 */,
-/* 13 */,
-/* 14 */
+/***/ 18:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10526,16 +10445,16 @@ module.exports = getParamsUrl;
  * @Descriptions: 单张图片浏览界面js依赖文件
  * @Date: 2017-12-17 20:43:42 
  * @Last Modified by: zhouyou@werun
- * @Last Modified time: 2018-02-03 15:49:15
+ * @Last Modified time: 2018-02-06 12:12:32
  */
 
 //import css
-__webpack_require__(15);
+__webpack_require__(19);
 
 //import js
 __webpack_require__(1);
 __webpack_require__(2);
-var getParamsUrl = __webpack_require__(3);
+var getParamsUrl = __webpack_require__(6);
 
 $(function () {
     //判断是否处于登录状态
@@ -10628,7 +10547,7 @@ $(function () {
                         $(".user-default").hide();
                         $(".user-name").text(data.user.username);
                         //显示用户头像
-                        $(".user-img").attr("src", data.user.headimg);
+                        $(".user-img").attr("src", data.user.headimg || "../image/login.png");
                         //返回主页面
                         $(".login-container").hide();
                         $(".mask-layer").hide();
@@ -10741,7 +10660,7 @@ $(function () {
 
                     //加载上传用户信息
                     $(".uploader-name").text(user.username);
-                    $(".uploader-img").attr("src", user.headimg);
+                    $(".uploader-img").attr("src", user.headimg || "../image/login.png");
                 } else {
                     alert("加载图片失败！");
                 }
@@ -10807,10 +10726,88 @@ $(function () {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 15 */
+
+/***/ 19:
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
+/***/ }),
+
+/***/ 2:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;
+
+(function (e) {
+  if (true) {
+    !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(0)], __WEBPACK_AMD_DEFINE_FACTORY__ = (e),
+				__WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ?
+				(__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__),
+				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+  } else {
+    e(jQuery);
+  }
+})(function (e) {
+  function n(e) {
+    return u.raw ? e : encodeURIComponent(e);
+  }function r(e) {
+    return u.raw ? e : decodeURIComponent(e);
+  }function i(e) {
+    return n(u.json ? JSON.stringify(e) : String(e));
+  }function s(e) {
+    if (e.indexOf('"') === 0) {
+      e = e.slice(1, -1).replace(/\\"/g, '"').replace(/\\\\/g, "\\");
+    }try {
+      e = decodeURIComponent(e.replace(t, " "));return u.json ? JSON.parse(e) : e;
+    } catch (n) {}
+  }function o(t, n) {
+    var r = u.raw ? t : s(t);return e.isFunction(n) ? n(r) : r;
+  }var t = /\+/g;var u = e.cookie = function (t, s, a) {
+    if (s !== undefined && !e.isFunction(s)) {
+      a = e.extend({}, u.defaults, a);if (typeof a.expires === "number") {
+        var f = a.expires,
+            l = a.expires = new Date();l.setDate(l.getDate() + f);
+      }return document.cookie = [n(t), "=", i(s), a.expires ? "; expires=" + a.expires.toUTCString() : "", a.path ? "; path=" + a.path : "", a.domain ? "; domain=" + a.domain : "", a.secure ? "; secure" : ""].join("");
+    }var c = t ? undefined : {};var h = document.cookie ? document.cookie.split("; ") : [];for (var p = 0, d = h.length; p < d; p++) {
+      var v = h[p].split("=");var m = r(v.shift());var g = v.join("=");if (t && t === m) {
+        c = o(g, s);break;
+      }if (!t && (g = o(g)) !== undefined) {
+        c[m] = g;
+      }
+    }return c;
+  };u.defaults = {};e.removeCookie = function (t, n) {
+    if (e.cookie(t) === undefined) {
+      return false;
+    }e.cookie(t, "", e.extend({}, n, { expires: -1 }));return !e.cookie(t);
+  };
+});
+
+/***/ }),
+
+/***/ 6:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+/*
+* @Author: Neeze@ZJS
+* @Date:   2017-10-11
+ * @Last Modified by: zhouyou@werun
+ * @Last Modified time: 2018-02-01 19:14:31
+*/
+//获取url中的参数
+var getParamsUrl = function getUrlParam(name) {
+    var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)"); //构造一个含有目标参数的正则表达式对象
+    var r = window.location.search.substr(1).match(reg); //匹配目标参数
+    if (r != null) return unescape(r[2]);
+    return null; //返回参数值
+};
+
+module.exports = getParamsUrl;
+
 /***/ })
-],[14]);
+
+},[18]);

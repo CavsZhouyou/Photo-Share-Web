@@ -563,8 +563,8 @@ ul {
  * @Author: zhouyou@weruan 
  * @Descriptions: 图片上传界面样式表
  * @Date: 2017-12-18 11:32:19 
- * @Last Modified by: zhouyou@weruan
- * @Last Modified time: 2017-12-18 17:54:58
+ * @Last Modified by: zhouyou@werun
+ * @Last Modified time: 2018-02-06 11:19:42
  */
 #photo-upload-content {
   width: 910px;
@@ -615,7 +615,7 @@ ul {
             display: inline-block;
             width: 300px;
             height: 25px; }
-          #photo-upload-content > .container > .upload > .content > .upload-photo > .file {
+          #photo-upload-content > .container > .upload > .content > .upload-photo #file {
             width: 100px;
             height: 30px;
             margin-top: 10px;
@@ -625,10 +625,8 @@ ul {
             line-height: 25px;
             text-align: center;
             border-radius: 5px;
+            border: none;
             cursor: pointer; }
-            #photo-upload-content > .container > .upload > .content > .upload-photo > .file input {
-              position: absolute;
-              opacity: 0; }
     #photo-upload-content > .container > .photo-name {
       height: 100px;
       line-height: 100px; }

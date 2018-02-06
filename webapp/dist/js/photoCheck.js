@@ -1,5 +1,6 @@
-webpackJsonp([2],[
-/* 0 */
+webpackJsonp([5],{
+
+/***/ 0:
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
@@ -10370,7 +10371,8 @@ return jQuery;
 
 
 /***/ }),
-/* 1 */
+
+/***/ 1:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10431,24 +10433,8 @@ return jQuery;
 })(window);
 
 /***/ }),
-/* 2 */,
-/* 3 */,
-/* 4 */,
-/* 5 */,
-/* 6 */,
-/* 7 */,
-/* 8 */,
-/* 9 */,
-/* 10 */,
-/* 11 */,
-/* 12 */,
-/* 13 */,
-/* 14 */,
-/* 15 */,
-/* 16 */,
-/* 17 */,
-/* 18 */,
-/* 19 */
+
+/***/ 23:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10459,14 +10445,14 @@ return jQuery;
  * @Descriptions: 图片审核界面js依赖文件
  * @Date: 2017-12-18 00:44:09 
  * @Last Modified by: zhouyou@werun
- * @Last Modified time: 2018-02-03 20:24:47
+ * @Last Modified time: 2018-02-06 13:17:19
  */
 
 //get the view
-var photoCheck = __webpack_require__(20);
+var photoCheck = __webpack_require__(24);
 
 //import css
-__webpack_require__(24);
+__webpack_require__(25);
 
 //import js
 __webpack_require__(1);
@@ -10474,6 +10460,9 @@ __webpack_require__(1);
 // 路由调用
 SPA_RESOLVE_INIT = function SPA_RESOLVE_INIT(transition) {
     $("#content").html(photoCheck);
+
+    //获取图片分类列表
+    var classList = getPhotoClassList();
 
     //加载图片列表
     getPhotoList();
@@ -10508,7 +10497,7 @@ SPA_RESOLVE_INIT = function SPA_RESOLVE_INIT(transition) {
             $photoBox;
 
         photoList.forEach(function (photo) {
-            photoBoxString = __webpack_require__(25);
+            photoBoxString = __webpack_require__(26);
             photoBoxString = photoBoxString.replace("$className", getPhotoClass(photo.photoclass)).replace(/photoName/g, photo.photoname).replace("$photoURL", photo.photourl).replace("$photoDescription", photo.descriptions).replace(/photoID/g, photo.id);
 
             $photoBox = $(photoBoxString);
@@ -10571,66 +10560,58 @@ SPA_RESOLVE_INIT = function SPA_RESOLVE_INIT(transition) {
      * @description 通过ID获取图片分类
      * @param {String} photoClass
      */
-    function getPhotoClass(photoClass) {
+    function getPhotoClass(photoClassID) {
         var className;
 
-        $.ajax({
-            url: "/PhotoShareWeb/share/photoClass/getPhotoClass",
-            type: "POST",
-            data: {
-                id: photoClass
-            },
-            dataType: "json",
-            async: false,
-            success: function success(data) {
-                if (data.success) {
-                    className = data.photoClass.classname;
-                } else {
-                    alert("获取图片分类失败！");
-                }
+        classList.forEach(function (photoclass) {
+            if (photoclass.id === photoClassID) {
+                className = photoclass.classname;
             }
         });
 
         return className;
     }
+
+    /**
+     * @description 获取图片分类列表
+     */
+    function getPhotoClassList() {
+        var resultList;
+
+        $.ajax({
+            url: "/PhotoShareWeb/share/photoClass/getPhotoClassList",
+            async: false,
+            success: function success(data) {
+                resultList = data.photoClassList;
+            }
+        });
+
+        return resultList;
+    }
 };
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 20 */
-/***/ (function(module, exports, __webpack_require__) {
 
-module.exports = "<section id=\"photo-check-content\">\r    <h3 class=\"title\">图片审核</h3>\r    <div class=\"photo-check-container\">\r        <!-- <div class=\"photo-info\">\r            <div class=\"photo-class\">\r                <span>商务建筑</span>\r            </div>\r            <div class=\"photo-name\">\r                <span>夕阳下的陌路</span>\r            </div>\r            <div class=\"photo-description\">\r                <div class=\"photo\">\r                    <img src="+JSON.stringify(__webpack_require__(21))+" alt=\"图片 夕阳下的陌路\">\r                </div>\r                <div class=\"photo-description-content\">\r                    <p>你有没有想过有一天，放下一切，到一个深山老林里居住，感受大自然的美好，把一切都寄托于山水田园间，远离城市的喧嚣，在山野里放歌..............</p>\r                </div>\r            </div>\r            <div class=\"check\">\r                <div class=\"pass\">\r                    <svg class=\"icon\" aria-hidden=\"true\">\r                        <use xlink:href=\"#icon-edit\"></use>\r                    </svg>\r                    <span>审核通过</span>\r                </div>\r                <div class=\"nopass\">\r                    <svg class=\"icon\" aria-hidden=\"true\">\r                        <use xlink:href=\"#icon-edit\"></use>\r                    </svg>\r                    <span>审核不通过</span>\r                </div>\r            </div>\r        </div>\r        <div class=\"photo-info\">\r            <div class=\"photo-class\">\r                <span>商务建筑</span>\r            </div>\r            <div class=\"photo-name\">\r                <span>夕阳下的陌路</span>\r            </div>\r            <div class=\"photo-description\">\r                <div class=\"photo\">\r                    <img src="+JSON.stringify(__webpack_require__(22))+" alt=\"图片 夕阳下的陌路\">\r                </div>\r                <div class=\"photo-description-content\">\r                    <p>你有没有想过有一天，放下一切，到一个深山老林里居住，感受大自然的美好，把一切都寄托于山水田园间，远离城市的喧嚣，在山野里放歌..............</p>\r                </div>\r            </div>\r            <div class=\"check\">\r                <div class=\"pass\">\r                    <svg class=\"icon\" aria-hidden=\"true\">\r                        <use xlink:href=\"#icon-edit\"></use>\r                    </svg>\r                    <span>审核通过</span>\r                </div>\r                <div class=\"nopass\">\r                    <svg class=\"icon\" aria-hidden=\"true\">\r                        <use xlink:href=\"#icon-edit\"></use>\r                    </svg>\r                    <span>审核不通过</span>\r                </div>\r            </div>\r        </div>\r        <div class=\"photo-info\">\r            <div class=\"photo-class\">\r                <span>商务建筑</span>\r            </div>\r            <div class=\"photo-name\">\r                <span>夕阳下的陌路</span>\r            </div>\r            <div class=\"photo-description\">\r                <div class=\"photo\">\r                    <img src="+JSON.stringify(__webpack_require__(23))+" alt=\"图片 夕阳下的陌路\">\r                </div>\r                <div class=\"photo-description-content\">\r                    <p>你有没有想过有一天，放下一切，到一个深山老林里居住，感受大自然的美好，把一切都寄托于山水田园间，远离城市的喧嚣，在山野里放歌..............</p>\r                </div>\r            </div>\r            <div class=\"check\">\r                <div class=\"pass\">\r                    <svg class=\"icon\" aria-hidden=\"true\">\r                        <use xlink:href=\"#icon-edit\"></use>\r                    </svg>\r                    <span>审核通过</span>\r                </div>\r                <div class=\"nopass\">\r                    <svg class=\"icon\" aria-hidden=\"true\">\r                        <use xlink:href=\"#icon-edit\"></use>\r                    </svg>\r                    <span>审核不通过</span>\r                </div>\r            </div>\r        </div> -->\r    </div>\r</section>"
+/***/ 24:
+/***/ (function(module, exports) {
 
-/***/ }),
-/* 21 */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__.p + "img/photo1.jpg";
+module.exports = "<section id=\"photo-check-content\">\r    <h3 class=\"title\">图片审核</h3>\r    <div class=\"photo-check-container\">\r\r    </div>\r</section>"
 
 /***/ }),
-/* 22 */
-/***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "img/photo2.jpg";
-
-/***/ }),
-/* 23 */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__.p + "img/photo3.jpg";
-
-/***/ }),
-/* 24 */
+/***/ 25:
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
-/* 25 */
+
+/***/ 26:
 /***/ (function(module, exports) {
 
 module.exports = "<div class=\"photo-info\">\r    <div class=\"photo-class\">\r        <span>$className</span>\r    </div>\r    <div class=\"photo-name\">\r        <span>photoName</span>\r    </div>\r    <div class=\"photo-description\">\r        <div class=\"photo\">\r            <img src=\"$photoURL\" alt=\"图片 photoName\" title=\"图片 photoName\">\r        </div>\r        <div class=\"photo-description-content\">\r            <p>$photoDescription</p>\r        </div>\r    </div>\r    <div class=\"check\">\r        <div class=\"pass\" data-ID=\"photoID\">\r            <svg class=\"icon\" aria-hidden=\"true\">\r                <use xlink:href=\"#icon-edit\"></use>\r            </svg>\r            <span>审核通过</span>\r        </div>\r        <div class=\"nopass\" data-ID=\"photoID\">\r            <svg class=\"icon\" aria-hidden=\"true\">\r                <use xlink:href=\"#icon-edit\"></use>\r            </svg>\r            <span>审核不通过</span>\r        </div>\r    </div>\r</div>"
 
 /***/ })
-],[19]);
+
+},[23]);
