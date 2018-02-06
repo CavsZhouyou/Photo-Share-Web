@@ -3,7 +3,7 @@
  * @Descriptions: 个人信息界面样式文件
  * @Date: 2017-12-18 16:18:54 
  * @Last Modified by: zhouyou@werun
- * @Last Modified time: 2018-02-03 21:43:33
+ * @Last Modified time: 2018-02-06 11:33:27
  */
 
 @import url("../../scss/normalize.css");
@@ -80,7 +80,7 @@
                         width: 300px;
                         height: 25px;
                     }
-                    > .file {
+                    #file {
                         width: 100px;
                         height: 30px;
                         margin-top: 10px;
@@ -90,12 +90,8 @@
                         line-height: 25px;
                         text-align: center;
                         border-radius: 5px;
+                        border: none;
                         cursor: pointer;
-
-                        input {
-                            position: absolute;
-                            opacity: 0;
-                        }
                     }
                 }
             }

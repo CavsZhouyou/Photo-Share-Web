@@ -17,7 +17,7 @@ public class AuthController {
     public @ResponseBody String getUpToken(){
         String accessKey = "MVorSHa-Ok1amT_F30IRN7grLQDub6Qw4nU9bjmb";
         String secretKey = "gyaLNjWt4XJUCHaFRRL5SH_vGY2Z0mdvRbjJaz1q";
-        String bucket = "cavszhouyou";
+        String bucket = "photoshareweb";
         Auth auth = Auth.create(accessKey, secretKey);
         String upToken = auth.uploadToken(bucket);
         return upToken;

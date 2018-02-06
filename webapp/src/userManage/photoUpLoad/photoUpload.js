@@ -3,7 +3,7 @@
  * @Descriptions: 图片上传依赖文件
  * @Date: 2017-12-18 11:29:15 
  * @Last Modified by: zhouyou@werun
- * @Last Modified time: 2018-02-05 21:57:01
+ * @Last Modified time: 2018-02-06 11:17:53
  */
 
 //get the view
@@ -15,20 +15,20 @@ require("./photoUpload.scss");
 //import js
 require("../../js/iconfont.js");
 require("../../js/jquery.cookie.min.js");
-require("./plupload/plupload.dev.js");
-require("./plupload/moxie.js");
-require("./qiniu.js");
+require("../../js/qiniu/plupload/plupload.dev.js");
+require("../../js/qiniu/plupload/moxie.js");
+require("../../js/qiniu/qiniu.js");
 
 // 路由调用
-SPA_RESOLVE_INIT = function(transition) {
+SPA_RESOLVE_INIT = function (transition) {
     $("#content").html(photoUpload);
 
-    $("#upload").click(function() {
+    $("#upload").click(function () {
         var photoURL = "./img/photo24.jpg",
             photoName = $("#user-name").val(),
             photoClass = $("#class")
-                .find("option:selected")
-                .val(),
+            .find("option:selected")
+            .val(),
             descriptions = $("#description").val(),
             uploadTime = new Date(),
             uploadUser = $.cookie("account"),
@@ -52,7 +52,7 @@ SPA_RESOLVE_INIT = function(transition) {
             data: JSON.stringify(postData),
             dataType: "json",
             contentType: "application/json",
-            success: function(data) {
+            success: function (data) {
                 if (data.success) {
                     alert("上传成功！");
                 } else {
@@ -80,9 +80,9 @@ SPA_RESOLVE_INIT = function(transition) {
         // Ajax请求downToken的Url，私有空间时使用,JS-SDK 将向该地址POST文件的key和domain,服务端返回的JSON必须包含`url`字段，`url`值为该文件的下载地址
         unique_names: false, // 默认 false，key 为文件名。若开启该选项，JS-SDK 会为每个文件自动生成key（文件名）
         save_key: false, // 默认 false。若在服务端生成 uptoken 的上传策略中指定了 `save_key`，则开启，SDK在前端将不对key进行任何处理
-        domain: "http://p2p4htzmu.bkt.clouddn.com/", // bucket 域名，下载资源时用到，如：'http://xxx.bkt.clouddn.com/' **必需**
+        domain: "http://p3pjzejg3.bkt.clouddn.com/", // bucket 域名，下载资源时用到，如：'http://xxx.bkt.clouddn.com/' **必需**
         container: "photo-container", // 上传区域 DOM ID，默认是 browser_button 的父元素，
-        max_file_size: "100mb", // 最大文件体积限制
+        max_file_size: "10mb", // 最大文件体积限制
         flash_swf_url: "../plupload/Moxie.swf", //引入 flash,相对路径
         max_retries: 3, // 上传失败最大重试次数
         dragdrop: true, // 开启可拖曳上传
@@ -103,20 +103,20 @@ SPA_RESOLVE_INIT = function(transition) {
         //    }
         //},
         init: {
-            FilesAdded: function(up, files) {
-                plupload.each(files, function(file) {
+            FilesAdded: function (up, files) {
+                plupload.each(files, function (file) {
                     // 文件添加进队列后,处理相关的事情
                 });
             },
-            BeforeUpload: function(up, file) {
+            BeforeUpload: function (up, file) {
                 // 每个文件上传前,处理相关的事情
                 console.log("上传开始");
             },
-            UploadProgress: function(up, file) {
+            UploadProgress: function (up, file) {
                 // 每个文件上传时,处理相关的事情
                 console.log("上传中");
             },
-            FileUploaded: function(up, file, info) {
+            FileUploaded: function (up, file, info) {
                 // 每个文件上传成功后,处理相关的事情
                 // 其中 info.response 是文件上传成功后，服务端返回的json，形式如
                 // {
@@ -131,14 +131,21 @@ SPA_RESOLVE_INIT = function(transition) {
                 console.log(sourceLink);
                 $("#photo").attr("src", sourceLink);
             },
-            Error: function(up, err, errTip) {
+            Error: function (up, err, errTip) {
+                base.hideLoading();
                 //上传出错时,处理相关的事情
-                console.log("发生错误");
+                if (file.code == '-600') {
+                    base.showAlertDialog('上传图片的大小不能超过10mb！');
+                } else if (file.code == '-601') {
+                    base.showAlertDialog('上传图片的格式有误！')
+                } else {
+                    base.showAlertDialog(err);
+                }
             },
-            UploadComplete: function() {
+            UploadComplete: function () {
                 //队列文件处理完毕后,处理相关的事情
             },
-            Key: function(up, file) {
+            Key: function (up, file) {
                 // 若想在前端对每个文件的key进行个性化处理，可以配置该函数
                 // 该配置必须要在 unique_names: false , save_key: false 时才生效
                 var timestamp = Date.parse(new Date());
@@ -154,7 +161,7 @@ SPA_RESOLVE_INIT = function(transition) {
         $.ajax({
             url: "/PhotoShareWeb/share/auth/getUpToken",
             async: false,
-            success: function(data) {
+            success: function (data) {
                 token = data;
             }
         });

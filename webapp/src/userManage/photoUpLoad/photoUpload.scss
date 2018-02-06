@@ -2,8 +2,8 @@
  * @Author: zhouyou@weruan 
  * @Descriptions: 图片上传界面样式表
  * @Date: 2017-12-18 11:32:19 
- * @Last Modified by: zhouyou@weruan
- * @Last Modified time: 2017-12-18 17:54:58
+ * @Last Modified by: zhouyou@werun
+ * @Last Modified time: 2018-02-06 11:19:42
  */
 
 @import url("../../scss/normalize.css");
@@ -63,7 +63,7 @@
                         width: 300px;
                         height: 25px;
                     }
-                    > .file {
+                    #file {
                         width: 100px;
                         height: 30px;
                         margin-top: 10px;
@@ -73,12 +73,8 @@
                         line-height: 25px;
                         text-align: center;
                         border-radius: 5px;
+                        border: none;
                         cursor: pointer;
-
-                        input {
-                            position: absolute;
-                            opacity: 0;
-                        }
                     }
                 }
             }

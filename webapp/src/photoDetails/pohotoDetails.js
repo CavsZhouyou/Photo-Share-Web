@@ -3,7 +3,7 @@
  * @Descriptions: 单张图片浏览界面js依赖文件
  * @Date: 2017-12-17 20:43:42 
  * @Last Modified by: zhouyou@werun
- * @Last Modified time: 2018-02-03 15:49:15
+ * @Last Modified time: 2018-02-06 12:12:32
  */
 
 //import css
@@ -105,7 +105,10 @@ $(function() {
                         $(".user-default").hide();
                         $(".user-name").text(data.user.username);
                         //显示用户头像
-                        $(".user-img").attr("src", data.user.headimg);
+                        $(".user-img").attr(
+                            "src",
+                            data.user.headimg || "../image/login.png"
+                        );
                         //返回主页面
                         $(".login-container").hide();
                         $(".mask-layer").hide();
@@ -218,7 +221,10 @@ $(function() {
 
                     //加载上传用户信息
                     $(".uploader-name").text(user.username);
-                    $(".uploader-img").attr("src", user.headimg);
+                    $(".uploader-img").attr(
+                        "src",
+                        user.headimg || "../image/login.png"
+                    );
                 } else {
                     alert("加载图片失败！");
                 }

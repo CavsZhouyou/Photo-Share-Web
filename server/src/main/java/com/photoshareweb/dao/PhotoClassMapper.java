@@ -1,6 +1,7 @@
 package com.photoshareweb.dao;
 
 import com.photoshareweb.entitys.PhotoClass;
+import java.util.List;
 
 public interface PhotoClassMapper {
     /**
@@ -50,4 +51,6 @@ public interface PhotoClassMapper {
      * @mbggenerated
      */
     int updateByPrimaryKey(PhotoClass record);
+
+    List<PhotoClass> getPhotoClassList();
 }

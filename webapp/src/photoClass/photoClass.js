@@ -3,7 +3,7 @@
  * @Descriptions: 图片分类页面js依赖文件
  * @Date: 2017-12-17 17:33:38 
  * @Last Modified by: zhouyou@werun
- * @Last Modified time: 2018-02-03 15:49:05
+ * @Last Modified time: 2018-02-06 12:11:53
  */
 
 //import css
@@ -22,7 +22,7 @@ $(function() {
         $(".user-default").hide();
         $(".user-name").text($.cookie("username"));
         //显示用户头像
-        $(".user-img").attr("src", $.cookie("headimg"));
+        $(".user-img").attr("src", $.cookie("headimg") || "../image/login.png");
     }
 
     //加载图片列表
@@ -105,7 +105,10 @@ $(function() {
                         $(".user-default").hide();
                         $(".user-name").text(data.user.username);
                         //显示用户头像
-                        $(".user-img").attr("src", data.user.headimg);
+                        $(".user-img").attr(
+                            "src",
+                            data.user.headimg || "../image/login.png"
+                        );
                         //返回主页面
                         $(".login-container").hide();
                         $(".mask-layer").hide();
@@ -208,6 +211,11 @@ $(function() {
         var photoBoxString,
             $photoContainer = $("#photo-container"),
             $photoBox;
+
+        if (photoList.length === 0) {
+            alert("该分类还没有人上传图片，快快登录一起上传图片吧！");
+            return;
+        }
 
         photoList.forEach(photo => {
             photoBoxString = require("./box.html");

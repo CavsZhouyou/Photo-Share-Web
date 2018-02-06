@@ -3,7 +3,7 @@
  * @Descriptions: 单张图片浏览页面样式文件
  * @Date: 2017-12-17 20:42:18 
  * @Last Modified by: zhouyou@werun
- * @Last Modified time: 2018-02-01 19:54:23
+ * @Last Modified time: 2018-02-06 11:57:51
  */
 
 @import url("../scss/normalize.css");
@@ -142,8 +142,9 @@
 
 #container {
     width: 100%;
-    height: 795px;
+    min-height: 824px;
     padding-top: 100px;
+    padding-bottom: 50px;
     background: rgba(242, 242, 242, 1);
 
     > .login-container {
