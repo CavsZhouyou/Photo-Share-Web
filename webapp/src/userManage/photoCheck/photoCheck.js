@@ -3,7 +3,7 @@
  * @Descriptions: 图片审核界面js依赖文件
  * @Date: 2017-12-18 00:44:09 
  * @Last Modified by: zhouyou@werun
- * @Last Modified time: 2018-02-03 20:24:47
+ * @Last Modified time: 2018-02-06 13:17:19
  */
 
 //get the view
@@ -18,6 +18,9 @@ require("../../js/iconfont.js");
 // 路由调用
 SPA_RESOLVE_INIT = function(transition) {
     $("#content").html(photoCheck);
+
+    //获取图片分类列表
+    var classList = getPhotoClassList();
 
     //加载图片列表
     getPhotoList();
@@ -126,26 +129,32 @@ SPA_RESOLVE_INIT = function(transition) {
      * @description 通过ID获取图片分类
      * @param {String} photoClass
      */
-    function getPhotoClass(photoClass) {
+    function getPhotoClass(photoClassID) {
         var className;
 
-        $.ajax({
-            url: "/PhotoShareWeb/share/photoClass/getPhotoClass",
-            type: "POST",
-            data: {
-                id: photoClass
-            },
-            dataType: "json",
-            async: false,
-            success: function(data) {
-                if (data.success) {
-                    className = data.photoClass.classname;
-                } else {
-                    alert("获取图片分类失败！");
-                }
+        classList.forEach(photoclass => {
+            if (photoclass.id === photoClassID) {
+                className = photoclass.classname;
             }
         });
 
         return className;
+    }
+
+    /**
+     * @description 获取图片分类列表
+     */
+    function getPhotoClassList() {
+        var resultList;
+
+        $.ajax({
+            url: "/PhotoShareWeb/share/photoClass/getPhotoClassList",
+            async: false,
+            success: function(data) {
+                resultList = data.photoClassList;
+            }
+        });
+
+        return resultList;
     }
 };
